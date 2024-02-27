@@ -16,5 +16,5 @@ int num;
 
 void pyramid(int n)
 {
-    
+    printf("#");
 }
