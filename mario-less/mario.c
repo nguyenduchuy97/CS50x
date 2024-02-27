@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void print_row(int n);
+void print_row(int bricks);
 int main(void)
 {
 
@@ -11,10 +11,13 @@ int num;
         num = get_int("Height: ");
     }
     while(num <= 0);
-    print_row(num);
+    for(int i=0;i<num;i++)
+    {
+
+    }
 }
 
-void print_row(int n)
+void print_row(int bricks)
 {
     for(int i=0; i<n;i++)
     {
