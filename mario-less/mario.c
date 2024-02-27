@@ -18,11 +18,6 @@ void pyramid(int n)
 {
     for(int i=0; i<n; i++)
     {
-        for(int )
-        {
-
-            printf(" ");
-        }
-        printf("\n");
+        printf("%s\n", hash);
     }
 }
