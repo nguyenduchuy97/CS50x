@@ -14,16 +14,18 @@ int num;
     for(int i=0;i<num;i++)
     {
         print_row(num);
+        printf("\n");
     }
 }
 
 void print_row(int bricks)
 {
-    //print spaces
-    for(int a=bricks; )
+    for(int i=0; i<bricks;i++)
     {
-        printf(" ");
+        for(int a=bricks; 0<a; a--)
+        {
+            printf(" ");
+        }
+        printf("#");
     }
-
-    //print hash
 }
