@@ -40,18 +40,11 @@ void print_row(int spaces, int bricks)
 
     for (int i = 0; i < bricks; i++)
     {
-        if (i == 0)
-        {
-            printf("");
-        }
-        else
-        {
-            printf(" ");
-        }
+        printf("#");
     }
     for (int j = 0; j < spaces; j++)
     {
-        printf("#");
+        printf(" ");
     }
 
 // New line
