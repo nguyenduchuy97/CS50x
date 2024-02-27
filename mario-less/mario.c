@@ -10,10 +10,10 @@ int num;
     {
         num = get_int("Height: ");
     }
-    while(num <= 0);
+    while(num < 1);
     for(int i=0;i<num;i++)
     {
-        printf("#");
+        
     }
 }
 
