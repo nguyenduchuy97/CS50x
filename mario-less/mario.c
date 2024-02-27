@@ -13,7 +13,7 @@ int num;
     while(num <= 0);
     for(int i=0;i<num;i++)
     {
-        printf("");
+        printf(" ");
     }
 }
 
