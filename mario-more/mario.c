@@ -34,5 +34,26 @@ void print_row(int spaces, int bricks)
     {
         printf("#");
     }
+// 2 Spaces
+    printf("  ")
+// Block 2
+
+    for (int i = 0; i < bricks; i++)
+    {
+        if (i == 0)
+        {
+            printf("");
+        }
+        else
+        {
+            printf(" ");
+        }
+    }
+    for (int j = 0; j < spaces; j++)
+    {
+        printf("#");
+    }
+
+// New line
     printf("\n");
 }
