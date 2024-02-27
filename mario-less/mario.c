@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void print_row(int bricks);
+void print_row(int spaces, int bricks);
 int main(void)
 {
 
@@ -13,16 +13,19 @@ int main(void)
     while (num < 1);
     for (int i = 0; i < num; i++)
     {
-        print_row(num - i);
+        print_row(num - i, num);
         printf("\n");
     }
 }
 
-void print_row(int bricks)
+void print_row(int spaces, int bricks)
 {
-    for (int i = 0; i < bricks; i++)
+    for (int i = 0; i < spaces; i++)
     {
         printf(" ");
     }
-    printf("#");
+    for (int j = 0; j < bricks; j++)
+    {
+        printf("#");
+    }
 }
