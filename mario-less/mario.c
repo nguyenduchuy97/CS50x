@@ -16,6 +16,7 @@ int num;
         print_row(num-1);
         printf("#");
     }
+    printf("\n");
 }
 
 void print_row(int bricks)
