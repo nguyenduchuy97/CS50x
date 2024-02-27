@@ -21,7 +21,7 @@ int num;
 
 void print_row(int bricks)
 {
-    for(int a=bricks; 0<a; a--)
+    for(int i=0;i<bricks;i++)
     {
         printf(" ");
     }
