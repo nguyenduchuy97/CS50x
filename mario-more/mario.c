@@ -19,6 +19,7 @@ int main(void)
 
 void print_row(int spaces, int bricks)
 {
+    // Block left.
     for (int i = 0; i < spaces; i++)
     {
         if (i == 0)
@@ -34,15 +35,15 @@ void print_row(int spaces, int bricks)
     {
         printf("#");
     }
-// 2 Spaces
+    // 2 Spaces.
     printf("  ");
-// Block 2
+    // Block right.
 
     for (int i = 0; i < bricks; i++)
     {
         printf("#");
     }
 
-// New line
+    // New line
     printf("\n");
 }
