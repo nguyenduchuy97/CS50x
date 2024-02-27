@@ -13,8 +13,7 @@ int main(void)
     while (num < 1);
     for (int i = 0; i < num; i++)
     {
-        print_row(num - i, num);
-        printf("\n");
+        print_row(num - i, i + 1);
     }
 }
 
@@ -28,4 +27,5 @@ void print_row(int spaces, int bricks)
     {
         printf("#");
     }
+    printf("\n");
 }
