@@ -18,6 +18,7 @@ void pyramid(int n)
 {
     for(int i=0; i<n; i++)
     {
-        printf("%s\n", hash);
+        string hash = "#"
+        printf("%s\n", hash*n);
     }
 }
