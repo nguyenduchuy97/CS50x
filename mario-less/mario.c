@@ -9,7 +9,8 @@ int num;
     do
     {
         num = get_int("Height: ");
-    } while(num <= 0);
+    }
+    while(num <= 0);
     pyramid(num);
 }
 
