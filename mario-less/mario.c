@@ -13,12 +13,7 @@ int num;
     while(num < 1);
     for(int i=0;i<num;i++)
     {
-        for(int j=0;j<num;j++)
-        {
-            print_row(num-1);
-            printf("#");
-        }
-        printf("\n");
+        print_row(num-i);
     }
 }
 
@@ -26,6 +21,7 @@ void print_row(int bricks)
 {
     for(int i=0;i<bricks;i++)
     {
-        printf(" ");
+        printf("#");
     }
+    printf("\n");
 }
