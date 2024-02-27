@@ -20,5 +20,10 @@ int num;
 void print_row(int bricks)
 {
     //print spaces
+    for(int a=bricks; )
+    {
+        printf(" ");
+    }
+
     //print hash
 }
