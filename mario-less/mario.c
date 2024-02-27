@@ -14,6 +14,7 @@ int main(void)
     for (int i = 0; i < num; i++)
     {
         print_row(num - i);
+        printf("\n");
     }
 }
 
@@ -21,7 +22,7 @@ void print_row(int bricks)
 {
     for (int i = 0; i < bricks; i++)
     {
-        printf("#");
+        printf(" ");
     }
-    printf("\n");
+    printf("#");
 }
