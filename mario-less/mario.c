@@ -16,6 +16,6 @@ int num;
 
 void pyramid(int n)
 {
-    for(int j=0;j)
+    for(int j=0;j<3;j++)
     printf(' ');
 }
