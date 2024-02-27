@@ -13,10 +13,13 @@ int num;
     while(num < 1);
     for(int i=0;i<num;i++)
     {
-        print_row(num-1);
-        printf("#");
+        for(int j=0;j<num;j++)
+        {
+            print_row(num-1);
+            printf("#");
+        }
+        printf("\n");
     }
-    printf("\n");
 }
 
 void print_row(int bricks)
