@@ -35,7 +35,7 @@ void print_row(int spaces, int bricks)
         printf("#");
     }
 // 2 Spaces
-    printf("  ")
+    printf("  ");
 // Block 2
 
     for (int i = 0; i < bricks; i++)
