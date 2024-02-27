@@ -19,13 +19,6 @@ int num;
 
 void print_row(int bricks)
 {
-    for(int i=0; i< bricks;i++)
-    {
-        for(int a=0; a< bricks; a++)
-        {
-            printf(" ");
-        }
-        printf("#");
-    }
-    printf("\n");
+    //print spaces
+    //print hash
 }
