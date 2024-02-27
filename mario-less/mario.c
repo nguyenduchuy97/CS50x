@@ -19,7 +19,7 @@ int main(void)
 
 void print_row(int spaces, int bricks)
 {
-    for (int i = -1; i < spaces; i++)
+    for (int i = 0; i < spaces; i++)
     {
         printf(" ");
     }
