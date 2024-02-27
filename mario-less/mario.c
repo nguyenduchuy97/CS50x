@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void pyramid(int n);
+void print_row(int n);
 int main(void)
 {
 
@@ -11,10 +11,14 @@ int num;
         num = get_int("Height: ");
     }
     while(num <= 0);
-    pyramid(num);
+    print_row(num);
 }
 
-void pyramid(int n)
+void print_row(int n)
 {
-    printf("#");
+    for(int i=0; i<n;i++)
+    {
+        printf("#");
+    }
+
 }
