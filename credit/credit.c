@@ -80,17 +80,17 @@ string id_issuer(long int card)
         first_2_d /= 10;
     }
 
-    if ((first_2_d == 34 || first_2_d == 37) || (first_2_d >= 34 && first_2_d <= 37))
+    if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
     {
         return "AMEX";
     }
 
-    else if ((first_2_d >= 51 && first_2_d <= 55))
+    else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
     {
         return "MASTERCARD";
     }
 
-    else if ((first_2_d >= 40 && first_2_d <= 49))
+    else if (((length == 13 || length == 16) && first_2_d >= 40) && ((length == 13 || length == 16) && first_2_d <= 49))
     {
         return "VISA";
     }
