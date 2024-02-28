@@ -19,10 +19,10 @@ int main(void)
 
     while (cents > 0)
     {
-        calculate_quarters(cents);
-        calculate_dimes(cents);
-        calculate_nickels(cents);
-        calculate_pennies(cents);
+        cents = calculate_quarters(cents);
+        cents = calculate_dimes(cents);
+        cents = calculate_nickels(cents);
+        cents = calculate_pennies(cents);
     }
     calculate_sum(quarter,dimes,nickels,pennies);
 }
