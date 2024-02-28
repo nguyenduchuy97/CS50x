@@ -7,11 +7,10 @@ string id_issuer(long int card);
 int main()
 {
     long int number = get_long("Number: ");
-    if (check_valid())
-    {
-        indentify_issuer()
-    }
-}
+
+    string issuer = indentify_issuer(number);
+    printf("%s\n", issuer);
+ }
 
 bool check_valid(long int card)
 {
@@ -46,16 +45,16 @@ bool check_valid(long int card)
         sum += digit;
         // Change to true of false so it will jump 2 step at a time.
         double_step = !double_step;
-
-
     }
-
-    return result;
+    // Check if the last digit of the algorithm's result equal 0 and the number of digit between 13 to 16.
+    return (sum % 2 == 0) && (length >= 13 && length <= 16);
 }
 
 string id_issuer(long int card)
 {
     string issuer;
+    
+    if
 
     return issuer;
 }
