@@ -30,11 +30,26 @@ int main(void)
 int calculate_quarters(int cents)
 {
     int quarters = 0;
-    while (cents > 24)
+    if (cents > 24)
     {
-    // Subtract the value of those quarters from cents
-        quarters ++;
-        cents -= 25;
+        while (cents > 24)
+        {
+        // Subtract the value of those quarters from cents
+            quarters ++;
+            cents -= 25;
+        }
+    }
+    else if (cents > 9)
+    {
+        quarters += calculate_dimes(cents);
+    }
+    else if (cents > 4)
+    {
+        quarters += calculate_nickels(cents);
+    }
+    else
+    {
+        quarters += calculate_pennies(cents);
     }
     return quarters;
 }
