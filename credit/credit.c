@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 int main()
 {
     long int card = get_long("Number: ");
