@@ -6,7 +6,9 @@ int check_digits(long int card);
 int main()
 {
     char card[20];
+    printf("Enter your card number: ");
     scanf("Number: %s", card);
+
 
 // Length of
 
