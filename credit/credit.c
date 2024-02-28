@@ -79,7 +79,7 @@ string id_issuer(long long card)
     {
         first_2_d /= 10;
     }
-
+    card = temp_card;
     if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
     {
         return "AMEX";
