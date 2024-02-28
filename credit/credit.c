@@ -39,9 +39,10 @@ bool check_valid(long int card)
 
             if (digit > 9)
             {
-                
+                digit = (digit % 10) + 1;
             }
         }
+        sum += digit;
     }
 
     return result;
