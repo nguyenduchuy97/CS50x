@@ -37,7 +37,6 @@ bool check_valid(long int card)
         // Start from the second-to-last digit of the credit card number.
         int digit = card % 10;
         // Double every other digit, moving from right to left.
-            printf("This is the length %i\n", length);
         if (double_step)
         {
             digit *= 2;
@@ -49,6 +48,8 @@ bool check_valid(long int card)
         }
         // Sum all the obtained digits from the doubling process along with the digits that were not doubled.
         sum += digit;
+        // Move to the next 2 digit.
+        card /= 10;
         // Change to true of false so it will jump 2 step at a time.
         double_step = !double_step;
     }
