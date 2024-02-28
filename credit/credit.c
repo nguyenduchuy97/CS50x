@@ -39,7 +39,7 @@ bool check_valid(long int card)
     while (card > 0)
     {
         // Start from the second-to-last digit of the credit card number.
-        int digit = card % 10;
+        long int digit = card % 10;
         // Double every other digit, moving from right to left.
         if (double_step)
         {
