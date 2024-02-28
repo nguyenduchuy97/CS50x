@@ -3,8 +3,8 @@
 
 int main()
 {
-    long[] card = get_long("Number: ");
-    printf("%li")
+    long long int[] card = get_long("Number: ");
+    printf("%lld\n", card)
 }
 
 // Start from the second-to-last digit of the credit card number.
