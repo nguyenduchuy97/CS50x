@@ -17,12 +17,14 @@ int main(void)
     }
     while (cents < 0);
 
-    int quarters = 0;calculate_quarters(cents);
-    int dimes = 0;calculate_dimes(cents);
-    int nickels = 0;calculate_nickels(cents);
-    int pennies = 0;calculate_pennies(cents);
-
-    calculate_sum(quarters, dimes, nickels, pennies);
+    while (cents > 0)
+    {
+        calculate_quarters(cents);
+        calculate_dimes(cents);
+        calculate_nickels(cents);
+        calculate_pennies(cents);
+    }
+    calculate_sum(quarter,dimes,nickels,pennies);
 }
 
     // Calculate how many quarters you should give customer
