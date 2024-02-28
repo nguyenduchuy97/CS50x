@@ -50,6 +50,7 @@ int calculate_quarters(int cents)
         {
             while (cents > 4)
             {
+    // Subtract the value of those nickels from remaining cents
                 cents -= 5;
                 quarters ++;
             }
@@ -58,6 +59,7 @@ int calculate_quarters(int cents)
         {
             while (cents > 0)
             {
+    // Subtract the value of those pennies from remaining cents
                 cents -= 1;
                 quarters ++;
             }
