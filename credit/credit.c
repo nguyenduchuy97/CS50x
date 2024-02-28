@@ -5,7 +5,15 @@
 int check_digits(long int card);
 int main()
 {
-    long int = get_long("Number: ");
+    long int number = get_long("Number: ");
+    if (number < 0)
+    {
+        printf("Invalid input %li\n", number);
+    }
+    int len = number % 10;
+    printf("%i\n", len);
+    len = number % 100;
+    printf("%i\n", len);
 }
 
 
