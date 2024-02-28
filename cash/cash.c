@@ -83,5 +83,5 @@ int calculate_pennies(int cents)
 void calculate_sum(int sum)
 {
     // Print that sum
-    printf("%i\n", sum);
+    
 }
