@@ -15,12 +15,12 @@ int main()
 
 bool check_valid(long int card)
 {
-    int lenth;
+    int lenth = 0;
     int result;
     bool flip = false;
     long int c_card = card;
 
-    while(c_card)
+    while(c_card >= 10)
     {
         
     }
