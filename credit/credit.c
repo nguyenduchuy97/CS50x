@@ -77,7 +77,7 @@ string id_issuer(long int card)
     //MASTERCARD
     //number digits:	16
     //start with: 51 - 55
-    else if ((last_d >= 51 && last_d <= 55))
+    else if ((last_d >= 51 && last_d <= 55) || (last_d >= 5100 && last_d <= 5599))
     {
         return "MASTERCARD";
     }
