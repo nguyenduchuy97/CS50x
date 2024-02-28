@@ -4,13 +4,21 @@
 int main(void)
 {
     // Prompt the user for change owed, in cents
-    int c_owed;
+    int cents;
     do
     {
-        c_owed = get_int("Change owed: ");
+        cents = get_int("Change owed: ");
     }
-    while (c_owed < 0);
+    while (cents < 0);
+}
     // Calculate how many quarters you should give customer
+int calculate_quarters(int amount)
+{
+    if (amount > 24)
+    {
+        amount -= 25;
+    }
+}
     // Subtract the value of those quarters from cents
 
     // Calculate how many dimes you should give customer
@@ -24,4 +32,4 @@ int main(void)
 
     // Sum the number of quarters, dimes, nickels, and pennies used
     // Print that sum
-}
+
