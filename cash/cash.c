@@ -7,10 +7,11 @@ int calculate_nickels(int cents);
 int calculate_pennies(int cents);
 void calculate_sum(int sum);
 
+int cents;
+
 int main(void)
 {
     // Prompt the user for change owed, in cents
-    int cents;
     do
     {
         cents = get_int("Change owed: ");
@@ -23,8 +24,8 @@ int main(void)
         sum += calculate_dimes(cents);
         sum += calculate_nickels(cents);
         sum += calculate_pennies(cents);
-
     calculate_sum(sum);
+
 }
 
     // Calculate how many quarters you should give customer
