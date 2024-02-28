@@ -59,7 +59,7 @@ AMEX:
 number digits:	15
 start with: 34 - 37
     */
-    if (last_d )
+    if (last_d 34)
     {}
 
     return ;
