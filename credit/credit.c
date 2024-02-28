@@ -72,27 +72,16 @@ string id_issuer(long int card)
     //VISA
     //number digits:	13 - 16
     //start with: 4
-    else if (())
-    {}
+    else if ((last_d >= 40 && last_d <= 49) || (last_d >= 40000 && last_d <= 49999))
+    {
+        return "VISA\n";
+    }
+    else
+    {
+        return "INVALID\n"
+    }
 
-    return ;
 }
-/*
-AMEX:
-number digits:	15
-start with: 34 - 37
-
-MASTERCARD
-number digits:	16
-start with: 51 - 55
-
-VISA
-number digits:	13 - 16
-start with: 4
-
-INVALID
-*/
-
 
 // Start from the second-to-last digit of the credit card number.
 // Double every other digit, moving from right to left.
