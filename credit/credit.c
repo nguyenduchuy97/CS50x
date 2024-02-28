@@ -16,11 +16,10 @@ int main()
 bool check_valid(long int card)
 {
     int lenth = 0;
-    int result;
-    bool flip = false;
-    long int c_card = card;
+    int sum = 0;
+    bool double_step = false;
 
-    while(c_card >= 10)
+    while(card > 0)
     {
         
     }
