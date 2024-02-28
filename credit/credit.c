@@ -8,12 +8,12 @@ int main()
     long int number = get_long("Number: ");
     if (number < 0)
     {
-        printf("Invalid input %li\n", number);
+        printf("Invalid number %li\n", number);
     }
     int len = 0;
-    int mod = 10;
-    while (number % mod < mod)
+    while (number)
     {
+        
         len++;
 
     }
