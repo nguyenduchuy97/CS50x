@@ -18,13 +18,12 @@ int main(void)
     while (cents < 0);
     // Call sum function
     int sum = 0;
-    while (cents > 0)
-    {
+
         sum = calculate_quarters(cents);
-        cents = calculate_dimes(cents);
-        cents = calculate_nickels(cents);
-        cents = calculate_pennies(cents);
-    }
+        sum = calculate_dimes(cents);
+        sum = calculate_nickels(cents);
+        sum = calculate_pennies(cents);
+
     calculate_sum(sum);
 }
 
