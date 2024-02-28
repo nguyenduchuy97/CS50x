@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 bool check_valid(long int card);
-string identify_issuer(long int card);
+string id_issuer(long int card);
 
 int main()
 {
@@ -16,13 +16,22 @@ int main()
 bool check_valid(long int card)
 {
     int lenth;
+    int result;
+    bool flip = false;
+    long int c_card = card;
 
+    while(c_card)
+    {
+        
+    }
+
+    return result;
 }
 
-string identify_issuer(long int card)
+string id_issuer(long int card)
 {
     string issuer;
-    
+
     return issuer;
 }
 /*
