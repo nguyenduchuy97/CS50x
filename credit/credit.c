@@ -25,6 +25,7 @@ bool check_valid(long int card)
         length++;
         temp_card /= 10;
     }
+    printf("This is the length %i\n", length);
     //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
     double_step = length % 2 == 0;
     while (card > 0)
