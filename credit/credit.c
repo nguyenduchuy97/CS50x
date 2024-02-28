@@ -64,8 +64,6 @@ bool check_valid(long int card)
 
 string id_issuer(long int card)
 {
-    // Divide 12 digit to get at least more than 1 digit.
-    int last_d = card / 100000000000;
     int length = 0;
     long int temp_card = card;
 
