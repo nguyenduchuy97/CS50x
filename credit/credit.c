@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
+int check_digits(long int card);
 int main()
 {
     long int card = get_long("Number: ");
@@ -13,6 +13,10 @@ int main()
     {}
 }
 
+int check_digits(long int card)
+{
+    
+}
 // Start from the second-to-last digit of the credit card number.
 // Double every other digit, moving from right to left.
 // If doubling a digit results in a two-digit number, add the individual digits of that product together.
