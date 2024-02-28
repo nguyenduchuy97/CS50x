@@ -47,6 +47,7 @@ bool check_valid(long int card)
         double_step = !double_step;
     }
     // Check if the last digit of the algorithm's result equal 0 and the number of digit between 13 to 16.
+    // If the total sum ends in 0 (i.e., it is divisible by 10), then the credit card number is considered valid.
     return (sum % 2 == 0) && (length >= 13 && length <= 16);
 }
 
@@ -83,8 +84,3 @@ string id_issuer(long int card)
 
 }
 
-// Start from the second-to-last digit of the credit card number.
-// Double every other digit, moving from right to left.
-// If doubling a digit results in a two-digit number, add the individual digits of that product together.
-// Sum all the obtained digits from the doubling process along with the digits that were not doubled.
-// If the total sum ends in 0 (i.e., it is divisible by 10), then the credit card number is considered valid.
