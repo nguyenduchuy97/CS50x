@@ -32,18 +32,21 @@ bool check_valid(long int card)
     {
         // Start from the second-to-last digit of the credit card number.
         int digit = card % 10;
-        // Count the last position if number of digit is odd.
+        // Count the last position if number of digits is odd.
         if (double_step)
         {
             digit *= 2;
-
+            // Count digit if it has 2 digits
             if (digit > 9)
             {
-                digit = (digit % 10) + 1;
+                digit = digit % 10 + digit / 10;
             }
         }
-        // Count the last position if number of digit is even.
+        // Count the last position if number of digits is even.
         sum += digit;
+        // Change to true of false so it will jump 2 step at a time.
+        double_step = !double_step;
+        
 
     }
 
