@@ -5,7 +5,7 @@ int calculate_quarters(int cents);
 int calculate_dimes(int cents);
 int calculate_nickels(int cents);
 int calculate_pennies(int cents);
-void calculate_sum(int sum);
+void print_sum(int sum);
 
 int main(void)
 {
@@ -24,7 +24,7 @@ int main(void)
 //   sum += calculate_pennies(cents);
 //   calculate_sum(calculate_quarters(cents), calculate_dimes(cents), calculate_nickels(cents), calculate_pennies(cents));
     int sum = calculate_quarters(cents);
-    calculate_sum(sum);
+    print_sum(sum);
 
 }
 
@@ -96,7 +96,7 @@ int calculate_pennies(int cents)
 }
 
     // Sum the number of quarters, dimes, nickels, and pennies used
-void calculate_sum(int sum)
+void print_sum(int sum)
 {
     // Print that sum
     printf("%i\n", sum);
