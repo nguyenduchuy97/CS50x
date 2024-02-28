@@ -31,12 +31,13 @@ bool check_valid(long int card)
 
     //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
     double_step = length % 2 == 0;
-    printf("This is the length %i\n", length);
+
     while (card > 0)
     {
         // Start from the second-to-last digit of the credit card number.
         int digit = card % 10;
         // Double every other digit, moving from right to left.
+            printf("This is the length %i\n", length);
         if (double_step)
         {
             digit *= 2;
