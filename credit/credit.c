@@ -11,15 +11,7 @@ int main()
         printf("Invalid number %li\n", number);
     }
     int len = 0;
-    long int cont_n = number;
-    while (number < cont_n)
-    {
-        int n = 1;
-        n = n*10;
-        number %= n;
-        len++;
-
-    }
+    
     printf("%i\n", len);
 }
 
