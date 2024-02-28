@@ -14,7 +14,7 @@ int main()
 
 bool check_valid(long int card)
 {
-    int lenth = 0;
+    int length = 0;
     int sum = 0;
     bool double_step = false;
     long int temp_card = card;
@@ -79,7 +79,7 @@ string id_issuer(long int card)
     }
     else
     {
-        return "INVALID\n"
+        return "INVALID\n";
     }
 
 }
