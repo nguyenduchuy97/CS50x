@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int coins = 0;
 int main(void)
 {
     // Prompt the user for change owed, in cents
@@ -17,6 +18,7 @@ int calculate_quarters(int amount)
     if (amount > 24)
     {
         amount -= 25;
+        coins += 1;
     }
 }
     // Subtract the value of those quarters from cents
