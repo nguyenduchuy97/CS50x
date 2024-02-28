@@ -13,6 +13,10 @@ int main()
         string issuer = id_issuer(number);
         printf("%s\n", issuer);
     }
+    else
+    {
+        printf("INVALID\n");
+    }
  }
 
 bool check_valid(long int card)
@@ -68,25 +72,25 @@ string id_issuer(long int card)
     //start with: 34 - 37
     if ((last_d == 34 || last_d == 37) || (last_d >= 3400 && last_d <= 3799))
     {
-        return "AMEX\n\0";
+        return "AMEX\n";
     }
     //MASTERCARD
     //number digits:	16
     //start with: 51 - 55
     else if ((last_d >= 51000 && last_d <= 55999))
     {
-        return "MASTERCARD\n\0";
+        return "MASTERCARD\n";
     }
     //VISA
     //number digits:	13 - 16
     //start with: 4
     else if ((last_d >= 40 && last_d <= 49) || (last_d >= 40000 && last_d <= 49999))
     {
-        return "VISA\n\0";
+        return "VISA\n";
     }
     else
     {
-        return "INVALID\n\0";
+        return "INVALID\n";
     }
 
 }
