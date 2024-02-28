@@ -7,18 +7,40 @@ string identify_issuer(long int card);
 int main()
 {
     long int number = get_long("Number: ");
-    if (number < 0)
+    if (check_valid())
     {
-        printf("Invalid number %li\n", number);
+        indentify_issuer()
     }
-    printf("%i\n", len);
 }
 
 bool check_valid(long int card)
 {
     int lenth;
-    
+
 }
+
+string identify_issuer(long int card)
+{
+    string issuer;
+    
+    return issuer;
+}
+/*
+AMEX:
+number digits:	15
+start with: 34 - 37
+
+MASTERCARD
+number digits:	16
+start with: 51 - 55
+
+VISA
+number digits:	13 - 16
+start with: 4
+
+INVALID
+*/
+
 
 // Start from the second-to-last digit of the credit card number.
 // Double every other digit, moving from right to left.
