@@ -46,7 +46,7 @@ int calculate_dimes(int cents)
 {
     int dimes = 0;
 
-    while (cents > 24)
+    while (cents > 10)
     {
     // Subtract the value of those dimes from cents
         cents -= 10;
