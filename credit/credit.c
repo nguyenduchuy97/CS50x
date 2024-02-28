@@ -11,10 +11,11 @@ int main()
         printf("Invalid input %li\n", number);
     }
     int len = 0;
-    int mod;
-    for (int i = 10; (number % i < number); i*10)
+    int mod = 10;
+    while (number % mod < mod)
     {
         len++;
+
     }
     printf("%i\n", len);
 }
