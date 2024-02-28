@@ -18,14 +18,24 @@ bool check_valid(long int card)
     int lenth = 0;
     int sum = 0;
     bool double_step = false;
+    long int c_card = card;
 
-    while(card > 0)
+    // Count the number of digit.
+    while (c_card > 0)
+    {
+        lenth++;
+        c_card /= 10;
+    }
+    //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
+    doulbe_step = lenth % 2 == 0;
+    while (card > 0)
     {
         // Start from the second-to-last digit of the credit card number.
         int digit = card % 10;
+
         if (double_step)
         {
-            
+
         }
     }
 
