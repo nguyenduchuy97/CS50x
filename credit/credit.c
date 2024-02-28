@@ -1,12 +1,12 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool check_valid(long long card);
-string id_issuer(long long card);
+bool check_valid(long int card);
+string id_issuer(long int card);
 
 int main()
 {
-    long long number = get_long("Number: ");
+    long int number = get_long("Number: ");
 
     if (check_valid(number))
     {
@@ -19,12 +19,12 @@ int main()
     }
  }
 
-bool check_valid(long long card)
+bool check_valid(long int card)
 {
     int length = 0;
     int sum = 0;
     bool double_step = false;
-    long long temp_card = card;
+    long int temp_card = card;
 
     // Count the number of digit.
     while (temp_card > 0)
@@ -39,7 +39,7 @@ bool check_valid(long long card)
     while (card > 0)
     {
         // Start from the second-to-last digit of the credit card number.
-        long long digit = card % 10;
+        long int digit = card % 10;
         // Double every other digit, moving from right to left.
         if (double_step)
         {
@@ -62,10 +62,10 @@ bool check_valid(long long card)
     return (sum % 10 == 0) && (length >= 13 && length <= 16);
 }
 
-string id_issuer(long long card)
+string id_issuer(long int card)
 {
     int length = 0;
-    long long temp_card = card;
+    long int temp_card = card;
 
     while (temp_card > 0)
     {
@@ -75,7 +75,7 @@ string id_issuer(long long card)
     printf("This is the first 2 digit: %lli and length: %i\n", temp_card, length);
 
     // Get the first two digits of the card number.
-    long long first_2_d = card;
+    long int first_2_d = card;
     while (first_2_d > 99)
     {
         first_2_d /= 10;
