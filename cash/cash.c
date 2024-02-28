@@ -4,7 +4,7 @@
 int calculate_quarters(int cents);
 int calculate_dimes(int cents);
 int calculate_nickels(int cents);
-int calculate_pennies(int cents);
+int calculates_pennies(int cents);
 void calculate_sum(int quarter, int dimes, int nickels, int pennies);
 
 int main(void)
@@ -68,7 +68,7 @@ int calculate_nickels(int cents)
 }
 
     // Calculate how many pennies you should give customer
-int calculate_penies(int cents)
+int calculates_penies(int cents)
 {
     int pennies = 0;
 
