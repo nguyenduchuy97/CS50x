@@ -66,6 +66,21 @@ string id_issuer(long int card)
 {
     // Divide 12 digit to get at least more than 1 digit.
     int last_d = card / 100000000000;
+    int length = 0;
+    long int temp_card = card;
+
+    while (temp_card > 0)
+    {
+        length++;
+        temp_card /= 10;
+    }
+
+    // Get the first two digits of the card number.
+    int first_two_digits = card;
+    while (first_two_digits > 100)
+    {
+        first_two_digits /= 10;
+    }
 
     if ((last_d == 34 || last_d == 37) || (last_d >= 3400 && last_d <= 3799))
     {
