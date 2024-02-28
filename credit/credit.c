@@ -71,14 +71,14 @@ string id_issuer(long int card)
     //MASTERCARD
     //number digits:	16
     //start with: 51 - 55
-    else if ((last_d >= 51000 && last_d <= 55999))
+    else if ((last_d >= 5100 && last_d <= 5599))
     {
         return "MASTERCARD\n";
     }
     //VISA
     //number digits:	13 - 16
     //start with: 4
-    else if ((last_d >= 40 && last_d <= 49) || (last_d >= 40000 && last_d <= 49999))
+    else if ((last_d >= 40 && last_d <= 49) || (last_d >= 4000 && last_d <= 4999))
     {
         return "VISA\n";
     }
