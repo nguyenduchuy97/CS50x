@@ -52,16 +52,17 @@ bool check_valid(long int card)
 
 string id_issuer(long int card)
 {
-    string issuer;
+    // Divide 12 digit to get at least more than 1 digit.
+    int last_d = card / 100000000000;
     /*
 AMEX:
 number digits:	15
 start with: 34 - 37
     */
-    if ()
+    if (last_d )
     {}
 
-    return issuer;
+    return ;
 }
 /*
 AMEX:
