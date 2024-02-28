@@ -35,7 +35,12 @@ bool check_valid(long int card)
 
         if (double_step)
         {
+            digit *= 2;
 
+            if (digit > 9)
+            {
+                
+            }
         }
     }
 
