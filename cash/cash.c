@@ -49,7 +49,12 @@ int calculate_quarters(int cents)
         }
         else if (cents > 9)
         {
-            quarters += calculate_dimes(cents);
+            while (cents > 9) //(cents > 9 && cents < 25)
+            {
+            // Subtract the value of those dimes from cents
+                cents -= 10;
+                dimes ++;
+            };
         }
         else if (cents > 4)
         {
