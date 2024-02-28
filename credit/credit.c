@@ -5,18 +5,15 @@
 int check_digits(long int card);
 int main()
 {
-    long int card = get_long("Number: ");
-    char s_card[32];
-    sprintf(s_card, "%ld", card);
-// Length of 
-    if ()
-    {}
+    char card[20] = get_long("Number: ");
+
+// Length of
+
 }
 
 int check_digits(long int card)
 {
-    for (int i = 0; i < 32))
-    {}
+
 }
 // Start from the second-to-last digit of the credit card number.
 // Double every other digit, moving from right to left.
