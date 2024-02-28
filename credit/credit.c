@@ -66,7 +66,7 @@ string id_issuer(long int card)
     //AMEX:
     //number digits:	15
     //start with: 34 - 37
-    if ((last_d >= 34 && last_d <= 37) || (last_d >= 3400 && last_d <= 3799))
+    if ((last_d == 34 || last_d == 37) || (last_d >= 3400 && last_d <= 3799))
     {
         return "AMEX\n\0";
     }
