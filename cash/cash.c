@@ -7,11 +7,10 @@ int calculate_nickels(int cents);
 int calculate_pennies(int cents);
 void calculate_sum(int sum);
 
-int cents;
-
 int main(void)
 {
     // Prompt the user for change owed, in cents
+    int cents;
     do
     {
         cents = get_int("Change owed: ");
