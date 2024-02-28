@@ -8,7 +8,7 @@ int main()
 {
     long int number = get_long("Number: ");
 
-    string issuer = indentify_issuer(number);
+    string issuer = id_issuer(number);
     printf("%s\n", issuer);
  }
 
@@ -22,11 +22,11 @@ bool check_valid(long int card)
     // Count the number of digit.
     while (temp_card > 0)
     {
-        lenth++;
+        length++;
         temp_card /= 10;
     }
     //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
-    double_step = lenth % 2 == 0;
+    double_step = length % 2 == 0;
     while (card > 0)
     {
         // Start from the second-to-last digit of the credit card number.
