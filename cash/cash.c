@@ -17,10 +17,10 @@ int main(void)
     }
     while (cents < 0);
 
-    int quarters = calculate_quarters(cents);
-    int dimes = calculate_dimes(cents);
-    int nickels = calculate_nickels(cents);
-    int pennies = calculate_pennies(cents);
+    int quarters = 0;calculate_quarters(cents);
+    int dimes = 0;calculate_dimes(cents);
+    int nickels = 0;calculate_nickels(cents);
+    int pennies = 0;calculate_pennies(cents);
 
     calculate_sum(quarters, dimes, nickels, pennies);
 }
