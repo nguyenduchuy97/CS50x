@@ -17,13 +17,12 @@ int main(void)
     }
     while (cents < 0);
     // Call sum function
-    int sum = 0;
-
-        sum += calculate_quarters(cents);
-        sum += calculate_dimes(cents);
-        sum += calculate_nickels(cents);
-        sum += calculate_pennies(cents);
-    calculate_sum(calculate_quarters(cents), calculate_dimes(cents), calculate_nickels(cents), calculate_pennies(cents));
+//   int sum = 0;
+//   sum += calculate_quarters(cents);
+//   sum += calculate_dimes(cents);
+//   sum += calculate_nickels(cents);
+//   sum += calculate_pennies(cents);
+//   calculate_sum(calculate_quarters(cents), calculate_dimes(cents), calculate_nickels(cents), calculate_pennies(cents));
 
 }
 
@@ -80,7 +79,7 @@ int calculate_pennies(int cents)
 }
 
     // Sum the number of quarters, dimes, nickels, and pennies used
-void calculate_sum(int sum)
+int calculate_sum(int sum)
 {
     // Print that sum
 
