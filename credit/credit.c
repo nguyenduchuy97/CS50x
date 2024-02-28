@@ -54,12 +54,25 @@ string id_issuer(long int card)
 {
     // Divide 12 digit to get at least more than 1 digit.
     int last_d = card / 100000000000;
-    /*
-AMEX:
-number digits:	15
-start with: 34 - 37
-    */
-    if (last_d 34)
+
+    //AMEX:
+    //number digits:	15
+    //start with: 34 - 37
+    if ((last_d >= 3400 && last_d <= 3700))
+    {
+        return "AMEX\n";
+    }
+    //MASTERCARD
+    //number digits:	16
+    //start with: 51 - 55
+    else if ((last_d >= 51000 && last_d <= 55000))
+    {
+        return "MASTERCARD\n";
+    }
+    //VISA
+    //number digits:	13 - 16
+    //start with: 4
+    else if (())
     {}
 
     return ;
