@@ -53,8 +53,13 @@ bool check_valid(long int card)
 string id_issuer(long int card)
 {
     string issuer;
-    
-    if
+    /*
+AMEX:
+number digits:	15
+start with: 34 - 37
+    */
+    if ()
+    {}
 
     return issuer;
 }
