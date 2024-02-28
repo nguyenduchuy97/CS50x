@@ -16,7 +16,13 @@ int main(void)
         cents = get_int("Change owed: ");
     }
     while (cents < 0);
-    int calculate_sum(int quarters, int dimes, int nickels, int pennies);
+
+    int quarters = calculate_quarters(int cents);
+    int dimes = calculate_dimes(int cents);
+    int nickels = calculate_nickels(int cents);
+    int pennies = calculate_pennies(int cents);
+
+    int calculate_sum(quarters, dimes, nickels, pennies);
 }
 
     // Calculate how many quarters you should give customer
