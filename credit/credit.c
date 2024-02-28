@@ -8,8 +8,11 @@ int main()
 {
     long int number = get_long("Number: ");
 
-    string issuer = id_issuer(number);
-    printf("%s\n", issuer);
+    if (check_valid(number))
+    {
+        string issuer = id_issuer(number);
+        printf("%s\n", issuer);
+    }
  }
 
 bool check_valid(long int card)
