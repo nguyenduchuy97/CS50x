@@ -35,7 +35,7 @@ int calculate_quarters(int cents)
 {
     int quarters = 0;
     int cent = cents;
-    //
+    
         while (cents != 0)
     {
         if (cents > 24)
@@ -53,23 +53,30 @@ int calculate_quarters(int cents)
             {
             // Subtract the value of those dimes from cents
                 cents -= 10;
-                dimes ++;
+                quarters ++;
             };
         }
         else if (cents > 4)
         {
-            quarters += calculate_nickels(cents);
+            while (cents > 4) //(cents > 4 && cents < 10)
+            {
+                cents -= 5;
+                quarters ++;
+            }
         }
         else
         {
-            quarters += calculate_pennies(cents);
+            while (cents > 0) //(cents > 0 && cents < 5)
+            {
+                cents -= 1;
+                quarters ++;
+            }
         }
     }
-    //
 
     return quarters;
 }
-
+/*
     // Calculate how many dimes you should give customer
 int calculate_dimes(int cents)
 {
@@ -110,6 +117,7 @@ int calculate_pennies(int cents)
 }
 
     // Sum the number of quarters, dimes, nickels, and pennies used
+*/
 void print_sum(int sum)
 {
     // Print that sum
