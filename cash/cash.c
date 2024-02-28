@@ -2,9 +2,6 @@
 #include <stdio.h>
 
 int calculate_quarters(int cents);
-int calculate_dimes(int cents);
-int calculate_nickels(int cents);
-int calculate_pennies(int cents);
 void print_sum(int sum);
 
 int main(void)
@@ -16,13 +13,6 @@ int main(void)
         cents = get_int("Change owed: ");
     }
     while (cents < 0);
-    // Call sum function
-//   int sum = 0;
-//   sum += calculate_quarters(cents);
-//   sum += calculate_dimes(cents);
-//   sum += calculate_nickels(cents);
-//   sum += calculate_pennies(cents);
-//   calculate_sum(calculate_quarters(cents), calculate_dimes(cents), calculate_nickels(cents), calculate_pennies(cents));
 
     int sum = calculate_quarters(cents);
 
@@ -35,30 +25,30 @@ int calculate_quarters(int cents)
 {
     int quarters = 0;
     int cent = cents;
-    
+
         while (cents != 0)
     {
         if (cents > 24)
         {
                 while (cents > 24)
                 {
-                // Subtract the value of those quarters from cents
+    // Subtract the value of those quarters from cents
                     quarters ++;
                     cents -= 25;
                 }
         }
         else if (cents > 9)
         {
-            while (cents > 9) //(cents > 9 && cents < 25)
+            while (cents > 9)
             {
-            // Subtract the value of those dimes from cents
+    // Subtract the value of those dimes from cents
                 cents -= 10;
                 quarters ++;
             };
         }
         else if (cents > 4)
         {
-            while (cents > 4) //(cents > 4 && cents < 10)
+            while (cents > 4)
             {
                 cents -= 5;
                 quarters ++;
@@ -66,7 +56,7 @@ int calculate_quarters(int cents)
         }
         else
         {
-            while (cents > 0) //(cents > 0 && cents < 5)
+            while (cents > 0)
             {
                 cents -= 1;
                 quarters ++;
