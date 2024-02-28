@@ -90,7 +90,7 @@ string id_issuer(long int card)
         return "MASTERCARD";
     }
 
-    else if (((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49)) && ((length == 13 || length == 16) && (first_2_d <= 40 && first_2_d <= 49)))
+    else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49))
     {
         return "VISA";
     }
