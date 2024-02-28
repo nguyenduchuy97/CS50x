@@ -27,12 +27,12 @@ bool check_valid(long int card)
         c_card /= 10;
     }
     //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
-    doulbe_step = lenth % 2 == 0;
+    double_step = lenth % 2 == 0;
     while (card > 0)
     {
         // Start from the second-to-last digit of the credit card number.
         int digit = card % 10;
-
+        // Count the last position if number of digit is odd.
         if (double_step)
         {
             digit *= 2;
@@ -42,7 +42,9 @@ bool check_valid(long int card)
                 digit = (digit % 10) + 1;
             }
         }
+        // Count the last position if number of digit is even.
         sum += digit;
+
     }
 
     return result;
