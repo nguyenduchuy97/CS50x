@@ -74,23 +74,23 @@ string id_issuer(long int card)
     }
 
     // Get the first two digits of the card number.
-    int first_two_digits = card;
-    while (first_two_digits > 100)
+    int first_2_d = card;
+    while (first_2_d > 100)
     {
-        first_two_digits /= 10;
+        first_2_d /= 10;
     }
 
-    if ((last_d == 34 || last_d == 37) || (last_d >= 3400 && last_d <= 3799))
+    if ((first_2_d == 34 || first_2_d == 37) || (first_2_d >= 34 && first_2_d <= 37))
     {
         return "AMEX";
     }
 
-    else if ((last_d >= 51 && last_d <= 55) || (last_d >= 5100 && last_d <= 5599))
+    else if ((first_2_d >= 51 && first_2_d <= 55))
     {
         return "MASTERCARD";
     }
 
-    else if ((last_d >= 40 && last_d <= 49) || (last_d >= 40000 && last_d <= 49999))
+    else if ((first_2_d >= 40 && first_2_d <= 49))
     {
         return "VISA";
     }
