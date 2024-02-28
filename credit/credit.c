@@ -5,13 +5,13 @@
 int main()
 {
     long int card = get_long("Number: ");
-    
+    printf("%i\n", strlen(card));
 
     char s_card[32];
     sprintf(s_card, "%ld", card);
 
     printf("This is int %ld\n", card);
-    printf("This is strings %s\n", s_card);
+    printf("This is strings %s\n", strlen(card));
 
     for (int i = 0; i < strlen(s_card); i++)
     {
