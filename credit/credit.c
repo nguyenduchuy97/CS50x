@@ -18,13 +18,13 @@ bool check_valid(long int card)
     int lenth = 0;
     int sum = 0;
     bool double_step = false;
-    long int c_card = card;
+    long int temp_card = card;
 
     // Count the number of digit.
-    while (c_card > 0)
+    while (temp_card > 0)
     {
         lenth++;
-        c_card /= 10;
+        temp_card /= 10;
     }
     //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
     double_step = lenth % 2 == 0;
@@ -46,7 +46,7 @@ bool check_valid(long int card)
         sum += digit;
         // Change to true of false so it will jump 2 step at a time.
         double_step = !double_step;
-        
+
 
     }
 
