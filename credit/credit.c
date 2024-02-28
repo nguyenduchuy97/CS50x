@@ -64,14 +64,14 @@ string id_issuer(long int card)
     //AMEX:
     //number digits:	15
     //start with: 34 - 37
-    if ((last_d >= 3400 && last_d <= 3700))
+    if ((last_d >= 3400 && last_d <= 3799))
     {
         return "AMEX\n";
     }
     //MASTERCARD
     //number digits:	16
     //start with: 51 - 55
-    else if ((last_d >= 51000 && last_d <= 55000))
+    else if ((last_d >= 51000 && last_d <= 55999))
     {
         return "MASTERCARD\n";
     }
