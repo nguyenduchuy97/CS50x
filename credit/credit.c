@@ -11,7 +11,8 @@ int main()
         printf("Invalid input %li\n", number);
     }
     int len = 0;
-    for (int i = 10; (number % i != number); i*10)
+    int mod;
+    for (int i = 10; (mod = number % i != number); i*10)
     {
         len++;
     }
