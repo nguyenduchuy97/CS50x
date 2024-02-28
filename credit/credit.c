@@ -5,7 +5,8 @@
 int main()
 {
     long int card = get_long("Number: ");
-    //long int card = (long int) s_card;
+    char s_card[]
+    sprintf();
     printf("This is int %ld\n", card);
     //printf("This is strings %s\n", strlen(s_card))
 }
