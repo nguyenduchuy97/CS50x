@@ -72,6 +72,7 @@ string id_issuer(long long card)
         length++;
         temp_card /= 10;
     }
+    printf("This is the first 2 digit: %lli and length: %i\n", temp_card, length);
 
     // Get the first two digits of the card number.
     long long first_2_d = card;
@@ -79,7 +80,6 @@ string id_issuer(long long card)
     {
         first_2_d /= 10;
     }
-    printf("This is the first 2 digit: %lld", first_2_d);
 
     if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
     {
