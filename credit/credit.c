@@ -1,8 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <string.h>
 
-int check_digits(long int card);
+bool check_valid(long int card);
+string identify_issuer(long int card);
+
 int main()
 {
     long int number = get_long("Number: ");
@@ -13,6 +14,11 @@ int main()
     printf("%i\n", len);
 }
 
+bool check_valid(long int card)
+{
+    int lenth;
+    
+}
 
 // Start from the second-to-last digit of the credit card number.
 // Double every other digit, moving from right to left.
