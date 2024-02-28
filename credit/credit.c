@@ -10,8 +10,6 @@ int main()
     {
         printf("Invalid number %li\n", number);
     }
-    int len = 0;
-    
     printf("%i\n", len);
 }
 
