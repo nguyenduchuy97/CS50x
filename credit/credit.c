@@ -10,10 +10,8 @@ int main()
     {
         printf("Invalid input %li\n", number);
     }
-    int len = number % 10;
-    printf("%i\n", len);
-    len = number % 100;
-    printf("%i\n", len);
+    int len = 0;
+    
 }
 
 
