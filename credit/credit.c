@@ -9,13 +9,14 @@ int main()
     char s_card[32];
     sprintf(s_card, "%ld", card);
 
-    if ((!isdigit(card) || ))
+    if ()
     {}
 }
 
 int check_digits(long int card)
 {
-    
+    for (int i = 0; i < 32))
+    {}
 }
 // Start from the second-to-last digit of the credit card number.
 // Double every other digit, moving from right to left.
