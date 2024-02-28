@@ -3,12 +3,9 @@
 
 int main()
 {
-    long long int card = get_long("Number: ");
-    printf("%lld\n", card);
-    for (int i = 0; i)
-    {
+    long int card = get_long("Number: ");
+    printf("%ld\n", card);
 
-    }
 }
 
 // Start from the second-to-last digit of the credit card number.
