@@ -23,6 +23,27 @@ int main(void)
 //   sum += calculate_nickels(cents);
 //   sum += calculate_pennies(cents);
 //   calculate_sum(calculate_quarters(cents), calculate_dimes(cents), calculate_nickels(cents), calculate_pennies(cents));
+
+    while (cents > 0)
+    {
+        if (cents > 24)
+        {
+
+        }
+        else if (cents > 9)
+        {
+            quarters += calculate_dimes(cents);
+        }
+        else if (cents > 4)
+        {
+            quarters += calculate_nickels(cents);
+        }
+        else
+        {
+            quarters += calculate_pennies(cents);
+        }
+    }
+
     int sum = calculate_quarters(cents);
     print_sum(sum);
 
@@ -32,8 +53,6 @@ int main(void)
 int calculate_quarters(int cents)
 {
     int quarters = 0;
-    while (cents > 0)
-    {
         if (cents > 24)
         {
             while (cents > 24)
@@ -55,7 +74,6 @@ int calculate_quarters(int cents)
         {
             quarters += calculate_pennies(cents);
         }
-    }
     return quarters;
 }
 
