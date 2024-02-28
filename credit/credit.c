@@ -74,7 +74,7 @@ string id_issuer(long int card)
     }
 
     // Get the first two digits of the card number.
-    int first_2_d = card;
+    long int first_2_d = card;
     while (first_2_d > 99)
     {
         first_2_d /= 10;
