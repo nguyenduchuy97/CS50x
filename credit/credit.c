@@ -5,7 +5,8 @@
 int check_digits(long int card);
 int main()
 {
-    char card[20] = get_long("Number: ");
+    char card[20];
+    card = scanf("Number: ");
 
 // Length of
 
