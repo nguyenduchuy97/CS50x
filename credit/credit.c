@@ -5,9 +5,9 @@
 int main()
 {
     long int card = get_long("Number: ");
-    string s_card = (string) card;
+    string s_card = card;
     printf("%ld\n", card);
-    printf("%s\n", strlen(card))
+    printf("%s\n", strlen(s_card))
 }
 
 // Start from the second-to-last digit of the credit card number.
