@@ -1,6 +1,11 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int main()
+{
+    long card = get_long("Number: ");
+    
+}
 
 // Start from the second-to-last digit of the credit card number.
 // Double every other digit, moving from right to left.
