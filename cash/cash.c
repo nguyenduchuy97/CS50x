@@ -44,7 +44,7 @@ int calculate_quarters(int cents)
 int calculate_dimes(int cents)
 {
     int dimes = 0;
-    while (cents > 9)
+    while (cents > 9 || cents < 25)
     {
     // Subtract the value of those dimes from cents
         cents -= 10;
