@@ -25,7 +25,12 @@ bool check_sum(long int card)
     int sum = 0;
     bool double_step = false;
     long int temp_card = card;
+    long int first_2_d = card;
 
+    while (first_2_d > 99)
+    {
+        first_2_d /= 10;
+    }
     // Count the number of digit.
     while (temp_card > 0)
     {
@@ -63,10 +68,32 @@ bool check_sum(long int card)
     {
         return true;
     }
+    //long int first_2_d = card;
+    //while (first_2_d > 99)
+    //{
+        //first_2_d /= 10;
+    //}
+
+    else if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
+    {
+        return true;
+    }
+
+    else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
+    {
+        return "MASTERCARD";
+    }
+
+    else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49))
+    {
+        return "VISA";
+    }
     else
     {
-        return false;
+        return "INVALID";
     }
+
+
     //return (sum % 10 == 0) && (length >= 13 && length <= 16);
 }
 
