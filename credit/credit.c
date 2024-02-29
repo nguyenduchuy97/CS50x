@@ -57,7 +57,7 @@ bool check_sum(long int card)
         sum += digit;
         // Move to the next digit.
         card /= 10;
-        // Change to true of false so it will jump 2 step at a time.
+        // Change to true of false so it will times 2 at the digit we want.
         double_step = !double_step;
     }
     // Check if the last digit of the algorithm's result equal 0 and the number of digit between 13 to 16.
@@ -66,12 +66,7 @@ bool check_sum(long int card)
     {
         return true;
     }
-    //long int first_2_d = card;
-    //while (first_2_d > 99)
-    //{
-        //first_2_d /= 10;
-    //}
-
+    // M
     else if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
     {
         return true;
