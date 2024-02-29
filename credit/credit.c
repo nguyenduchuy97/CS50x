@@ -43,9 +43,9 @@ bool check_sum(long int card)
     {
         // Start from the second-to-last digit of the credit card number.
         long int digit = card % 10;
-        // Double every other digit, moving from right to left.
         if (double_step)
         {
+            // Double every other digit, moving from right to left.
             digit *= 2;
             // If doubling a digit results in a two-digit number, add the individual digits of that product together.
             if (digit > 9)
@@ -55,7 +55,7 @@ bool check_sum(long int card)
         }
         // Sum all the obtained digits from the doubling process along with the digits that were not doubled.
         sum += digit;
-        // Move to the next 2 digit.
+        // Move to the next digit.
         card /= 10;
         // Change to true of false so it will jump 2 step at a time.
         double_step = !double_step;
