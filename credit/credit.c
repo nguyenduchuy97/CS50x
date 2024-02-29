@@ -17,7 +17,7 @@ int main()
     {
         printf("INVALID\n");
     }
- }
+}
 
 bool check_sum(long int card)
 {
@@ -66,17 +66,17 @@ bool check_sum(long int card)
     {
         return true;
     }
-    // M
+    // American Express
     else if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
     {
         return true;
     }
-
+    // MasterCard
     else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
     {
         return true;
     }
-
+    // VISA
     else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49) && (sum % 10 == 0))
     {
         return true;
@@ -86,8 +86,7 @@ bool check_sum(long int card)
         return false;
     }
 
-
-    //return (sum % 10 == 0) && (length >= 13 && length <= 16);
+    // return (sum % 10 == 0) && (length >= 13 && length <= 16);
 }
 
 string id_issuer(long int card)
@@ -101,7 +100,6 @@ string id_issuer(long int card)
         temp_card /= 10;
     }
 
-    // Get the first two digits of the card number.
     long int first_2_d = card;
     while (first_2_d > 99)
     {
@@ -126,6 +124,4 @@ string id_issuer(long int card)
     {
         return "INVALID";
     }
-
 }
-
