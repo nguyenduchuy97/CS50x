@@ -24,7 +24,7 @@ int compute_score(string player)
 
     for (int i = 0; i < len; i++)
     {
-        cap_letters = toupper(player[i]);
-        printf("%s", cap_letters);
-}
+        //cap_letters = toupper(player[i]);
+        printf("%c", toupper(player[i]));
+    }
 }
