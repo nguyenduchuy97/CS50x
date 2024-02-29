@@ -28,8 +28,11 @@ int compute_score(string player)
         up_l[i] = toupper(player[i]);
         while (n < 26)
         {
-            if (up_l[i] - alpha[n])
-            n++;
+            if ((up_l[i] - alpha[n] != 0))
+            {
+                n++;
+            }
+
         }
 
     }
