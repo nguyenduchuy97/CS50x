@@ -31,9 +31,10 @@ int compute_score(string player)
     {
         if (strcmp(up_l[n], alpha[n]) != 0)
         {
-            printf("%c  %c\n", up_l[n], alpha[n]);
-            n++;
+
+            
         }
+        n++;
     }
 
     return 0;
