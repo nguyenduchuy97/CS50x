@@ -24,13 +24,13 @@ int compute_score(string player)
     for (int i = 0; i < len; i++)
     {
         up_l[i] = toupper(player[i]);
-        strcat(up_l[i], )
+        strcat(up_l[i], "\0" )
     }
 
     int n = 0;
     while (n < len)
     {
-        if (strcmp())
+        
         n++;
     }
 
