@@ -17,15 +17,14 @@ int main(void)
 
 int compute_score(string player)
 {
-    const int N = 27;
-    string alpha = ""//{"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+    string alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //{"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
     int points[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
     string cap_letters;
     int len = strlen(player);
 
     for (int i = 0; i < len; i++)
     {
-        cap_letters = toupper(pl_1[i]);
+        cap_letters = toupper(player[i]);
         printf("%s", cap_letters);
 }
 }
