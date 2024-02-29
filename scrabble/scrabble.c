@@ -21,11 +21,16 @@ int compute_score(string player)
     int points[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
     int len = strlen(player);
     char up_l[len];
+    int n = 0;
+
     for (int i = 0; i < len; i++)
     {
         up_l[i] = toupper(player[i]);
-        printf("\n%c\n", up_l[i]);
-        printf("Alpha: %c, Up: %c, num: %i",alpha[i], up_l[i], alpha[i] - up_l[i] );
+        while (n < 26)
+        {
+            if (up_l[i] - alpha[n])
+            n++;
+        }
 
     }
 
