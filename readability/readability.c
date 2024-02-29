@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <math.h>
+#include <string.h>
 
 float Coleman_Liau(float L, float S);
 
@@ -23,13 +24,13 @@ int main(void)
 		if (isspace(input[i]))
 		{
 			words += 1;
-			if (input[len] = i)
+			if (input[len] == i)
 			{
 				words +=1;
 			}
 		}
 		// Find letters
-		else if (isalnum(input[n]))
+		else if (isalnum(input[i]))
 		{
 			letters += 1;
 		}
@@ -44,17 +45,17 @@ int main(void)
 			L = (float) letters / 100.00;
 
 			// S is the average number of sentences per 100 words in the text.
-			S = (float) sentences / 100.00
+			S = (float) sentences / 100.00;
 		}
 		else
 		{
-			printf("Something went wrong!\n")
+			printf("Something went wrong!\n");
 		}
 	}
 
 // Print the Grade X
 	int X = (int) round(Coleman_Liau(L,S));
-    
+
 	if (X < 1)
 	{
 		printf("Before Grade 1\n");
@@ -73,6 +74,6 @@ int main(void)
 // Coleman-Liau's algorithm.
 float Coleman_Liau(float L, float S)
 {
-	float index = 0.0588 * L - 0.296 * S - 15.8
+	float index = 0.0588 * L - 0.296 * S - 15.8;
 	return index;
 }
