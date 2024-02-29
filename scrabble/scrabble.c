@@ -36,10 +36,12 @@ int compute_score(string player)
             {
                 printf("UP: %c, AL: %c, -: %i\n", up[i], al[n], up[i] - al[n]);
                 sum += points[n];
+                printf("Thay Roi: %i\n", sum);
             }
             else
             {
                 sum += 0;
+                printf("Deo thay gi: %i\n", sum);
             }
         }
     }
