@@ -24,31 +24,16 @@ int compute_score(string player)
     int sum = 0;
     int len = strlen(player);
     char up[len];
-    int n = 0;
+    //int n = 0;
 
     for (int i = 0; i < len; i++)
     {
         up[i] = toupper(player[i]);
-        while (n < 26)
+
+        for (int n = 0; n < 26; n++)
         {
-            if ((up[i] - points[n] < 25) || (up[i] - points[n] > -1))
-            {
-                if ((up[i] - points[n] == 0))
-                {
-                    printf("Point: %i", points[n]);
-                    sum += points[n];
-
-                }
-                else
-                {
-                    printf("%c\n",alpha[n]);
-                    sum += 0;
-                    n++;
-                }
-
-            }
+            
         }
-
     }
 
     return sum;
