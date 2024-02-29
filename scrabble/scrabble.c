@@ -12,6 +12,11 @@ int main(void)
 
     int score1 = compute_score(pl_1);
     int score2 = compute_score(pl_2);
+
+    if (score1 - score2 > 0)
+    {
+        printf("Player 1 win);
+    }
     printf("1: %i", score1);
     printf("2: %i", score2);
 
