@@ -33,7 +33,6 @@ bool check_valid(long int card)
         length++;
         temp_card /= 10;
     }
-    //--------------------------------------------------------------------------------------------------------------
 long int first_2_d = card;
     while (first_2_d > 99)
     {
@@ -57,8 +56,6 @@ long int first_2_d = card;
         printf("VISA\n");
         return true;
     }
-    //-------------------------------------------------------------------------------------------------------------
-    //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
     else
     {
         double_step = length % 2 == 0;
@@ -115,7 +112,7 @@ long int first_2_d = card;
         //return (sum % 10 == 0) && (length >= 13 && length <= 16);
     }
 }
-/*
+
 string id_issuer(long int card)
 {
     int length = 0;
@@ -154,4 +151,4 @@ string id_issuer(long int card)
     }
 
 }
-*/
+
