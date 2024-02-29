@@ -52,7 +52,7 @@ int main(void)
 			printf("Something went wrong!\n");
 		}
 	}
-
+    printf("\nLetters: %i, Words: %i, Sentences: %i, L: %f, S: %f\n", letters, words, sentences, L, S);
 // Print the Grade X
 	int X = (int) round(Coleman_Liau(L,S));
     printf("\nX: %i\n", X);
