@@ -27,10 +27,13 @@ int compute_score(string player)
         printf("%c", up_l[i]);
     }
     int n = 0;
-    while (strcmp(up_l[n], alpha[n]) != 0)
+    while (n < len)
     {
-        printf("%c  %c\n", up_l[n], alpha[n]);
-        n++;
+        if (strcmp(up_l[n], alpha[n]) != 0)
+        {
+            printf("%c  %c\n", up_l[n], alpha[n]);
+            n++;
+        }
     }
 
     return 0;
