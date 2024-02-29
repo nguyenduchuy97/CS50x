@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    string pl_1 = get_string("Player 1: ");
-    string pl_2 = get_string("Player 2: ");
-    
+    string pl_1 = toupper(get_string("Player 1: "));
+    string pl_2 = toupper(get_string("Player 2: "));
+
 }
