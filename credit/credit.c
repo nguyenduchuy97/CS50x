@@ -32,7 +32,33 @@ bool check_valid(long int card)
         length++;
         temp_card /= 10;
     }
+    //--------------------------------------------------------------------------------------------------------------
+long int first_2_d = card;
+    while (first_2_d > 99)
+    {
+        first_2_d /= 10;
+    }
 
+    if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
+    {
+        return "AMEX";
+    }
+
+    else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
+    {
+        return "MASTERCARD";
+    }
+
+    else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49))
+    {
+        return "VISA";
+    }
+    else
+    {
+        return "INVALID";
+    }
+
+    //-------------------------------------------------------------------------------------------------------------
     //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
     double_step = length % 2 == 0;
 
