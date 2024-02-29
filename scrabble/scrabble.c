@@ -5,8 +5,8 @@
 
 int main(void)
 {
-    char alpha[26] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    int point[26] = {1332142418513113101111448410};
+    char alpha[26] = {};
+    int point[26] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
 
     string pl_1 = get_string("Player 1: ");
     string pl_2 = get_string("Player 2: ");
