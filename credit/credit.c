@@ -65,7 +65,33 @@ bool check_sum(long int card)
     }
     else
     {
-        return false;
+        //==========
+        long int first_2_d = card;
+        while (first_2_d > 99)
+        {
+            first_2_d /= 10;
+        }
+
+        if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
+        {
+            return true;
+        }
+
+        else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
+        {
+            return true;
+        }
+
+        else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+        //==========
     }
     //return (sum % 10 == 0) && (length >= 13 && length <= 16);
 }
