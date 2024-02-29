@@ -8,7 +8,7 @@ int main()
 {
     long int number = get_long("Number: ");
 
-    if (check_valid(number))
+    if (check_sum(number))
     {
         string issuer = id_issuer(number);
         printf("%s\n", issuer);
