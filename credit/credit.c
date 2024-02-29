@@ -61,12 +61,10 @@ bool check_sum(long int card)
     // If the total sum ends in 0 (i.e., it is divisible by 10), then the credit card number is considered valid.
     if ((sum % 10 == 0) && (length >= 13 && length <= 16))
     {
-        printf("length: %i, sum: %i\n", length, sum);
         return true;
     }
     else
     {
-        printf("length: %i, sum: %i", length, sum);
         return false;
     }
     //return (sum % 10 == 0) && (length >= 13 && length <= 16);
@@ -82,7 +80,6 @@ string id_issuer(long int card)
         length++;
         temp_card /= 10;
     }
-    printf("This is the first 2 digit: %li and length: %i\n", temp_card, length);
 
     // Get the first two digits of the card number.
     long int first_2_d = card;
