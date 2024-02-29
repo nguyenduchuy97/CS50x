@@ -17,6 +17,7 @@ int main(void)
 // User input
 	string input = get_string("Text: ");
 	int len = strlen(input);
+    printf("Length: %i\n", len);
 
 // Find words, leters, sentences.
 	for (int i = 0; i < len; i++)
@@ -26,6 +27,7 @@ int main(void)
 			words += 1;
 			if (input[len] == i)
 			{
+                printf("Plus last word\n");
 				words +=1;
 			}
 		}
