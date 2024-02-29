@@ -7,12 +7,15 @@ int compute_score(string player);
 
 int main(void)
 {
+    // Prompt the user for two words
     string pl_1 = get_string("Player 1: ");
     string pl_2 = get_string("Player 2: ");
 
+    // Compute the score of each word
     int score1 = compute_score(pl_1);
     int score2 = compute_score(pl_2);
 
+    // Print the winner
     if (score1 - score2 > 0)
     {
         printf("Player 1 wins!\n");
@@ -27,6 +30,7 @@ int main(void)
     }
 }
 
+// Compute and return score for word
 int compute_score(string player)
 {
     string al = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
