@@ -27,19 +27,17 @@ bool check_sum(long int card)
     long int temp_card = card;
     long int first_2_d = card;
 
+    // Take the first 2 digits.
     while (first_2_d > 99)
     {
         first_2_d /= 10;
     }
-    // Count the number of digit.
+    // Count the number of digit(length of digit).
     while (temp_card > 0)
     {
         length++;
         temp_card /= 10;
     }
-
-    //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
-    //double_step = length % 2 == 0;
 
     while (card > 0)
     {
