@@ -81,16 +81,16 @@ bool check_sum(long int card)
 
     else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
     {
-        return "MASTERCARD";
+        return true;
     }
 
-    else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49))
+    else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49) && (sum % 10 == 0))
     {
-        return "VISA";
+        return true;
     }
     else
     {
-        return "INVALID";
+        return false;
     }
 
 
