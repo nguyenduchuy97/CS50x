@@ -55,7 +55,7 @@ int main(void)
 
 // Print the Grade X
 	int X = (int) round(Coleman_Liau(L,S));
-
+    printf("\nX: %i\n", X);
 	if (X < 1)
 	{
 		printf("Before Grade 1\n");
