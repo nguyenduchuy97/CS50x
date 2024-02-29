@@ -10,8 +10,9 @@ int main()
 
     if (check_valid(number))
     {
-        string issuer = id_issuer(number);
-        printf("%s\n", issuer);
+        //string issuer = id_issuer(number);
+        //printf("%s\n", issuer);
+        //check_valid(number);
     }
     else
     {
@@ -48,13 +49,13 @@ long int first_2_d = card;
     else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
     {
         printf("MASTERCARD\n");
-        return true
+        return true;
     }
 
     else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49))
     {
         printf("VISA\n");
-        return true
+        return true;
     }
     //-------------------------------------------------------------------------------------------------------------
     //  If the number of digit odd (count the last) or even (won't count the last), because we count from right to left.
@@ -87,18 +88,34 @@ long int first_2_d = card;
         // If the total sum ends in 0 (i.e., it is divisible by 10), then the credit card number is considered valid.
         if ((sum % 10 == 0) && (length >= 13 && length <= 16))
         {
-            printf("length: %i, sum: %i\n", length, sum);
+            if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
+            {
+                printf("AMEX\n");
+                return true;
+            }
+
+            else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
+            {
+                printf("MASTERCARD\n");
+                return true;
+            }
+
+            else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49))
+            {
+                printf("VISA\n");
+                return true;
+            }
             return true;
         }
         else
         {
-            printf("length: %i, sum: %i\n", length, sum);
+            printf("INVALID\n");
             return false;
         }
         //return (sum % 10 == 0) && (length >= 13 && length <= 16);
     }
 }
-
+/*
 string id_issuer(long int card)
 {
     int length = 0;
@@ -137,4 +154,4 @@ string id_issuer(long int card)
     }
 
 }
-
+*/
