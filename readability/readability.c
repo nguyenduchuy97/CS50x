@@ -25,12 +25,12 @@ int main(void)
 		if (isspace(input[i]))
 		{
 			words += 1;
-			if (input[len] == i)
+		}
+        else if (len -1 == i)
 			{
                 printf("Plus last word\n");
 				words +=1;
 			}
-		}
 		// Find letters
 		else if (isalnum(input[i]))
 		{
