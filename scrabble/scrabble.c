@@ -24,15 +24,17 @@ int compute_score(string player)
     for (int i = 0; i < len; i++)
     {
         up_l[i] = toupper(player[i]);
-        strcat(up_l[i], "\0" )
+        printf("%c\n", up_l[i]);
+        printf("Alpha: %c, Up: %c, num: %i",alpha[i], up_l[i], alpha[i] - up_l[i] );
+
     }
 
-    int n = 0;
-    while (n < len)
-    {
-        
-        n++;
-    }
+    //int n = 0;
+   // while ()
+    //{
+
+        //n++;
+    //}
 
     return 0;
 }
