@@ -31,11 +31,12 @@ int compute_score(string player)
         up[i] = toupper(player[i]);
         while (n < 26)
         {
-            if ((up[i] - points[n] < 25) || (up[i] - points[n] > -1))
+            if ((up[i] - points[n] < 25) && (up[i] - points[n] > -1))
             {
                 if ((up[i] - points[n] != 0))
                 {
                     printf("%c\n",alpha[n]);
+                    sum += 0;
                     n++;
                 }
                 else
