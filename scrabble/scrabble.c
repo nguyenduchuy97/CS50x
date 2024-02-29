@@ -10,8 +10,8 @@ int main(void)
     string pl_1 = get_string("Player 1: ");
     string pl_2 = get_string("Player 2: ");
 
-    int score1 = compute_score(pl_1);
-    int score2 = compute_score(pl_2);
+    //int score1 = compute_score(pl_1);
+    //int score2 = compute_score(pl_2);
 
 }
 
@@ -21,10 +21,6 @@ int compute_score(string player)
     int points[] = {1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10};
     string cap_letters;
     int len = strlen(player);
-
-    for (int i = 0; i < len; i++)
-    {
-        //cap_letters = toupper(player[i]);
-        printf("%c", toupper(player[i]));
-    }
+    printf("%i\n", len);
 }
+
