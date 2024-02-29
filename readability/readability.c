@@ -27,11 +27,11 @@ int main(void)
 			words += 1;
 		}
         else if (ispunct(input[len]))
-			{
-                printf("Plus last word\n");
-				words += 1;
-                sentences += 1;
-			}
+        {
+        printf("Plus last word\n");
+        words += 1;
+        sentences += 1;
+        }
 		// Find letters
 		else if (isalnum(input[i]))
 		{
