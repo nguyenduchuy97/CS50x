@@ -61,11 +61,12 @@ bool check_valid(long int card)
     // If the total sum ends in 0 (i.e., it is divisible by 10), then the credit card number is considered valid.
     if ((sum % 10 == 0) && (length >= 13 && length <= 16))
     {
-        printf("length: %i, sum: %i", length, sum);
+        printf("length: %i, sum: %i\n", length, sum);
         return true;
     }
     else
     {
+        printf("length: %i, sum: %i", length, sum);
         return false;
     }
     //return (sum % 10 == 0) && (length >= 13 && length <= 16);
