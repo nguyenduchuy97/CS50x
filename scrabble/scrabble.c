@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -25,7 +25,6 @@ int main(void)
     {
         printf("Tie!\n");
     }
-
 }
 
 int compute_score(string player)
@@ -35,7 +34,6 @@ int compute_score(string player)
     int sum = 0;
     int len = strlen(player);
     char up[len];
-    //int n = 0;
 
     for (int i = 0; i < len; i++)
     {
@@ -56,4 +54,3 @@ int compute_score(string player)
 
     return sum;
 }
-
