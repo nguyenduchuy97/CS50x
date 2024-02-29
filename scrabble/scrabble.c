@@ -26,6 +26,7 @@ int compute_score(string player)
         up_l[i] = toupper(player[i]);
         printf("%c", up_l[i]);
 
+        strcmp();
     }
 
     return 0;
