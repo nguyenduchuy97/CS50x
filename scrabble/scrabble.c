@@ -15,10 +15,16 @@ int main(void)
 
     if (score1 - score2 > 0)
     {
-        printf("Player 1 win);
+        printf("Player 1 wins!\n");
     }
-    printf("1: %i", score1);
-    printf("2: %i", score2);
+    else if (score1 - score2 < 0)
+    {
+        printf("Player 2 wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
+    }
 
 }
 
@@ -39,14 +45,11 @@ int compute_score(string player)
         {
             if ((up[i] - al[n]) == 0)
             {
-                printf("UP: %c, AL: %c, -: %i\n", up[i], al[n], up[i] - al[n]);
                 sum += points[n];
-                printf("Thay Roi: %i\n", sum);
             }
             else
             {
                 sum += 0;
-                printf("Deo thay gi: %i\n", sum);
             }
         }
     }
