@@ -5,6 +5,8 @@
 
 int main(void)
 {
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+    
     string pl_1 = get_string("Player 1: ");
     string pl_2 = get_string("Player 2: ");
     int len_pl1 = strlen(pl_1);
@@ -19,5 +21,5 @@ int main(void)
         toupper(pl_2[i]);
     }
 
-    
+
 }
