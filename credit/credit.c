@@ -66,7 +66,7 @@ bool check_valid(long int card)
     }
     else
     {
-        printf("length: %i, sum: %i", length, sum);
+        printf("length: %i, sum: %i\n", length, sum);
         return false;
     }
     //return (sum % 10 == 0) && (length >= 13 && length <= 16);
