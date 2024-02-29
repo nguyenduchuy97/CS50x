@@ -12,6 +12,12 @@ int main(void)
 
     for (int i = 0; i < len_pl1; i++)
     {
-        
+        toupper(pl_1[i]);
     }
+        for (int i = 0; i < len_pl2; i++)
+    {
+        toupper(pl_2[i]);
+    }
+
+    
 }
