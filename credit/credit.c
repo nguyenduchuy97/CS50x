@@ -33,29 +33,7 @@ bool check_valid(long int card)
         length++;
         temp_card /= 10;
     }
-long int first_2_d = card;
-    while (first_2_d > 99)
-    {
-        first_2_d /= 10;
-    }
 
-    if ((length == 15 && first_2_d == 34) || (length == 15 && first_2_d == 37))
-    {
-        printf("AMEX\n");
-        return true;
-    }
-
-    else if ((length == 16) && (first_2_d >= 51 && first_2_d <= 55))
-    {
-        printf("MASTERCARD\n");
-        return true;
-    }
-
-    else if ((length == 13 || length == 16) && (first_2_d >= 40 && first_2_d <= 49))
-    {
-        printf("VISA\n");
-        return true;
-    }
     else
     {
         double_step = length % 2 == 0;
