@@ -10,8 +10,8 @@ int main(void)
     string pl_1 = get_string("Player 1: ");
     string pl_2 = get_string("Player 2: ");
 
-    //int score1 = compute_score(pl_1);
-    //int score2 = compute_score(pl_2);
+    int score1 = compute_score(pl_1);
+    int score2 = compute_score(pl_2);
 
 }
 
@@ -22,5 +22,7 @@ int compute_score(string player)
     string cap_letters;
     int len = strlen(player);
     printf("%i\n", len);
+
+    return 0;
 }
 
