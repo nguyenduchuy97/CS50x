@@ -12,6 +12,8 @@ int main(void)
 
     int score1 = compute_score(pl_1);
     int score2 = compute_score(pl_2);
+    printf("1: %i", score1);
+    printf("2: %i", score2);
 
 }
 
