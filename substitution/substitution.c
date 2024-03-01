@@ -43,11 +43,11 @@ char rotate(char c, string n)
         for (int i = 0; i < strlen(n); i++)
             if (isupper(c))
             {
-                c = (c - 'A' + i) % 26 + 'A';
+                c = c[((c - 'A' + i) % 26 + 'A')];
             }
             else
             {
-                c = (c - 'a' + i) % 26 + 'a';
+                c = c[((c - 'a' + i) % 26 + 'a')];
             }
         return c;
     }
