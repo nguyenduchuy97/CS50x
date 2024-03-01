@@ -26,7 +26,7 @@ int main(void)
 		{
 			words += 1;
 		}
-		else if ((len - i == 0))
+		else if ((len - 1 == i))
 		{
 			words += 1;
 		}
