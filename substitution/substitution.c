@@ -38,15 +38,16 @@ char rotate(char c, string n)
 {
     if (isalpha(c))
     {
-        if (isupper(c))
-        {
-            c = (c - 'A' + n) % 26 + 'A';
-        }
-        else
-        {
-            c = (c - 'a' + n) % 26 + 'a';
-        }
-        return c;
+        for (int i = 0; i < strlen())
+            if (isupper(c))
+            {
+                c = (c - 'A' + n) % 26 + 'A';
+            }
+            else
+            {
+                c = (c - 'a' + n) % 26 + 'a';
+            }
+            return c;
     }
     else
     {
