@@ -7,13 +7,12 @@ char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
-    int k;
-    atoi(argv[1])
-    if (argc == 2 && isdigit(*argv[1]) && argv[1] >= 0)
+    int k = atoi(argv[1]);
+
+    if (argc == 2 && isdigit(*argv[1]) && k >= 0)
     {
-        k = argv[1];
         string p = get_string("plaintext:  ");
-        int len = strlen(p)
+        int len = strlen(p);
         char ci[len];
     }
     else
@@ -35,11 +34,11 @@ char rotate(char c, int n)
     {
         if (isupper(c))
         {
-            c = (c - 'A' + n) % 26 + 'A'
+            c = (c - 'A' + n) % 26 + 'A';
         }
         else
         {
-            c = (c - 'a' + n) % 26 + 'a'
+            c = (c - 'a' + n) % 26 + 'a';
         }
         return c;
     }
