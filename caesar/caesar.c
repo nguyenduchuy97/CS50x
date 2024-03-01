@@ -9,12 +9,14 @@ char rotate(char c, int n);
 int main(int argc, string argv[])
 {
     int k = atoi(argv[1]);
+    int len;
+    char ci[];
+    string p;
 
     if (argc == 2 && isdigit(*argv[1]) && k >= 0)
     {
-        string p = get_string("plaintext:  ");
-        int len = strlen(p);
-        char ci[len];
+        p = get_string("plaintext:  ");
+        len = strlen(p);
     }
     else
     {
