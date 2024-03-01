@@ -14,7 +14,7 @@ int main(void)
 	double L;
 	double S;
 
-// User input
+	// Prompt the user for some text
 	string input = get_string("Text: ");
 	int len = strlen(input);
 	if (len > 0)
@@ -23,26 +23,23 @@ int main(void)
 	}
     printf("Length: %i\n", len);
 
-// Find words, leters, sentences.
+	// Count the number of letters, words, and sentences in the text
 	for (int i = 0; i < len; i++)
 	{
+		// Count the words
 		if (isspace(input[i]) && i + 1 < len && isalnum(input[i + 1]))
         {
             words++;
         }
-		// Find letters
+		// Count the letters
 		else if (isalnum(input[i]))
 		{
 			letters++;
 		}
-		// Find sentences
+		// Count the sentences
 		else if (len - 1 == i || input[i] == '.' || input[i] == '!' || input[i] == '?')
 		{
 			sentences++;
-		}
-		else
-		{
-			printf("Something went wrong!\n");
 		}
 
 		// L is the average number of letters per 100 words in the text
@@ -52,10 +49,10 @@ int main(void)
 		S = ((double) sentences / (double) words ) * 100.00;
 	}
 
-    printf("\nLetters: %i, Words: %i, Sentences: %i, L: %f, S: %f\n", letters, words, sentences, L, S);
-// Print the Grade X
+	// Compute the Coleman-Liau index
 	int X = Coleman_Liau(L,S);
-    printf("\nX: %i\n", X);
+
+	// Print the Grade X
 	if (X < 1)
 	{
 		printf("Before Grade 1\n");
@@ -76,8 +73,6 @@ int Coleman_Liau(double L, double S)
 {
 	int sum;
 	double index = (0.0588 * L) - (0.296 * S) - 15.8;
-	printf("Index: %f\n", index);
 	sum = (int) round(index);
-	printf("Sum: %i\n", sum);
 	return sum;
 }
