@@ -74,6 +74,6 @@ int main(void)
 // Coleman-Liau's algorithm.
 float Coleman_Liau(float L, float S)
 {
-	float index = 0.0588 * L - 0.296 * S - 15.8;
+	double index = 0.0588 * L - 0.296 * S - 15.8;
 	return index;
 }
