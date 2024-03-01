@@ -13,10 +13,12 @@ int main(int argc, string argv[])
         printf("Usage: %s key", argv[0]);
         return 1;
     }
+    else
+    {
+        int k = atoi(argv[1]);
+    }
 
-    int k = atoi(argv[1]);
-
-    if (!isdigit(argv[1]) || k < 0)
+    if (!isdigit(argv[1][0]) || k < 0)
     {
         printf("Usage: %s key", argv[0]);
         return 1;
