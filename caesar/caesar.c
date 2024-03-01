@@ -14,13 +14,21 @@ int main(int argc, string argv[])
 
     if (argc != 2)
     {
-        printf("Please enter the key:\nUsage: %s key", argv[0]);
+        printf("Usage: %s key", argv[0]);
         return 1;
     }
-    else if (isdigit(*argv[1]) && k >= 0)
+    else
     {
-        p = get_string("plaintext:  ");
-        len = strlen(p);
+        if (isdigit(argv[1]) && k >= 0)
+        {
+            p = get_string("plaintext:  ");
+            len = strlen(p);
+        }
+        else
+        {
+            printf("Please enter the key:\nUsage: %s key", argv[0]);
+            return 1;
+        }
     }
 
     for (int i = 0; i < len; i++)
