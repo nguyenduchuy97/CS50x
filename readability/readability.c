@@ -40,19 +40,19 @@ int main(void)
 		{
 			sentences += 1;
 		}
-		else if ( words % 100 == 0)
-		{
-			// L is the average number of letters per 100 words in the text
-			L = ((float) letters / (float) words) * 100.00;
-
-			// S is the average number of sentences per 100 words in the text.
-			S = ((float) sentences / (float) words ) * 100.00;
 		}
 		else
 		{
 			printf("Something went wrong!\n");
 		}
+
+					// L is the average number of letters per 100 words in the text
+		L = ((float) letters / (float) words) * 100.00;
+
+			// S is the average number of sentences per 100 words in the text.
+		S = ((float) sentences / (float) words ) * 100.00;
 	}
+
     printf("\nLetters: %i, Words: %i, Sentences: %i, L: %f, S: %f\n", letters, words, sentences, L, S);
 // Print the Grade X
 	int X = (int) round(Coleman_Liau(L,S));
