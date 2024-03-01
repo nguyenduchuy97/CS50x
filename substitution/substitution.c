@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
@@ -22,6 +22,7 @@ int main(int argc, string argv[])
             return 1;
         }
     }
+    
 
 }
 
