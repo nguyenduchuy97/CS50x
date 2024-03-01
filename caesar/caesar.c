@@ -4,15 +4,16 @@
 
 int main(int argc, char argv[])
 {
-    int key;
-    if (argc == 2 && isdigit(argv[1]))
+    int k = ;
+    if (argc == 2 && isdigit(argv[1]) && (int) argv[1] >= 0)
     {
-        key = (int) argv[1];
+        k = (int) argv[1];
         string plain = get_string("Plaintext: ");
     }
     else
     {
         printf("Usage: %s key\n", argv[0]);
+        return 1;
     }
-    
+
 }
