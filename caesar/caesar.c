@@ -15,25 +15,18 @@ int main(int argc, string argv[])
     }
 
     int k = atoi(argv[1]);
-    int len;
-    string p;
 
-    if (!isdigit(argv[1]) || k < 0 || k)
+    if (!isdigit(argv[1]) || k < 0 || argc > 2)
     {
         printf("Usage: %s key", argv[0]);
+        return 1;
     }
+    int len;
+    string p;
+    else
     {
-
-        if (isdigit(argv[1]) && k >= 0)
-        {
-            p = get_string("plaintext:  ");
-            len = strlen(p);
-        }
-        else
-        {
-            printf("Please enter the key:\nUsage: %s key", argv[0]);
-            return 1;
-        }
+        p = get_string("plaintext:  ");
+        len = strlen(p);
     }
 
     for (int i = 0; i < len; i++)
