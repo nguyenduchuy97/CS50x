@@ -8,7 +8,7 @@ int main(int argc, char argv[])
     if (argc == 2 && isdigit(argv[1]) && (int) argv[1] >= 0)
     {
         k = (int) argv[1];
-        string plain = get_string("Plaintext: ");
+        string plain = get_string("Plaintext:  ");
     }
     else
     {
