@@ -13,12 +13,17 @@ int main(int argc, string argv[])
         printf("Usage: %s key\n", argv[0]);
         return 1;
     }
+
+    int l = strlen(argv[1]);
     int k = atoi(argv[1]);
 
-    if (!isdigit(argv[1][0]) || k < 0)
+    for (int x = 0; x < l; x++)
     {
-        printf("Usage: %s key\n", argv[0]);
-        return 1;
+        if (!isdigit(argv[1][x]) || k < 0)
+        {
+            printf("Usage: %s key\n", argv[0]);
+            return 1;
+        }
     }
 
     string p = get_string("plaintext:  ");
