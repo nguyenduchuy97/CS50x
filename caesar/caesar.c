@@ -19,7 +19,10 @@ int main(int argc, char argv[])
         return 1;
     }
 
-
+    for (int i = 0; i < len; i++)
+    {
+        rotate(char p[i], int n);
+    }
 }
 
 char rotate(char c, int n)
