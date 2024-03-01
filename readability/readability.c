@@ -25,6 +25,7 @@ int main(void)
 		if (isspace(input[i]))
 		{
 			words += 1;
+			if 
 		}
         else if (ispunct(input[len]))
         {
