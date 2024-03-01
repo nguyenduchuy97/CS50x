@@ -25,7 +25,12 @@ int main(int argc, string argv[])
     string p = get_string("plaintext:  ");
     int len_p = strlen(p);
 
-    
+    for (int i = 0; i < len_p; i++)
+    {
+        
+    }
+
+
 
 }
 
