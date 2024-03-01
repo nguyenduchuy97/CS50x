@@ -9,10 +9,10 @@ char rotate(char c, string n);
 int main(int argc, string argv[])
 {
     if (argc != 2)
-    (
+    {
         printf("Usage %s key\n", argv[0]);
         return 1;
-    )
+    }
     int len_k = strlen(argv[1]);
     for (int x = 0; x < len_k; x++)
     {
@@ -49,7 +49,7 @@ char rotate(char c, string n)
             {
                 c = (c - 'a' + i) % 26 + 'a';
             }
-            return c;
+        return c;
     }
     else
     {
