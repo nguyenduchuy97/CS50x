@@ -11,8 +11,8 @@ int main(void)
 	int sentences = 0;
 	int letters = 0;
 	int words = 0;
-	float L;
-	float S;
+	double L;
+	double S;
 
 // User input
 	string input = get_string("Text: ");
@@ -46,10 +46,10 @@ int main(void)
 		}
 
 		// L is the average number of letters per 100 words in the text
-		L = ((float) letters / (float) words) * 100.00;
+		L = ((double) letters / (double) words) * 100.00;
 
 		// S is the average number of sentences per 100 words in the text.
-		S = (sentences / words ) * 100.00;
+		S = ((double) sentences / (double) words ) * 100.00;
 	}
 
     printf("\nLetters: %i, Words: %i, Sentences: %i, L: %f, S: %f\n", letters, words, sentences, L, S);
