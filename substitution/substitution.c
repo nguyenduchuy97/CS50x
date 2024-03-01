@@ -41,15 +41,14 @@ char rotate(char c, string n)
     int x;
     if (isalpha(c))
     {
-        for (int i = 0; i < strlen(n); i++)
-            if (isupper(c))
+        if (isupper(c))
             {
-                x = (c - 'A') + i;
+                x = (c - 'A');
                 c = n[x];
             }
             else
             {
-                x = (c - 'a') + i;
+                x = (c - 'a');
                 c = n[x];
             }
         return c;
