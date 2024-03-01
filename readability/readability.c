@@ -25,10 +25,10 @@ int main(void)
 		if (isspace(input[i]))
 		{
 			words += 1;
-			if (i == 1)
-			{
-				words += 1;
-			}
+		}
+		else if ((len - i == 0))
+		{
+			words += 1;
 		}
 		// Find letters
 		else if (isalnum(input[i]))
