@@ -1,20 +1,20 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
     int k;
-    if (argc == 2 && isdigit(argv[1]) && (int) argv[1] >= 0)
+    if (argc == 2 && isdigit(*argv[1]) && atoi(*argv[1]) >= 0)
     {
-        k = (int) argv[1];
+        k = atoi(argv[1]);
         string p = get_string("plaintext:  ");
         int len = strlen(p)
         char ci[len];
     }
-    if else (isdigit(argv[1]))
     else
     {
         printf("Usage: %s key\n", argv[0]);
