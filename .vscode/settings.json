@@ -2,6 +2,7 @@
     "gitdoc.enabled": true,
     "files.associations": {
         "stdio.h": "c",
-        "string_view": "c"
+        "string_view": "c",
+        "stdlib.h": "c"
     }
 }
