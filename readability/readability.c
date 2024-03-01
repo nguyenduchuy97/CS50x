@@ -45,10 +45,10 @@ int main(void)
 		else if ( words % 100 == 0)
 		{
 			// L is the average number of letters per 100 words in the text
-			L = (float) letters / 100.00;
+			L = (float) letters / 100.0;
 
 			// S is the average number of sentences per 100 words in the text.
-			S = (float) sentences / 100.00;
+			S = (float) sentences / 100.0;
 		}
 		else
 		{
