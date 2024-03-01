@@ -10,14 +10,14 @@ int main(int argc, string argv[])
 {
     if (argc != 2)
     {
-        printf("Usage: %s key", argv[0]);
+        printf("Usage: %s key\n", argv[0]);
         return 1;
     }
     int k = atoi(argv[1]);
 
     if (!isdigit(argv[1][0]) || k < 0)
     {
-        printf("Usage: %s key", argv[0]);
+        printf("Usage: %s key\n", argv[0]);
         return 1;
     }
 
