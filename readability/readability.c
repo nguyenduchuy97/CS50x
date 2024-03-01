@@ -64,7 +64,6 @@ int main(void)
 	{
 		printf("Grade %i\n", X);
 	}
-
 }
 
 // Coleman-Liau's algorithm.
