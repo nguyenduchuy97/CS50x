@@ -8,9 +8,10 @@ char rotate(char c, int n);
 int main(int argc, string argv[])
 {
     int k;
-    if (argc == 2 && isdigit(*argv[1]) && atoi(*argv[1]) >= 0)
+    atoi(argv[1])
+    if (argc == 2 && isdigit(*argv[1]) && argv[1] >= 0)
     {
-        k = atoi(argv[1]);
+        k = argv[1];
         string p = get_string("plaintext:  ");
         int len = strlen(p)
         char ci[len];
