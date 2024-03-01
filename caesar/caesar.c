@@ -12,6 +12,8 @@ int main(int argc, string argv[])
     int len;
     string p;
 
+    if (argc > 1)
+    {}
     if (argc == 2 && isdigit(*argv[1]) && k >= 0)
     {
         p = get_string("plaintext:  ");
