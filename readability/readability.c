@@ -22,14 +22,10 @@ int main(void)
 // Find words, leters, sentences.
 	for (int i = 0; i < len; i++)
 	{
-		if (isspace(input[i]))
-		{
-			words++;
-		}
-		else if ((len - 1 == i))
-		{
-			words++;
-		}
+		if (isspace(input[i]) && i + 1 < len && isalnum(input[i + 1]))
+        {
+            words++;
+        }
 		// Find letters
 		else if (isalnum(input[i]))
 		{
