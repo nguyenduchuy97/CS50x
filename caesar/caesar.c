@@ -10,13 +10,17 @@ int main(int argc, string argv[])
 {
     int k = atoi(argv[1]);
     int len;
-    char ci[len];
     string p;
 
     if (argc == 2 && isdigit(*argv[1]) && k >= 0)
     {
         p = get_string("plaintext:  ");
         len = strlen(p);
+    }
+    else if(argc < 2)
+    {
+        printf("Please enter the key:\nUsage: %s key", argv[0]);
+        return 1;
     }
     else
     {
@@ -26,9 +30,10 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < len; i++)
     {
-        ci = rotate(p[i], k);
+        p[i] = rotate(p[i], k);
     }
-    printf("ciphertext: %s", ci);
+    printf("ciphertext: %s\n", p);
+    return 0;
 }
 
 char rotate(char c, int n)
