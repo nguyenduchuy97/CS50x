@@ -31,7 +31,16 @@ char rotate(char c, int n)
     {
         if (isupper(c))
         {
-            c = c - 'A'
+            c = (c - 'A' + n) % 26 + 'A'
         }
+        else
+        {
+            c = (c - 'a' + n) % 26 + 'a'
+        }
+        return c;
+    }
+    else
+    {
+        return c;
     }
 }
