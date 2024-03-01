@@ -46,10 +46,10 @@ int main(void)
 		}
 
 		// L is the average number of letters per 100 words in the text
-		L = ((float) letters / (float) words) * 100;
+		L = ((float) letters / (float) words) * 100.00;
 
 		// S is the average number of sentences per 100 words in the text.
-		S = ((float) sentences / (float) words ) * 100;
+		S = (sentences / words ) * 100.00;
 	}
 
     printf("\nLetters: %i, Words: %i, Sentences: %i, L: %f, S: %f\n", letters, words, sentences, L, S);
