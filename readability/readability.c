@@ -17,6 +17,10 @@ int main(void)
 // User input
 	string input = get_string("Text: ");
 	int len = strlen(input);
+	if (len > 0)
+	{
+		words = 1;
+	}
     printf("Length: %i\n", len);
 
 // Find words, leters, sentences.
