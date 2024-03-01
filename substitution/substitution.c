@@ -44,12 +44,12 @@ char rotate(char c, string n)
         for (int i = 0; i < strlen(n); i++)
             if (isupper(c))
             {
-                x = (c - 'A' + i) % 26 + 'A';
+                x = (c - 'A') % 26 + i;
                 c = n[x];
             }
             else
             {
-                x = (c - 'a' + i) % 26 + 'a';
+                x = (c - 'a') % 26 + i;
                 c = n[x];
             }
         return c;
