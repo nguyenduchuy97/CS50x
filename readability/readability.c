@@ -45,11 +45,11 @@ int main(void)
 		L = ((double) letters / (double) words) * 100.00;
 
 		// S is the average number of sentences per 100 words in the text.
-		S = ((double) sentences / (double) words ) * 100.00;
+		S = ((double) sentences / (double) words) * 100.00;
 	}
 
 	// Compute the Coleman-Liau index
-	int X = Coleman_Liau(L,S);
+	int X = Coleman_Liau(L, S);
 
 	// Print the Grade X
 	if (X < 1)
