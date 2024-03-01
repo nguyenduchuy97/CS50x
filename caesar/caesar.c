@@ -4,8 +4,10 @@
 
 int main(int argc, char argv[])
 {
+    int key;
     if (argc == 2 && isdigit(argv[1]))
     {
+        key = (int) argv[1];
         
     }
     else
