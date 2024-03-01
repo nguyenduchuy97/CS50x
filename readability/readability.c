@@ -1,7 +1,7 @@
 #include <cs50.h>
-#include <stdio.h>
 #include <ctype.h>
 #include <math.h>
+#include <stdio.h>
 #include <string.h>
 
 int Coleman_Liau(double L, double S);
@@ -21,7 +21,6 @@ int main(void)
 	{
 		words = 1;
 	}
-    printf("Length: %i\n", len);
 
 	// Count the number of letters, words, and sentences in the text
 	for (int i = 0; i < len; i++)
