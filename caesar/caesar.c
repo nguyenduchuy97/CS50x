@@ -15,8 +15,8 @@ int main(int argc, string argv[])
     }
 
     int k = atoi(argv[1]);
-    
-    if (!isdigit(argv[1]) || k < 0 || argc > 2)
+
+    if (!isdigit(argv[1]) || k < 0)
     {
         printf("Usage: %s key", argv[0]);
         return 1;
