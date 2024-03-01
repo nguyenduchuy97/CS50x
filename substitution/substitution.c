@@ -32,13 +32,11 @@ int main(int argc, string argv[])
     for (int i = 0; i < len_p; i++)
     {
         // Substitution process with the key
-        p[i] = rotate(p[i],argv[1]);
+        p[i] = rotate(p[i], argv[1]);
     }
 
     printf("ciphertext: %s\n", p);
     return 0;
-
-
 }
 
 char rotate(char c, string n)
@@ -47,15 +45,15 @@ char rotate(char c, string n)
     if (isalpha(c))
     {
         if (isupper(c))
-            {
-                x = (c - 'A');
-                c = n[x];
-            }
-            else
-            {
-                x = (c - 'a');
-                c = n[x];
-            }
+        {
+            x = (c - 'A');
+            c = n[x];
+        }
+        else
+        {
+            x = (c - 'a');
+            c = n[x];
+        }
         return c;
     }
     else
