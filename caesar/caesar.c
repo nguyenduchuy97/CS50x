@@ -27,8 +27,11 @@ int main(int argc, char argv[])
 
 char rotate(char c, int n)
 {
-    if (isupper(c))
+    if (isalpha(c))
     {
-        
+        if (islower(c))
+        {
+            c = c
+        }
     }
 }
