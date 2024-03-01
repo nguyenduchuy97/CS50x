@@ -24,21 +24,18 @@ int main(void)
 	{
 		if (isspace(input[i]))
 		{
-			words += 1;
-		}
-		else if ((len - 1 == i))
-		{
-			words += 1;
+			words++;
 		}
 		// Find letters
 		else if (isalnum(input[i]))
 		{
-			letters += 1;
+			letters++;
 		}
 		// Find sentences
-		else if (input[i] == '.' || input[i] == '!' || input[i] == '?')
+		else if (len - 1 == i || input[i] == '.' || input[i] == '!' || input[i] == '?')
 		{
-			sentences += 1;
+			sentences++;
+			words++;
 		}
 		else
 		{
