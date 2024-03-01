@@ -38,16 +38,19 @@ int main(int argc, string argv[])
 
 char rotate(char c, string n)
 {
+    int x;
     if (isalpha(c))
     {
         for (int i = 0; i < strlen(n); i++)
             if (isupper(c))
             {
-                c = c[((c - 'A' + i) % 26 + 'A')];
+                x = (c - 'A' + i) % 26 + 'A';
+                c = n[x];
             }
             else
             {
-                c = c[((c - 'a' + i) % 26 + 'a')];
+                x = (c - 'a' + i) % 26 + 'a';
+                c = n[x];
             }
         return c;
     }
