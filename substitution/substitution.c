@@ -46,13 +46,11 @@ char rotate(char c, string n)
     {
         if (isupper(c))
         {
-            x = (c - 'A');
-            c = n[x];
+            c = n[c - 'A'];
         }
         else
         {
-            x = (c - 'a');
-            c = n[x];
+            c = n[c - 'a'];
         }
         return c;
     }
