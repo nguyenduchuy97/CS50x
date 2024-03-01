@@ -14,6 +14,7 @@ int main(int argc, string argv[])
         int len = strlen(p)
         char ci[len];
     }
+    if else (isdigit(argv[1]))
     else
     {
         printf("Usage: %s key\n", argv[0]);
