@@ -10,8 +10,9 @@ int main(int argc, char argv[])
     if (argc == 2 && isdigit(argv[1]) && (int) argv[1] >= 0)
     {
         k = (int) argv[1];
-        string p = get_string("Plaintext:  ");
+        string p = get_string("plaintext:  ");
         int len = strlen(p)
+        char ci[len];
     }
     else
     {
@@ -21,8 +22,9 @@ int main(int argc, char argv[])
 
     for (int i = 0; i < len; i++)
     {
-        rotate(char p[i], int n);
+        ci = rotate(p[i], k);
     }
+    printf("ciphertext: %s", ci);
 }
 
 char rotate(char c, int n)
