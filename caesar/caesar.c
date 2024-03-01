@@ -12,22 +12,15 @@ int main(int argc, string argv[])
     int len;
     string p;
 
-    if (argc > 1)
-    {}
-    if (argc == 2 && isdigit(*argv[1]) && k >= 0)
-    {
-        p = get_string("plaintext:  ");
-        len = strlen(p);
-    }
-    else if(argc < 2)
+    if (argc != 2)
     {
         printf("Please enter the key:\nUsage: %s key", argv[0]);
         return 1;
     }
-    else
+    else if (isdigit(*argv[1]) && k >= 0)
     {
-        printf("Usage: %s key\n", argv[0]);
-        return 1;
+        p = get_string("plaintext:  ");
+        len = strlen(p);
     }
 
     for (int i = 0; i < len; i++)
