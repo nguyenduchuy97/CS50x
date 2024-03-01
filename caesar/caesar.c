@@ -29,9 +29,9 @@ char rotate(char c, int n)
 {
     if (isalpha(c))
     {
-        if (islower(c))
+        if (isupper(c))
         {
-            c = c
+            c = c - 'A'
         }
     }
 }
