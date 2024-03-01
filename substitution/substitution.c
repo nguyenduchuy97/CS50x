@@ -14,9 +14,9 @@ int main(int argc, string argv[])
         return 1;
     )
     int len_k = strlen(argv[1]);
-    for (int i = 0; i < len_k; i++)
+    for (int x = 0; x < len_k; x++)
     {
-        if (!isalpha(argv[1][i]) || len_k != 26)
+        if (!isalpha(argv[1][x]) || len_k != 26)
         {
             printf("The key must contains 26 characters.\n");
             return 1;
@@ -27,9 +27,11 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < len_p; i++)
     {
-
+        p[i] = rotate(p[i],argv[1]);
     }
-
+    
+    printf("ciphertext: %s\n", p);
+    return 0;
 
 
 }
@@ -45,7 +47,7 @@ char rotate(char c, string n)
             }
             else
             {
-                c = (c - 'a' + n) % 26 + 'a';
+                c = (c - 'a' + n[i]) % 26 + 'a';
             }
             return c;
     }
