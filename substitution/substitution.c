@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-char rotate(char c, int n);
+char rotate(char c, string n);
 
 int main(int argc, string argv[])
 {
@@ -27,14 +27,14 @@ int main(int argc, string argv[])
 
     for (int i = 0; i < len_p; i++)
     {
-        
+
     }
 
 
 
 }
 
-char rotate(char c, int n)
+char rotate(char c, string n)
 {
     if (isalpha(c))
     {
