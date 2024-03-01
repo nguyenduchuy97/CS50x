@@ -25,14 +25,11 @@ int main(void)
 		if (isspace(input[i]))
 		{
 			words += 1;
-			if 
+			if (input[len] != ' ')
+			{
+				words += 1;
+			}
 		}
-        else if (ispunct(input[len]))
-        {
-        printf("Plus last word\n");
-        words += 1;
-        sentences += 1;
-        }
 		// Find letters
 		else if (isalnum(input[i]))
 		{
