@@ -25,7 +25,7 @@ int main(void)
 		if (isspace(input[i]))
 		{
 			words += 1;
-			if (len - i == 0)
+			if (i == 1)
 			{
 				words += 1;
 			}
