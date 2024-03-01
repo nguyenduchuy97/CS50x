@@ -18,7 +18,7 @@ int main(int argc, string argv[])
     int len;
     string p;
 
-    if (!isdigit(argv[1]) || k < 0)
+    if (!isdigit(argv[1]) || k < 0 || k)
     {
         printf("Usage: %s key", argv[0]);
     }
