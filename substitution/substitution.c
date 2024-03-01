@@ -29,7 +29,7 @@ int main(int argc, string argv[])
     {
         p[i] = rotate(p[i],argv[1]);
     }
-    
+
     printf("ciphertext: %s\n", p);
     return 0;
 
@@ -43,11 +43,11 @@ char rotate(char c, string n)
         for (int i = 0; i < strlen(n); i++)
             if (isupper(c))
             {
-                c = (c - 'A' + n[i]) % 26 + 'A';
+                c = (c - 'A' + i) % 26 + 'A';
             }
             else
             {
-                c = (c - 'a' + n[i]) % 26 + 'a';
+                c = (c - 'a' + i) % 26 + 'a';
             }
             return c;
     }
