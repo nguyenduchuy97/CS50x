@@ -41,7 +41,6 @@ int main(int argc, string argv[])
 
 char rotate(char c, string n)
 {
-    int x;
     if (isalpha(c))
     {
         if (isupper(c))
@@ -50,7 +49,7 @@ char rotate(char c, string n)
         }
         else
         {
-            c = n[c - 'a'];
+            c = tolower(n[c - 'a']);
         }
         return c;
     }
