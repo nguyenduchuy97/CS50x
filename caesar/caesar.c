@@ -4,7 +4,7 @@
 
 char rotate(char c, int n);
 
-int main(int argc, char argv[])
+int main(int argc, string argv[])
 {
     int k = ;
     if (argc == 2 && isdigit(argv[1]) && (int) argv[1] >= 0)
