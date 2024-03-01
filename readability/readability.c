@@ -13,6 +13,7 @@ int main(void)
 	int words = 0;
 	double L;
 	double S;
+
 	// Prompt the user for some text
 	string input = get_string("Text: ");
 	int len = strlen(input);
