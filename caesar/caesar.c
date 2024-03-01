@@ -8,17 +8,22 @@ char rotate(char c, int n);
 
 int main(int argc, string argv[])
 {
-    int k = atoi(argv[1]);
-    int len;
-    string p;
-
     if (argc != 2)
     {
         printf("Usage: %s key", argv[0]);
         return 1;
     }
-    else
+
+    int k = atoi(argv[1]);
+    int len;
+    string p;
+
+    if (!isdigit(argv[1]) || k < 0)
     {
+        printf("Usage: %s key", argv[0]);
+    }
+    {
+
         if (isdigit(argv[1]) && k >= 0)
         {
             p = get_string("plaintext:  ");
