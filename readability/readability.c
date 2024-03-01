@@ -25,6 +25,7 @@ int main(void)
 		if (isspace(input[i]))
 		{
 			words++;
+			
 		}
 		// Find letters
 		else if (isalnum(input[i]))
@@ -35,7 +36,6 @@ int main(void)
 		else if (len - 1 == i || input[i] == '.' || input[i] == '!' || input[i] == '?')
 		{
 			sentences++;
-			words++;
 		}
 		else
 		{
