@@ -10,7 +10,7 @@ int main(int argc, string argv[])
 {
     int k = atoi(argv[1]);
     int len;
-    char ci[];
+    char ci[len];
     string p;
 
     if (argc == 2 && isdigit(*argv[1]) && k >= 0)
