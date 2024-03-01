@@ -4,7 +4,7 @@
 #include <math.h>
 #include <string.h>
 
-float Coleman_Liau(float L, float S);
+int Coleman_Liau(float L, float S);
 
 int main(void)
 {
@@ -72,8 +72,12 @@ int main(void)
 }
 
 // Coleman-Liau's algorithm.
-float Coleman_Liau(float L, float S)
+int Coleman_Liau(float L, float S)
 {
-	double index = 0.0588 * L - 0.296 * S - 15.8;
-	return index;
+	int sum;
+	double index = (0.0588 * L) - (0.296 * S) - 15.8;
+	printf("Index: %f\n", index);
+	sum = (int) round(index);
+	printf("Sum: %i\n", sum);
+	return sum;
 }
