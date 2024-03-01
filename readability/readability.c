@@ -48,7 +48,7 @@ int main(void)
 			L = ((float) letters / (float) words) * 100.00;
 
 			// S is the average number of sentences per 100 words in the text.
-			S = ((float) sentences / words ) * 100.00;
+			S = ((float) sentences / (float) words ) * 100.00;
 		}
 		else
 		{
