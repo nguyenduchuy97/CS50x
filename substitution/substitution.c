@@ -13,15 +13,17 @@ int main(int argc, string argv[])
         printf("Usage %s key\n", argv[0]);
         return 1;
     )
-    int len = strlen(argv[1]);
-    for (int i = 0; i < len; i++)
+    int len_k = strlen(argv[1]);
+    for (int i = 0; i < len_k; i++)
     {
-        if (!isalpha(argv[1][i]) || len != 26)
+        if (!isalpha(argv[1][i]) || len_k != 26)
         {
             printf("The key must contains 26 characters.\n");
             return 1;
         }
     }
+    string p = get_string("plaintext:  ");
+    int len_p = strlen(p);
     
 
 }
