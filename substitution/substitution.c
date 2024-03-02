@@ -14,15 +14,32 @@ int main(int argc, string argv[])
         printf("Usage %s key\n", argv[0]);
         return 1;
     }
+
     int len_k = strlen(argv[1]);
+
+    // Only accept 26 characters and alphabet characters.
+    if (len_k != 26)
+    {
+        printf("The key must contains 26 characters.\n");
+        return 1;
+    }
 
     for (int x = 0; x < len_k; x++)
     {
-        // Only accept 26 characters and alphabet characters.
-        if (!isalpha(argv[1][x]) || len_k != 26)
+
+        if (!isalpha(argv[1][x]))
         {
-            printf("The key must contains 26 characters.\n");
+            printf("The key must contains only alphabet characters.\n");
             return 1;
+        }
+
+        for (int j = x + 1; j < len_k; j++)
+        {
+            if (argv[1][x] == argv[1][j])
+            {
+                printf("The key must not contains duplicate characters.\n");
+                return 1;
+            }
         }
     }
     // Input plain text.
@@ -45,7 +62,7 @@ char rotate(char c, string n)
     {
         if (isupper(c))
         {
-            c = n[c - 'A'];
+            c = toupper(n[c - 'A']);
         }
         else
         {
