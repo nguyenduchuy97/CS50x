@@ -1,4 +1,4 @@
-sort1 uses: 
+sort1 uses:
 
 How do you know?: Takes 0.585s to sorted list; Takes 5.2s to reversed list.
 
@@ -8,4 +8,4 @@ How do you know?: Takes 0.644s to sorted list; Take 0.516s to reversed list.
 
 sort3 uses:
 
-How do you know?: Takes 2.4s to sorted list; Take 2.5s to reversed list.
+How do you know?: Takes 2.6s to sorted list; Take 2.5s to reversed list.
