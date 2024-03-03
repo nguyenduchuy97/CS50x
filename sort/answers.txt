@@ -1,10 +1,10 @@
 sort1 uses:
 
-How do you know?: sorted50000.txt. takes 0.585s; 
+How do you know?: Takes 0.585s to sorted list; Takes 5.2s to reversed list.
 
 sort2 uses:
 
-How do you know?:
+How do you know?: Takes 0.644s to sorted list; Take  to reversed list.
 
 sort3 uses:
 
