@@ -151,7 +151,6 @@ void tabulate(void)
                 candidates[preferences[i][j]].votes++;
                 break;
             }
-
         }
     }
     return;
@@ -181,7 +180,6 @@ int find_min(void)
         {
             min = candidates[i].votes;
         }
-
     }
     return min;
 }
@@ -199,7 +197,7 @@ bool is_tie(int min)
             can++;
         }
     }
-    if (sum/can == min)
+    if (sum / can == min)
     {
         return true;
     }
