@@ -69,8 +69,12 @@ bool vote(string name)
     for (int i = 0; i < candidate_count; i++)
     {
         // Check if candidate's name matches given name
-        if (strcpy(name, candidates[i].name))
+        if (strcpy(name, candidates[i].name) == 0)
+        {
             // If yes, increment candidate's votes and return true
+            candidates[i].votes++;
+            return true;
+        }
     }
 
     // If no match, return false
