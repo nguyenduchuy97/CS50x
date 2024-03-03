@@ -164,6 +164,7 @@ bool print_winner(void)
     {
         if (candidates[i].votes > voter_count / 2)
         {
+            
             return true;
         }
     }
