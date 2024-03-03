@@ -1,6 +1,6 @@
 sort1 uses:
 
-How do you know?:
+How do you know?: sorted50000.txt. takes 0.585s; 
 
 sort2 uses:
 
@@ -8,4 +8,4 @@ How do you know?:
 
 sort3 uses:
 
-How do you know?: 
+How do you know?:
