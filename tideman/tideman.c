@@ -114,7 +114,7 @@ void record_preferences(int ranks[])
 {
     for (int i = 0; i < candidate_count; i++)
     {
-        for (int j = 1; j < candidate_count; j++)
+        for (int j = 0; j < candidate_count; j++)
         {
             if (i < j)
             {
@@ -132,7 +132,7 @@ void add_pairs(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            if (preferences[i][j] > 0)
+            if (preferences[i][j] > preferences[j][i])
             {
                 pairs[i].winner = i;
                 pairs[i].loser = j;
@@ -146,7 +146,7 @@ void add_pairs(void)
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
-    int temp;
+    int temp, winner, loser;
     for (int i = 0; i < pair_count; i++)
     {
         for (int j = 0; j < candidate_count; j++)
@@ -155,16 +155,18 @@ void sort_pairs(void)
             {
                 temp = preferences[pairs[j].winner][pairs[x].loser];
 
-                if (preferences[pairs[j].winner][pairs[x].loser] > temp)
+                if (preferences[pairs[j].winner][pairs[x].loser] > temp && pairs[j].winner != pairs[i].winner && pairs[x].loser != pairs[i].loser)
                 {
+                    temp = preferences[pairs[j].winner][pairs[x].loser];
                     winner = pairs[i].winner;
                     loser = pairs[i].loser;
                     pairs[i].winner = pairs[j].winner;
                     pairs[i].loser = pairs[x].loser;
+                    pairs[j].winner = winner;
+                    pairs[x].loser = loser;
                 }
             }
         }
-
     }
     return;
 }
@@ -174,9 +176,12 @@ void lock_pairs(void)
 {
     for (int i = 0; i < pair_count; i++)
     {
-        if (pairs[i] < pairs[pair_count]winner)
+        for (int j = 0; j < pair_count; j++)
         {
-            locked[pairs[i]winner][pairs[i]winner] = true;
+            if (pairs[i].winner != pairs[j].loser && pairs[j].winner != pairs[i].loser)
+            {
+                locked[pairs[i]winner][pairs[i]loser] = true;
+            }
         }
     }
     return;
