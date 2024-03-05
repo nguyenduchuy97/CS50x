@@ -155,9 +155,10 @@ void sort_pairs(void)
     {
         for (int j = i + 1; j < pair_count; j++)
         {
-            int margin_i = preferences[pairs[i].winner][pairs[i].loser] -preferences[pairs[i].loser][pairs[i].winner];
+            int margin_i = preferences[pairs[i].winner][pairs[i].loser] -
+                           preferences[pairs[i].loser][pairs[i].winner];
             int margin_j = preferences[pairs[j].winner][pairs[j].loser] -
-             preferences[pairs[j].loser][pairs[j].winner];
+                           preferences[pairs[j].loser][pairs[j].winner];
 
             if (margin_i < margin_j)
             {
