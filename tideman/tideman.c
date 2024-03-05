@@ -31,6 +31,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+bool creates_cycle(int winner, int loser);
 
 int main(int argc, string argv[])
 {
@@ -192,4 +193,24 @@ void print_winner(void)
 {
     // TODO
     return;
+}
+
+// Check cycle exists
+bool creates_cycle(int winner, int loser)
+{
+    if (winner == loser)
+    {
+        return true;
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (locked[loser][i])
+        {
+            if (creates_cycle(winner, i))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
 }
