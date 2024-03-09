@@ -79,5 +79,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    // Create a copy of image
+    RGBTRIPLE copy[height][width];
+    
+
     return;
 }
