@@ -14,6 +14,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             new = round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0)
 
             // Update pixel values
+            
         }
     }
     return;
