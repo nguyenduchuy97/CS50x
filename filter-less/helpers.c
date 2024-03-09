@@ -79,7 +79,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // Create a copy of image
+    // Create a copy of image.
     RGBTRIPLE copy[height][width];
     for (int i = 0; i < height; i++)
     {
@@ -96,10 +96,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int sumRed = 0, sumGreen = 0, sumBlue = 0;
             int count = 0;
 
+            // Iterate over the neighboring pixels.
             for (int ni = i - 1; ni < i + 1; ni++)
             {
                 for (int nj = j - 1; nj < j + 1; nj++)
                 {
+                    // Check if the neighboring pixel is within bounds.
                     if (ni >= 0 && ni < height && nj >= 0 && nj < width)
                     {
                         sumRed += copy[ni][nj].rgbtRed;
@@ -109,6 +111,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
+            // Calculate the average values and update the pixel.
             image[i][j].rgbtRed = round((float)sumRed / count);
             image[i][j].rgbtGreen = round((float)sumGreen / count);
             image[i][j].rgbtBlue = round((float)sumBlue / count);
