@@ -97,9 +97,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int count = 0;
 
             // Iterate over the neighboring pixels.
-            for (int ni = i - 1; ni < i + 1; ni++)
+            for (int ni = i - 1; ni <= i + 1; ni++)
             {
-                for (int nj = j - 1; nj < j + 1; nj++)
+                for (int nj = j - 1; nj <= j + 1; nj++)
                 {
                     // Check if the neighboring pixel is within bounds.
                     if (ni >= 0 && ni < height && nj >= 0 && nj < width)
