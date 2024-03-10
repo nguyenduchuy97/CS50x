@@ -87,11 +87,65 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE copy;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            
+            copy[i][j] = image[i][j];
+        }
+    }
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int X[3][3] = {
+                {-1, 0, 1},
+                {-2, 0, 2},
+                {-1, 0, 1}
+            };
+
+            int Y[3][3] = {
+                {-1, -2, -1},
+                {0, 0, 0},
+                {1, 2, 1}
+            };
+
+            int redX, greenX, blueX;
+            int redY, greenY, blueY;
+            int newRed, newGreen, newBlue;
+
+            // Iterate over the neighboring pixels.
+            for (int ni = i - 1; ni <= i + 1; ni++)
+            {
+                for (int nj = j - 1; nj <= j + 1; nj++)
+                {
+                    if (!ni >= 0 && !ni <= (height - 1) % 3 && !nj >= 0 && !nj <= (width - 1) % 3)
+                    {
+                        X[ni][nj] = 0;
+                        Y[ni][nj] = 0;
+                    }
+                    // Check if the neighboring pixel is within bounds.
+                    if (ni >= 0 && ni <= height - 1 && nj >= 0 && nj <= width - 1)
+                    {
+                        redX += X[ni % 3][nj % 3] * copy[ni][nj].rgbtRed;
+                        greenX += X[ni % 3][nj % 3] * copy[ni][nj].rgbtGreen;
+                        blueX += X[ni % 3][nj % 3] * copy[ni][nj].rgbtBlue;
+
+                        redY += Y[ni % 3][nj % 3] * copy[ni][nj].rgbtRed;
+                        greenY += Y[ni % 3][nj % 3] * copy[ni][nj].rgbtGreen;
+                        blueY += Y[ni % 3][nj % 3] * copy[ni][nj].rgbtBlue;
+                    }
+                }
+            }
+            newRed = squr(redX * redX + redY * redY);
+            newGreen = squr(greenX * greenX + greenY * greenY);
+            newBlue = squr(blueX  * blueX + blueY * blueY);
+
+            image[i][j].rgbtRed = newRed;
+            image[i][j].rgbtGreen = newGreen;
+            image[i][j].rgbtBlue = newBlue;
         }
     }
     return;
