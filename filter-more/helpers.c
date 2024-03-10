@@ -32,7 +32,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width / 2; j++)
         {
             // Swap pixels
-            swap= image[i][j];
+            swap = image[i][j];
             image[i][j] = image[i][width - 1 - j];
             image[i][width - 1 - j] = swap;
         }
@@ -101,17 +101,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int X[3][3] = {
-                {-1, 0, 1},
-                {-2, 0, 2},
-                {-1, 0, 1}
-            };
+            int X[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
 
-            int Y[3][3] = {
-                {-1, -2, -1},
-                {0, 0, 0},
-                {1, 2, 1}
-            };
+            int Y[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
             int redX = 0, greenX = 0, blueX = 0;
             int redY = 0, greenY = 0, blueY = 0;
@@ -126,6 +118,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // Check if the neighboring pixel is within bounds.
                     if (ni >= 0 && ni < height && nj >= 0 && nj < width)
                     {
+                        // I have to change the index back to original of ni and nj.
                         redX += X[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtRed;
                         greenX += X[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtGreen;
                         blueX += X[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtBlue;
@@ -136,9 +129,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
+            // New Gx, Gy channels.
             newRed = round(sqrt(redX * redX + redY * redY));
             newGreen = round(sqrt(greenX * greenX + greenY * greenY));
-            newBlue = round(sqrt(blueX  * blueX + blueY * blueY));
+            newBlue = round(sqrt(blueX * blueX + blueY * blueY));
 
             // I use ternary operator to cap at 255.
             image[i][j].rgbtRed = newRed > 255 ? 255 : newRed;
