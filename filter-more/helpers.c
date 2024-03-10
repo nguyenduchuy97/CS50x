@@ -140,9 +140,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            newRed = squr(redX * redX + redY * redY);
-            newGreen = squr(greenX * greenX + greenY * greenY);
-            newBlue = squr(blueX  * blueX + blueY * blueY);
+            newRed = sqrt(redX * redX + redY * redY);
+            newGreen = sqrt(greenX * greenX + greenY * greenY);
+            newBlue = sqrt(blueX  * blueX + blueY * blueY);
 
             image[i][j].rgbtRed = newRed;
             image[i][j].rgbtGreen = newGreen;
