@@ -136,13 +136,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            newRed = sqrt(redX * redX + redY * redY);
-            newGreen = sqrt(greenX * greenX + greenY * greenY);
-            newBlue = sqrt(blueX  * blueX + blueY * blueY);
+            newRed = round(sqrt(redX * redX + redY * redY));
+            newGreen = round(sqrt(greenX * greenX + greenY * greenY));
+            newBlue = round(sqrt(blueX  * blueX + blueY * blueY));
 
-            image[i][j].rgbtRed = newRed;
-            image[i][j].rgbtGreen = newGreen;
-            image[i][j].rgbtBlue = newBlue;
+            // I use ternary operator to cap at 255.
+            image[i][j].rgbtRed = newRed > 255 ? 255 : newRed;
+            image[i][j].rgbtGreen = newGreen > 255 ? 255 : newGreen;
+            image[i][j].rgbtBlue = newBlue > 255 ? 255 : newBlue;
         }
     }
     return;
