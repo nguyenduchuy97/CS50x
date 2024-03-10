@@ -122,7 +122,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int nj = j - 1; nj <= j + 1; nj++)
                 {
-                    if (!ni >= 0 && !ni <= (height - 1) % 3 && !nj >= 0 && !nj <= (width - 1) % 3)
+                    if ((!ni >= 0) && (!ni <= (height - 1)) % 3 && (!nj >= 0) && (!nj <= (width - 1) % 3))
                     {
                         X[ni][nj] = 0;
                         Y[ni][nj] = 0;
