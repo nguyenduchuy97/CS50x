@@ -113,8 +113,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {1, 2, 1}
             };
 
-            int redX, greenX, blueX;
-            int redY, greenY, blueY;
+            int redX = 0, greenX = 0, blueX = 0;
+            int redY = 0, greenY = 0, blueY = 0;
             int newRed, newGreen, newBlue;
 
             // Iterate over the neighboring pixels.
