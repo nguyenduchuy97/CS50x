@@ -59,18 +59,26 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             int sumRed = 0, sumGreen = 0, sumBlue = 0;
             int count = 0;
+
+            // Iterate over the neighboring pixels.
             for (int ni = i - 1; ni <= i + 1; ni++)
             {
                 for (int nj = j - 1; nj <= j + 1; nj++)
                 {
+                    // Check if the neighboring pixel is within bounds.
                     if (ni >= 0 && ni <= height - 1 && nj >= 0 && nj <= width - 1)
                     {
-                        image[ni][nj].rgbtRed = copy
-                        image[ni][nj].rgbtGreen
-                        image[ni][nj].rgbtBlue
+                        sumRed = copy[ni][nj].rgbtRed;
+                        sumGreen = copy[ni][nj].rgbtGreen;
+                        sumBlue = copy[ni][nj].rgbtBlue;
+                        count++;
                     }
                 }
             }
+            // Calculate the average values and update the pixel.
+            image[i][j].rgbtRed = round((float) sumRed / count);
+            image[i][j].rgbtGreen = round((float) sumGreen / count);
+            image[i][j].rgbtBlue = round((float) sumBlue / count);
         }
     }
     return;
@@ -79,5 +87,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            
+        }
+    }
     return;
 }
