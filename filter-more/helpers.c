@@ -27,7 +27,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         {
             swap[i][j] = image[i][j];
             image[i][j] = image[i][width - 1];
-            image[i][j] = swap[i][j];
+            image[i][width - 1] = swap[i][j];
         }
     }
     return;
