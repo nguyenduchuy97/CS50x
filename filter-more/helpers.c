@@ -67,7 +67,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 for (int nj = j - 1; nj <= j + 1; nj++)
                 {
                     // Check if the neighboring pixel is within bounds.
-                    if (ni >= 0 && ni <= height - 1 && nj >= 0 && nj <= width - 1)
+                    if (ni >= 0 && ni <= height && nj >= 0 && nj <= width)
                     {
                         sumRed = copy[ni][nj].rgbtRed;
                         sumGreen = copy[ni][nj].rgbtGreen;
