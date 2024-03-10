@@ -124,15 +124,15 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 {
 
                     // Check if the neighboring pixel is within bounds.
-                    if (ni >= 0 && ni <= height - 1 && nj >= 0 && nj <= width - 1)
+                    if (ni >= 0 && ni < height && nj >= 0 && nj < width)
                     {
-                        redX += X[ni % 3][nj % 3] * copy[ni][nj].rgbtRed;
-                        greenX += X[ni % 3][nj % 3] * copy[ni][nj].rgbtGreen;
-                        blueX += X[ni % 3][nj % 3] * copy[ni][nj].rgbtBlue;
+                        redX += X[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtRed;
+                        greenX += X[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtGreen;
+                        blueX += X[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtBlue;
 
-                        redY += Y[ni % 3][nj % 3] * copy[ni][nj].rgbtRed;
-                        greenY += Y[ni % 3][nj % 3] * copy[ni][nj].rgbtGreen;
-                        blueY += Y[ni % 3][nj % 3] * copy[ni][nj].rgbtBlue;
+                        redY += Y[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtRed;
+                        greenY += Y[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtGreen;
+                        blueY += Y[ni - i + 1][nj - j + 1] * copy[ni][nj].rgbtBlue;
                     }
                 }
             }
