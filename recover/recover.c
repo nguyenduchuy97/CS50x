@@ -18,8 +18,12 @@ int main(int argc, char *argv[])
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, 512, f) == 512)
     {
-        // If start of a JPEG file
+        // If start of a new JPEG file
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] & 0xf0 == 0xe0 )
+        {
+            // If first JPEG file
+            if ()
+        }
 
     }
 
