@@ -23,6 +23,9 @@ int main(int argc, char *argv[])
         {
             // If first JPEG file
             if ()
+            {
+                FILE *r = fread(filename, 1, 512, buffer)
+            }
         }
 
     }
