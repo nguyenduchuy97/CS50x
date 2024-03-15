@@ -43,10 +43,12 @@ int main(int argc, char *argv[])
         {
             fwrite(buffer, 1, 512, file);
         }
-        
-
     }
 
-    fclose(f);
+    if (file == NULL)
+    {
+        fclose(file);
+    }
+    fclose(card);
     return 0;
 }
