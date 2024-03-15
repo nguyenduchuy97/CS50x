@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[512];
     int i = 0;
-    char *num[7];
+    char *num[10];
     char *jpg[7];
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, 512, card) == 512)
