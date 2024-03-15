@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 int main(int argc, char *argv[])
@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, 512, card) == 512)
     {
         // If start of a new JPEG file
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff &&
+            ((buffer[3] & 0xf0) == 0xe0))
         {
             // Create output files
             i++;
@@ -42,18 +43,21 @@ int main(int argc, char *argv[])
             // Starting write to the output file
             fwrite(buffer, 1, 512, file);
         }
-        // Continue writing to the output file until the file pointer reach the null character where it located at the end of the file
+        // Continue writing to the output file until the file pointer reach the null character where
+        // it located at the end of the file
         else if (file != NULL)
         {
             fwrite(buffer, 1, 512, file);
         }
     }
 
-    // The file pointer reach the null character where it located at the end of the file
+    // The file pointer reached the end of the file so we close the output file
     if (file == NULL)
     {
         fclose(file);
     }
+
+    // Then close the input file
     fclose(card);
     return 0;
 }
