@@ -23,6 +23,8 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] & 0xf0 == 0xe0 )
         {
             // If first JPEG file
+            i++;
+            sprintf(num, "%03i.jpg", i)
             FILE *file = fopen(buffer, 1, 512, sprintf(num, "%03i", i))
             i++;
             fwrite(buffer, 1, 512, sprintf(num, "%03i", i))
