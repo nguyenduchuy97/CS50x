@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[512];
     int i = 0;
-    char *num[10];
-    char *jpg[7];
+    char num[7];
+    char jpg[7];
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, 512, card) == 512)
     {
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         {
             // If first JPEG file
             i++;
-            jpg = sprintf(num, "%03i.jpg", i)
+            jpg = sprintf(num, "%03i.jpg", i);
 
             FILE *file = fopen(jpg, "w");
             fwrite(buffer, 1, 512, jpg);
