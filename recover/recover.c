@@ -21,6 +21,7 @@ int main(int argc, char *argv[])
         // If start of a new JPEG file
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] & 0xf0 == 0xe0 )
         {
+            int i = 1;
             // If first JPEG file
             FILE *file = fwrite(buffer, 1, 512, sprintf())
             FILE *w = fwrite(buff, 1, 512, )
