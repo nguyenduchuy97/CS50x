@@ -22,7 +22,8 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] & 0xf0 == 0xe0 )
         {
             // If first JPEG file
-            FILE *r = fread(filename, 1, 512, buffer)
+            FILE *r = fread(filename, 1, 512, buffer);
+            FILE *w = fwrite()
         }
 
     }
