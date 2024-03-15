@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
             {
                 fclose(file);
             }
-            
+
             // Create output files
             sprintf(num, "%03i.jpg", i);
             i++;
@@ -57,8 +57,8 @@ int main(int argc, char *argv[])
         }
     }
 
-    // The file pointer reached the end of the file so we close the output file
-    if (file == NULL)
+    // Close the last output file if it's open
+    if (file != NULL)
     {
         fclose(file);
     }
