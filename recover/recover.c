@@ -28,9 +28,16 @@ int main(int argc, char *argv[])
             i++;
             sprintf(num, "%03i.jpg", i);
 
-            if ()
-            FILE *file = fopen(num, "w");
-            fwrite(buffer, 1, 512, num);
+            file = fopen(num, "w");
+
+            if (file == NULL)
+            {
+                fclose(card);
+                printf("Could not open the output file\n");
+                return 1;
+            }
+
+            fwrite(buffer, 1, 512, file);
         }
         else
         {
