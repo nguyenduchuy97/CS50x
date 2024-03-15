@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     // Open the memory card
-    FILE *f = fopen(argv[1], 'r');
+    FILE *card = fopen(argv[1], 'r');
 
     // Create a buffer for a block of data
     uint8_t buffer[512];
@@ -22,8 +22,7 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] & 0xf0 == 0xe0 )
         {
             // If first JPEG file
-            uint8_t buff[512];
-            FILE *r = fread(buff, 1, 512, buffer);
+            FILE *file = fwrite(buffer, 1, 512, sprintf())
             FILE *w = fwrite(buff, 1, 512, )
         }
 
