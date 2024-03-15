@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 
 int main(int argc, char *argv[])
@@ -18,10 +19,10 @@ int main(int argc, char *argv[])
     char *num[7];
     char *jpg[7];
     // While there's still data left to read from the memory card
-    while (fread(buffer, 1, 512, f) == 512)
+    while (fread(buffer, 1, 512, card) == 512)
     {
         // If start of a new JPEG file
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && buffer[3] & 0xf0 == 0xe0 )
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
         {
             // If first JPEG file
             i++;
