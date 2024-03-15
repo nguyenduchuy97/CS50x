@@ -26,8 +26,8 @@ int main(int argc, char *argv[])
             ((buffer[3] & 0xf0) == 0xe0))
         {
             // Create output files
-            i++;
             sprintf(num, "%03i.jpg", i);
+            i++;
 
             // Open the output files
             file = fopen(num, "w");
