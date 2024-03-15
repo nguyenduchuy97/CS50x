@@ -28,7 +28,11 @@ int main(int argc, char *argv[])
             jpg = sprintf(num, "%03i.jpg", i)
 
             FILE *file = fopen(jpg, "w");
-            fwrite(buffer, 1, 512, jpg)
+            fwrite(buffer, 1, 512, jpg);
+        }
+        else
+        {
+            fclose(card)
         }
 
     }
