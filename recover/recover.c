@@ -24,12 +24,14 @@ int main(int argc, char *argv[])
         // If start of a new JPEG file
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0))
         {
-            // If first JPEG file
+            // Create output files
             i++;
             sprintf(num, "%03i.jpg", i);
 
+            // Open the output files
             file = fopen(num, "w");
 
+            // Can we open the output files
             if (file == NULL)
             {
                 fclose(card);
@@ -37,14 +39,17 @@ int main(int argc, char *argv[])
                 return 1;
             }
 
+            // Starting write to the output file
             fwrite(buffer, 1, 512, file);
         }
+        // Continue writing to the output file until the file pointer reach the null character where it located at the end of the file
         else if (file != NULL)
         {
             fwrite(buffer, 1, 512, file);
         }
     }
 
+    // The file pointer reach the null character where it located at the end of the file
     if (file == NULL)
     {
         fclose(file);
