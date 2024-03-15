@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     // Open the memory card
-    FILE *card = fopen(argv[1], 'r');
+    FILE *card = fopen(&argv[1], 'r');
 
     // Create a buffer for a block of data
     uint8_t buffer[512];
