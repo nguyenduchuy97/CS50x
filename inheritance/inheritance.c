@@ -84,7 +84,7 @@ void free_family(person *p)
     }
 
     // TODO: Free parents recursively
-    while (!(p->parents[0] == NULL) && !(p->parents[1] == NULL))
+    if (!(p->parents[0] == NULL) && !(p->parents[1] == NULL))
     {
         free(p->parents[0]);
         free(p->parents[1]);
