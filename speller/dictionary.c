@@ -36,14 +36,18 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *f = fopen(dictionary, "r");
+    char buffer;
+    FILE *file = fopen(dictionary, "r");
 
     if(f == NULL)
     {
         return false;
     }
 
-    while(fread(1, ))
+    while(fread(buffer, 1, sizeof(char), file) != 0)
+    {
+        
+    }
     return false;
 }
 
