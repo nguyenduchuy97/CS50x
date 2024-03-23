@@ -46,7 +46,7 @@ bool load(const char *dictionary)
 
     while(fread(buffer, 1, sizeof(char), file) != 0)
     {
-        
+        fwrite(buffer, 1, sizeof(char), table[N]);
     }
     return false;
 }
