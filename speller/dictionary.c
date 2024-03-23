@@ -49,7 +49,7 @@ bool load(const char *dictionary)
     while(fread(buffer, 1, sizeof(char), file) != 0)
     {
         // Add each word to the hash table
-        fwrite(buffer, 1, sizeof(char), table[buffer - ]);
+        fwrite(buffer, 1, sizeof(char), table[buffer - 'A']);
     }
     // Close the dictionary file
     fclose(file);
