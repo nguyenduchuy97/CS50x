@@ -48,8 +48,9 @@ bool load(const char *dictionary)
     // Read each word in the file
     while(fread(buffer, 1, sizeof(char), file) != 0)
     {
+        
         // Add each word to the hash table
-        fwrite(buffer, 1, sizeof(char), table[buffer - 'a']);
+        fwrite(buffer, 1, sizeof(char), table[buffer - 'a']->word);
     }
     // Close the dictionary file
     fclose(file);
