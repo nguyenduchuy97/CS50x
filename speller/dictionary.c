@@ -40,7 +40,7 @@ bool load(const char *dictionary)
     // Open the dictionary file
     FILE *file = fopen(dictionary, "r");
 
-    if(f == NULL)
+    if(file == NULL)
     {
         return false;
     }
