@@ -35,7 +35,7 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    char buffer;
+    char buffer[LENGTH +  1];
 
     // Open the dictionary file
     FILE *file = fopen(dictionary, "r");
@@ -48,9 +48,9 @@ bool load(const char *dictionary)
     // Read each word in the file
     while(fread(buffer, 1, sizeof(char), file) != 0)
     {
-        
+
         // Add each word to the hash table
-        fwrite(buffer, 1, sizeof(char), table[buffer - 'a']->word);
+        fwrite(buffer, 1, sizeof(char), table[buffer[0] - 'a']->word);
     }
     // Close the dictionary file
     fclose(file);
