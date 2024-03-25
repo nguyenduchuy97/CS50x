@@ -31,7 +31,6 @@ bool check(const char *word)
     // TODO
     int index = hash(word);
     node *cursor;
-    cursor = table[index];
 
     while(cursor != NULL)
     {
@@ -48,6 +47,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+    unsign 
     return toupper(word[0]) - 'A';
 }
 
