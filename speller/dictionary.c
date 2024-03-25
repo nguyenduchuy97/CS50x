@@ -59,7 +59,6 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     char buffer[LENGTH +  1];
-    int index;
 
     // Open the dictionary file
     FILE *file = fopen(dictionary, "r");
@@ -69,6 +68,12 @@ bool load(const char *dictionary)
         return false;
     }
 
+    // Initialize the table
+    for (int i = 0; i < N; i++)
+    {
+        table[i] = NULL;
+    }
+    
     // Read each word in the file
     while(fscanf(file, "%s", buffer) != EOF)
     {
