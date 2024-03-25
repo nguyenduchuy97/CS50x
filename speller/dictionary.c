@@ -105,11 +105,9 @@ unsigned int size(void)
     int size = 0;
     for (int i = 0; i < N; i++)
     {
-        node *cursor = table[i];
-        while(cursor != NULL)
+        for (node *cursor = table[i]; cursor != NULL; cursor = cursor->next)
         {
             size++;
-            cursor = cursor->next;
         }
     }
     return size;
