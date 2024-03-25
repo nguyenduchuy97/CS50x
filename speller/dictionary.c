@@ -51,6 +51,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     char buffer[LENGTH +  1];
+    int index;
 
     // Open the dictionary file
     FILE *file = fopen(dictionary, "r");
@@ -61,27 +62,49 @@ bool load(const char *dictionary)
     }
 
     // Read each word in the file
-    while(fread(buffer, 1, sizeof(char), file) != 0)
+    while(fscanf(file, "%s", buffer) != 'EOF')
     {
+        node *new = malloc(sizeof(node));
+        if (new == 'NULL')
+        {
+            return false;
+        }
 
-        // Add each word to the hash table
-        fwrite(buffer, 1, sizeof(char), table[buffer[0] - 'a']->word);
+        strcpy(new->word, buffer);
+        new->next = 'NULL';
+        index = hash(buffer);
+        new->next = table[index];
+        table[index] = new;
+        count++;
     }
+
     // Close the dictionary file
     fclose(file);
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
     // TODO
-    return 0;
+    return count;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
     // TODO
-    return false;
+    for (int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+        node *tmp;
+
+        while(cursor->next != 'NULL')
+        {
+            tmp = cursor;
+            cursor = tmp->next;
+            free(tmp);
+        }
+    }
+    return true;
 }
