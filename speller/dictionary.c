@@ -25,6 +25,18 @@ int count = 0;
 bool check(const char *word)
 {
     // TODO
+    int index = hash(word);
+    node *cursor;
+    cursor = table[index];
+
+    while(cursor->next != 'NULL')
+    {
+        if (strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
+        cursor = cursor->next;
+    }
     return false;
 }
 
