@@ -88,15 +88,9 @@ bool load(const char *dictionary)
         unsigned int index = hash(buffer);
 
         // Insert node into the hash table
-        if (table[index] == NULL)
-        {
-            table[index] = new;
-        }
-        else
-        {
-           new->next = table[index];
-           table[index] = new;
-        }
+        new->next = table[index];
+        table[index] = new;
+
     }
 
     // Close the dictionary file
