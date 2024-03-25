@@ -4,6 +4,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 #include <strings.h>
 
 #include "dictionary.h"
@@ -65,7 +66,7 @@ bool load(const char *dictionary)
     }
 
     // Read each word in the file
-    while(fscanf(file, "%s", buffer) != 'EOF')
+    while(fscanf(file, "%s", buffer) != EOF)
     {
         node *new = malloc(sizeof(node));
         if (new == NULL)
