@@ -32,7 +32,7 @@ bool check(const char *word)
     node *cursor;
     cursor = table[index];
 
-    while(cursor->next != 'NULL')
+    while(cursor->next != NULL)
     {
         if (strcasecmp(word, cursor->word) == 0)
         {
@@ -68,13 +68,13 @@ bool load(const char *dictionary)
     while(fscanf(file, "%s", buffer) != 'EOF')
     {
         node *new = malloc(sizeof(node));
-        if (new == 'NULL')
+        if (new == NULL)
         {
             return false;
         }
 
         strcpy(new->word, buffer);
-        new->next = 'NULL';
+        new->next = NULL;
         index = hash(buffer);
         new->next = table[index];
         table[index] = new;
@@ -102,7 +102,7 @@ bool unload(void)
         node *cursor = table[i];
         node *tmp;
 
-        while(cursor->next != 'NULL')
+        while(cursor->next != NULL)
         {
             tmp = cursor;
             cursor = tmp->next;
