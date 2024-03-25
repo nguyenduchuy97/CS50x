@@ -73,22 +73,33 @@ bool load(const char *dictionary)
     {
         table[i] = NULL;
     }
-    
+
     // Read each word in the file
     while(fscanf(file, "%s", buffer) != EOF)
     {
         node *new = malloc(sizeof(node));
         if (new == NULL)
         {
+            fclose(file);
             return false;
         }
 
         strcpy(new->word, buffer);
         new->next = NULL;
+
+        // Hash the word to obtain the hash value
         index = hash(buffer);
-        new->next = table[index];
-        table[index] = new;
-        count++;
+
+        // Insert node into the hash table
+        if (table[index] == NULL)
+        {
+            table[index] = new;
+        }
+        else
+        {
+           new->next = table[index];
+           table[index] = new;
+        }
     }
 
     // Close the dictionary file
@@ -100,7 +111,17 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return count;
+    int size = 0;
+    for (int i = 0; i < N; i++)
+    {
+        node *cursor = table[i];
+        while(cursor != NULL)
+        {
+            size++;
+            cursor = cursor->next;
+        }
+    }
+    return size;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
