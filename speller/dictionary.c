@@ -45,9 +45,9 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     unsigned int hash = 0;
-    for (int i = 0, len = strlen(word); i < len; i++)
+    for (int i = 0; word[i] != '\0'; i++)
     {
-        hash = (hash << 2) ^ word[i];
+        hash = (hash << 2) ^ tolower(word[i]);
     }
     return hash % N;
 }
