@@ -1,8 +1,8 @@
 // Implements a dictionary's functionality
 
-#include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <strings.h>
@@ -21,7 +21,6 @@ const unsigned int N = 65536;
 
 // Hash table
 node *table[N];
-
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -55,12 +54,12 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    char buffer[LENGTH +  1];
+    char buffer[LENGTH + 1];
 
     // Open the dictionary file
     FILE *file = fopen(dictionary, "r");
 
-    if(file == NULL)
+    if (file == NULL)
     {
         return false;
     }
@@ -72,7 +71,7 @@ bool load(const char *dictionary)
     }
 
     // Read each word in the file
-    while(fscanf(file, "%s", buffer) != EOF)
+    while (fscanf(file, "%s", buffer) != EOF)
     {
         node *new = malloc(sizeof(node));
         if (new == NULL)
@@ -90,7 +89,6 @@ bool load(const char *dictionary)
         // Insert node into the hash table
         new->next = table[index];
         table[index] = new;
-
     }
 
     // Close the dictionary file
@@ -121,7 +119,7 @@ bool unload(void)
     {
         node *cursor = table[i];
 
-        while(cursor != NULL)
+        while (cursor != NULL)
         {
             node *tmp = cursor;
             cursor = cursor->next;
