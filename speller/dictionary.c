@@ -86,7 +86,7 @@ bool load(const char *dictionary)
         new->next = NULL;
 
         // Hash the word to obtain the hash value
-        index = hash(buffer);
+        int index = hash(buffer);
 
         // Insert node into the hash table
         if (table[index] == NULL)
