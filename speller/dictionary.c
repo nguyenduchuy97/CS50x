@@ -28,15 +28,14 @@ bool check(const char *word)
 {
     // Hash word to obtain hash value
     unsigned int index = hash(word);
-    node *cursor = table[index];
 
-    while(cursor != NULL)
+    for (node *cursor = table[index]; cursor != NULL; cursor = cursor->next)
     {
+        // Compare the word with the current node's word (case-insensitive)
         if (strcasecmp(word, cursor->word) == 0)
         {
             return true;
         }
-        cursor = cursor->next;
     }
     return false;
 }
