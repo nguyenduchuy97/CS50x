@@ -1,4 +1,13 @@
-def pyramid():
+
+def pyramid(space, brick):
+    
+
+
+
+
+
+
+def main():
     height = 0
     while True:
         height = int(input("Height: "))
@@ -11,6 +20,6 @@ def pyramid():
         print((i + 1) * "#")
 
 
-pyramid()
+main()
 
 

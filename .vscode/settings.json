@@ -6,5 +6,6 @@
         "stdlib.h": "c",
         "string.h": "c",
         "dictionary.h": "c"
-    }
+    },
+    "python.REPL.enableREPLSmartSend": false
 }
