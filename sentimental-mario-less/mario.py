@@ -1,4 +1,4 @@
-height = int(input("Height: "))
+height = 0
 
 while(0 < height and height < 9):
     hieght = int(input("Height: "))
