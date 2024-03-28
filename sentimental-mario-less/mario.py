@@ -7,10 +7,9 @@ def pyramid():
 
     for i in range(height):
         for j in range(height):
-            print((height - j) * " ", end="")
-            print((height - j) * "#", end="")
+            print(j * " ", end="")
+            print((height - j) * "#")
 
-        print()
 
 pyramid()
 
