@@ -1,13 +1,15 @@
 height = 0
 while True:
+    # Get input
     height = int(input("Height: "))
-    if height in range(1,9):
+
+    # positive integer between 1 and 8, inclusive.
+    if height in range(1, 9):
         break
 
 for i in range(height):
-    for j in range(height):
-        print((height - j - 1) * " ", end="")
+    # Print spaces to right-align the pyramid
+    print((height - i - 1) * " ", end="")
+
+    # Print '#' characters for the pyramid
     print((i + 1) * "#")
-
-
-
