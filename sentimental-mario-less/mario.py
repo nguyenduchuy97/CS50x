@@ -8,7 +8,8 @@ while True:
         if height in range(1, 9):
             break
     except:
-        
+        continue
+
 for i in range(height):
     # Print spaces to right-align the pyramid
     print((height - i - 1) * " ", end="")
