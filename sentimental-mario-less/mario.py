@@ -1,8 +1,9 @@
-hieght = int(input("Height: "))
+height = int(input("Height: "))
 
-while(0 < hieght and height < 9):
+while(0 < height and height < 9):
     hieght = int(input("Height: "))
     break
 
 for i < len(height):
-    
+    for j < len()
+
