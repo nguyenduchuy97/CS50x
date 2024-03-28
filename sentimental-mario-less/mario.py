@@ -1,5 +1,6 @@
 def pyramid():
-    
-    while(1 > height and height > 8):
+
+    while True:
         height = int(input("Height: "))
+        if height in range()
 
