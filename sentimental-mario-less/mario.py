@@ -6,10 +6,7 @@ while True:
 
 for i in range(height):
     for j in range(height):
-        if j == 0:
-            print("", end="")
-        else:
-            print((height - j) * " ", end="")
+        print((height - j) * " ", end="")
     print((i + 1) * "#")
 
 
