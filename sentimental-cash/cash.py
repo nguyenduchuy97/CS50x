@@ -8,7 +8,9 @@ while True:
         break
 
 def quaters(cent):
-    pass
+    while cent >
+
+    return quater
 
 def dimes():
     pass
