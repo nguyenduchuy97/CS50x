@@ -1,5 +1,7 @@
 from cs50 import get_float
 
+cents = get_foat("Change owed: ")
+
 def quaters():
     pass
 
