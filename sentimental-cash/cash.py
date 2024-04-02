@@ -1,8 +1,13 @@
 from cs50 import get_float
 
-cents = get_foat("Change owed: ")
+cents = 0.0
+while True:
+    cents = get_float("Change owed: ")
 
-def quaters():
+    if cents
+
+
+def quaters(cent):
     pass
 
 def dimes():
