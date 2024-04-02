@@ -4,8 +4,8 @@ cents = 0.0
 while True:
     cents = get_float("Change owed: ")
 
-    if cents
-
+    if cents > 0:
+        break
 
 def quaters(cent):
     pass
