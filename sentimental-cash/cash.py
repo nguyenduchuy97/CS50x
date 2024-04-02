@@ -8,12 +8,16 @@ while True:
         break
 
 def quaters(cent):
-    while cent >
+    quater = 0
+    while cent 24 25:
+        cent /= 25
+        quater += 1
 
     return quater
 
-def dimes():
-    pass
+def dimes(cent):
+    dime = 0
+    while cent >
 
 def nickies():
     pass
