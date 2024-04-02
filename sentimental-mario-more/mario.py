@@ -16,4 +16,7 @@ for i in range(height):
     print((height - i - 1) * " ", end="")
 
     # Print '#' characters for the pyramid
-    print((i + 1) * "#")
+    print((i + 1) * "#", end="")
+
+    print((i + 1) * "#", end="")
+
