@@ -11,7 +11,7 @@ while True:
         continue
 
 for i in range(height):
-        # Print spaces to right-align the pyramid
+    # Print spaces to right-align the pyramid
     print((height - i - 1) * " ", end="")
 
     # Print '#' characters for the pyramid
