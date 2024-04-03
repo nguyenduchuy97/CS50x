@@ -3,23 +3,24 @@ from cs50 import get_float
 coins = 0
 cents = 0.0
 while True:
-    cents = get_float("Change owed: ")
+    dollars = get_float("Change owed: ")
 
     if cents > -1:
         break
+dollars = dollars * 100
 
-while cents > 0:
-    if cents > 24:
-        cents -= 25
+while dollars > 0:
+    if dollars > 24:
+        dollars -= 25
         coins += 1
-    elif cents > 9:
-        cents -= 10
+    elif dollars > 9:
+        dollars -= 10
         coins += 1
-    elif cents > 4:
-        cents -= 5
+    elif dollars > 4:
+        dollars -= 5
         coins += 1
-    elif cents > 0:
-        cents -= 1
+    elif dollars > 0:
+        dollars -= 1
         coins += 1
 
 print(coins)
