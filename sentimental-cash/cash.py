@@ -5,7 +5,7 @@ cents = 0.0
 while True:
     cents = get_float("Change owed: ")
 
-    if cents >= 0:
+    if cents > -1:
         break
 
 while cents > 0:
@@ -22,3 +22,4 @@ while cents > 0:
         cents -= 1
         coins += 1
 
+print(coins)
