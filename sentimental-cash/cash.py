@@ -1,11 +1,11 @@
 from cs50 import get_float
 
 coins = 0
-cents = 0.0
+dollars = 0.0
 while True:
     dollars = get_float("Change owed: ")
 
-    if cents > -1:
+    if dollars > -1:
         break
 dollars = dollars * 100
 
