@@ -5,7 +5,7 @@ sum = 0
 length = 0
 second_digit = 0
 digit = 0
-booll = False
+step = False
 
 number = get_string("Number: ")
 length = len(number)
@@ -17,10 +17,14 @@ while number > 99:
 while number > 0:
     number %= 10
 
-    if booll is True:
+    if step is True:
         digit *= 2
 
         if digit > 9:
             digit = digit % 10 + digit // 10
+
+        sum += digit
+        number //= 10
+        step = not step
 
 
