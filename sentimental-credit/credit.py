@@ -8,4 +8,4 @@ second_digit = 0
 number = get_int("Number: ")
 
 while number > 99:
-    second_digit /= 10
+    second_digit = round(number / 10)
