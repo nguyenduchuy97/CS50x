@@ -9,3 +9,5 @@ number = get_int("Number: ")
 
 while number > 99:
     second_digit = round(number / 10)
+
+length = len(number)
