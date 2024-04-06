@@ -12,5 +12,6 @@ int(number)
 while number > 99:
     second_digit = round(int(number) / 10)
 
-
+while number > 0:
+    
 
