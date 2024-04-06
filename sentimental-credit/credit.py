@@ -12,7 +12,7 @@ length = len(number)
 int(number)
 
 while number > 99:
-    second_digit = round(int(number) / 10)
+    second_digit = rint(number) // 10
 
 while number > 0:
     number %= 10
@@ -21,6 +21,6 @@ while number > 0:
         digit *= 2
 
         if digit > 9:
-            digit = digit % 10 + round(digit / 10)
+            digit = digit % 10 + digit // 10
 
 
