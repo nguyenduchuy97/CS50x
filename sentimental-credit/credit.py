@@ -3,7 +3,7 @@ import re
 
 sum = 0
 length = 0
-second_digit = 0
+two_digit = 0
 digit = 0
 step = False
 
@@ -12,7 +12,7 @@ length = len(number)
 int(number)
 
 while number > 99:
-    second_digit = rint(number) // 10
+    two_digit = number // 10
 
 while number > 0:
     number %= 10
@@ -27,4 +27,4 @@ while number > 0:
         number //= 10
         step = not step
 
-
+sum += digit
