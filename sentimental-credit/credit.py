@@ -5,9 +5,12 @@ sum = 0
 length = 0
 second_digit = 0
 
-number = get_int("Number: ")
+number = get_string("Number: ")
+length = len(number)
+int(number)
 
 while number > 99:
-    second_digit = round(number / 10)
+    second_digit = round(int(number) / 10)
 
-length = len(number)
+
+
