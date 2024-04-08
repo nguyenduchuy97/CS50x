@@ -1,4 +1,5 @@
 from CS50 import get_int
+from CS50 import get_string
 import re
 
 sum = 0
@@ -27,4 +28,14 @@ while number > 0:
         number //= 10
         step = not step
 
-if length == 15
+if length == 15 and (two_digit in [34,37]) and (sum % 10 == 0):
+    print("AMEX")
+
+elif length == 16 and (two_digit in [51, 52, 53, 54,55]) and (sum % 10 == 0):
+    print("MASTERCARD")
+
+elif (length in [13,16]) and (two_digit in range(40,50)) and (sum % 10 == 0):
+    print("VISA")
+
+else:
+    print("INVALID")
