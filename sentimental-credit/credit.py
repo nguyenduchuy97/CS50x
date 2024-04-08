@@ -27,3 +27,4 @@ while number > 0:
         number //= 10
         step = not step
 
+if 
