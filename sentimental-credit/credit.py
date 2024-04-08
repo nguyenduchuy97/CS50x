@@ -1,6 +1,5 @@
-from CS50 import get_int
-from CS50 import get_string
-import re
+from cs50 import get_int
+from cs50 import get_string
 
 sum = 0
 length = 0
