@@ -9,7 +9,7 @@ step = False
 
 number = get_string("Number: ")
 length = len(number)
-int(number)
+number = int(number)
 
 while number > 99:
     two_digit = number // 10
