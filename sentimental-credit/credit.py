@@ -7,9 +7,9 @@ two_digit = 0
 digit = 0
 step = False
 
-number = get_string("Number: ")
-length = len(number)
-number = int(number)
+card = get_string("Number: ")
+length = len(card)
+number = int(card)
 
 while number > 99:
     two_digit = number // 10
