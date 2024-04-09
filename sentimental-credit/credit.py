@@ -3,7 +3,6 @@ from cs50 import get_string
 
 sum = 0
 length = 0
-digit = 0
 step = False
 
 card = get_string("Number: ")
