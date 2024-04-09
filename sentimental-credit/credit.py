@@ -18,7 +18,7 @@ while True:
 
 while number > 0:
 
-    number %= 10
+    digit = number % 10
 
     if step is True:
         digit *= 2
