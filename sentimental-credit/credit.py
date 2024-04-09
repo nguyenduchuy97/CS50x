@@ -29,7 +29,7 @@ while True:
         sum += digit
         number //= 10
         step = not step
-    if number > 0:
+    if number < 1:
         break
 
 if length == 15 and (two_digit in [34,37]) and (sum % 10 == 0):
