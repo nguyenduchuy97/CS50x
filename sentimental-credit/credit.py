@@ -12,7 +12,7 @@ number = int(card)
 two_digit = int(card)
 
 while True:
-    if number > 99:
+    if two_digit > 99:
         break
     two_digit //= 10
 
