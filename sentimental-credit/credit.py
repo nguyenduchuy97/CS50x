@@ -19,7 +19,7 @@ while number > 0:
 
     digit = number % 10
 
-    if step is True:
+    if step == True:
         digit *= 2
 
         if digit > 9:
