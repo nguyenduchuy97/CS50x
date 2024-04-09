@@ -16,7 +16,7 @@ while True:
         break
     two_digit //= 10
 
-while True:
+while number > 0:
 
     number %= 10
 
@@ -29,8 +29,6 @@ while True:
         sum += digit
         number //= 10
         step = not step
-    if number < 1:
-        break
 
 if length == 15 and (two_digit in [34,37]) and (sum % 10 == 0):
     print("AMEX")
