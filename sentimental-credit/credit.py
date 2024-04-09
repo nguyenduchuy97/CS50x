@@ -2,9 +2,7 @@ from cs50 import get_int
 from cs50 import get_string
 
 sum = 0
-length = 0
 step = False
-
 card = get_string("Number: ")
 length = len(card)
 number = int(card)
