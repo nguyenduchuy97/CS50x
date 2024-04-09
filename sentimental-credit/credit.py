@@ -25,9 +25,9 @@ while number > 0:
         if digit > 9:
             digit = digit % 10 + digit // 10
 
-        sum += digit
-        number //= 10
-        step = not step
+    sum += digit
+    number = number // 10
+    step = not step
 
 if length == 15 and (two_digit in [34,37]) and (sum % 10 == 0):
     print("AMEX")
