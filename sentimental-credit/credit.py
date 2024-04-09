@@ -3,18 +3,18 @@ from cs50 import get_string
 
 sum = 0
 length = 0
-two_digit = 0
 digit = 0
 step = False
 
 card = get_string("Number: ")
 length = len(card)
 number = int(card)
+two_digit = int(card)
 
 while True:
     if number > 99:
         break
-    two_digit = number // 10
+    two_digit //= 10
 
 while True:
 
