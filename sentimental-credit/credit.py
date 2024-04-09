@@ -11,10 +11,14 @@ card = get_string("Number: ")
 length = len(card)
 number = int(card)
 
-while number > 99:
+while True:
+    if number > 99:
+        break
     two_digit = number // 10
 
-while number > 0:
+while True:
+    if number > 0:
+        break
     number %= 10
 
     if step is True:
