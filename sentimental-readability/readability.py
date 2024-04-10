@@ -3,7 +3,10 @@ import panda as pd
 
 text = get_string("Text: ")
 length = len(text)
+letters = 0
+words = 0
+sentences = 0
 
 for i in text:
     if text[i] != None:
-        
+
