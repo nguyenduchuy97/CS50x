@@ -16,4 +16,11 @@ for i in text:
         words += 1
     elif text[i] in [".", "!", "?"]:
         sentences += 1
-grade = 0.0588 * () - 0.296 * S - 15.8
+grade = 0.0588 * ((letters / words) * 100) - 0.296 * ((sentences / words) * 100) - 15.8
+
+if grade < 0:
+    print("Before Grade 1")
+elif grade >= 16:
+    print("Grade 16+")
+else:
+    print(f"Grade {grade}")
