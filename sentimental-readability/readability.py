@@ -11,7 +11,7 @@ for i in text:
         break
     elif i.isalpha():
         letters += 1
-    elif i.whitespace():
+    elif i.isspace():
         words += 1
     elif i in [".", "!", "?"]:
         sentences += 1
