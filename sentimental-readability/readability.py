@@ -4,5 +4,4 @@ import panda as pd
 text = get_string("Text: ")
 length = len(text)
 
-while text.notnull():
-    
+for 
