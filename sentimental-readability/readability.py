@@ -9,7 +9,7 @@ sentences = 0
 for i in text:
     if i == None:
         break
-    elif i.ascii_letters():
+    elif i.isalpha():
         letters += 1
     elif i.whitespace():
         words += 1
