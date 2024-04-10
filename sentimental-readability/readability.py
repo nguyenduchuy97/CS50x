@@ -8,16 +8,15 @@ words = 0
 sentences = 0
 
 for i in text:
-    if i == None:
-        break
-    elif i.isalpha():
+    if i.isalpha():
         letters += 1
     elif i.isspace():
         words += 1
     elif i in [".", "!", "?"]:
         sentences += 1
-L = letters / words * 100
-S = sentences / words * 100
+
+L = letters / words * 100.0
+S = sentences / words * 100.0
 grade = 0.0588 * L - 0.296 * S - 15.8
 grade = math.floor(grade)
 
