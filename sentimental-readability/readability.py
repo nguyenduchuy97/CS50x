@@ -1,5 +1,4 @@
 from cs50 import get_string
-import panda as pd
 
 text = get_string("Text: ")
 length = len(text)
@@ -8,7 +7,7 @@ words = 0
 sentences = 0
 
 for i in text:
-    if i == length:
+    if text[i] == length:
         break
     elif text[i].ascii_letters():
         letters += 1
