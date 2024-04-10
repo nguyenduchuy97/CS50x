@@ -1,5 +1,8 @@
 from cs50 import get_string
+import panda as pd
 
 text = get_string("Text: ")
+length = len(text)
 
-while text.isnotnull
+while text.notnull():
+    
