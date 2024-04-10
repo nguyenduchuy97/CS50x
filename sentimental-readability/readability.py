@@ -10,5 +10,8 @@ sentences = 0
 for i in text:
     if text[i] == None:
         break
-    elif text.ascii_letters:
+    elif text.ascii_letters():
         letters += 1
+    elif text.whitespace():
+        words += 1
+    elif 
