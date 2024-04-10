@@ -7,7 +7,7 @@ words = 0
 sentences = 0
 
 for i in text:
-    if i == None:
+    if i.index() == Length:
         break
     elif i.ascii_letters():
         letters += 1
