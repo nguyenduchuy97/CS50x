@@ -18,11 +18,10 @@ for i in text:
 L = letters / words * 100.0
 S = sentences / words * 100.0
 grade = 0.0588 * L - 0.296 * S - 15.8
-grade = math.floor(grade)
 
-if grade < 0:
+if grade < 1:
     print("Before Grade 1")
 elif grade >= 16:
     print("Grade 16+")
 else:
-    print(f"Grade {grade}")
+    print(f"Grade {math.floor(grade)}")
