@@ -4,4 +4,5 @@ import panda as pd
 text = get_string("Text: ")
 length = len(text)
 
-for 
+for i in text:
+    if text[i] !==
