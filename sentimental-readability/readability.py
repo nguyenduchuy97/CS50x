@@ -7,13 +7,13 @@ words = 0
 sentences = 0
 
 for i in text:
-    if text[i] == length:
+    if i == None:
         break
-    elif text[i].ascii_letters():
+    elif i.ascii_letters():
         letters += 1
-    elif text[i].whitespace():
+    elif i.whitespace():
         words += 1
-    elif text[i] in [".", "!", "?"]:
+    elif i in [".", "!", "?"]:
         sentences += 1
 grade = 0.0588 * ((letters / words) * 100) - 0.296 * ((sentences / words) * 100) - 15.8
 
