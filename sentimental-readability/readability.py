@@ -1,5 +1,5 @@
 from cs50 import get_string
-from math import floor
+import math
 
 text = get_string("Text: ")
 length = len(text)
@@ -16,8 +16,10 @@ for i in text:
         words += 1
     elif i in [".", "!", "?"]:
         sentences += 1
-grade = 0.0588 * ((letters / words) * 100) - 0.296 * ((sentences / words) * 100) - 15.8
-truncate(grade)
+L = letters / words * 100
+S = sentences / words * 100
+grade = 0.0588 * L - 0.296 * S - 15.8
+grade = math.floor(grade)
 
 if grade < 0:
     print("Before Grade 1")
