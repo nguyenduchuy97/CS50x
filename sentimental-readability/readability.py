@@ -16,3 +16,4 @@ for i in text:
         words += 1
     elif text[i] in [".", "!", "?"]:
         sentences += 1
+grade = 0.0588 * () - 0.296 * S - 15.8
