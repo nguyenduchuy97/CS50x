@@ -5,4 +5,5 @@ text = get_string("Text: ")
 length = len(text)
 
 for i in text:
-    if text[i] not None:
+    if text[i] != None:
+        
