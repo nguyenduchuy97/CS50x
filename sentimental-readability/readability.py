@@ -16,6 +16,7 @@ for i in text:
     elif i in [".", "!", "?"]:
         sentences += 1
 grade = 0.0588 * ((letters / words) * 100) - 0.296 * ((sentences / words) * 100) - 15.8
+grade.round()
 
 if grade < 0:
     print("Before Grade 1")
