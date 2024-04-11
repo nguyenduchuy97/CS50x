@@ -10,7 +10,7 @@ sentences = 0
 for i in text:
     if i.isalpha():
         letters += 1
-    elif i.space():
+    elif i.isspace():
         words += 1
     elif i in [".", "!", "?"]:
         sentences += 1
