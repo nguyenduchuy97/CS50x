@@ -25,4 +25,4 @@ if grade < 1:
 elif grade >= 16:
     print("Grade 16+")
 else:
-    print(f"Grade {math.floor(grade)}")
+    print(f"Grade {round(grade)}")
