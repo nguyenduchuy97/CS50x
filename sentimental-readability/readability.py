@@ -15,9 +15,9 @@ for i in text:
     elif i in [".", "!", "?"]:
         sentences += 1
 
-L = letters / words * 100.0
-S = sentences / words * 100.0
-grade = 0.0588 * L - 0.296 * S - 15.8
+L = (letters / words) * 100.0
+S = (sentences / words) * 100.0
+grade = (0.0588 * L) - (0.296 * S) - 15.8
 
 if grade < 1:
     print("Before Grade 1")
