@@ -4,14 +4,12 @@ import math
 text = get_string("Text: ")
 length = len(text)
 letters = 0
-words = 0
+words = len(text.split())
 sentences = 0
 
 for i in text:
     if i.isalpha():
         letters += 1
-    elif i.isspace():
-        words += 1
     elif i in [".", "!", "?"]:
         sentences += 1
 
