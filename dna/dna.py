@@ -6,9 +6,8 @@ def main():
 
     # TODO: Check for command-line usage
     if sys.argc != 2:
-        print(f"Usage: {sys.argv[0]} ")
+        print(f"Usage: {sys.argv[0]} csv_file_name text_file_name")
         break
-
 
     # TODO: Read database file into a variable
 
