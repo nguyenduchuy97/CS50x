@@ -18,7 +18,6 @@ def main():
             rows.append(row)
 
     # TODO: Read DNA sequence file into a variable
-    seq = ""
     with open(sys.argv[2], "r") as dna:
         seq = dns.read()
 
