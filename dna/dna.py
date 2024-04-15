@@ -5,7 +5,7 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    if sys.argc != 2:
+    if sys.argv[2] == "" or sys.argv[2] == None:
         print(f"Usage: {sys.argv[0]} csv_file_name text_file_name")
         return
 
