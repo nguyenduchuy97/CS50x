@@ -30,9 +30,10 @@ def main():
     for i in range(len(rows)):
         num.append(longest_match(seq, lst[i]))
     print(num)
-    # TODO: Check database for matching profiles
-    #for i in range(len(rows)):
 
+    # TODO: Check database for matching profiles
+    for i in range(len(rows)):
+        if i
 
     return
 
