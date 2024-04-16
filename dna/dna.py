@@ -33,9 +33,12 @@ def main():
         for j in range(len(rows)):
             print(num[j] == rows[i][lst[j]])
             if num[j] == rows[i][lst[j]]:
-                print(num[j] == rows[i][lst[j]])
-                print(rows[i]["name"])
-                return
+                continue
+            else:
+                break
+            print(num[j] == rows[i][lst[j]])
+            print(rows[i]["name"])
+            return
 
     print("No match")
 
