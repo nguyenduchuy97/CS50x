@@ -18,10 +18,10 @@ def main():
             rows.append(row)
 
     # TODO: Read DNA sequence file into a variable
-    seq = ""
     with open(sys.argv[2], "r") as dna:
         seq = dna.read()
     print(seq)
+    
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
