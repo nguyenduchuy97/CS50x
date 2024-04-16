@@ -32,14 +32,11 @@ def main():
     for i in range(len(rows)):
         for j in range(len(rows)):
             print(num[j] == rows[i][lst[j]])
-            if num[j] == rows[i][lst[j]]:
-                continue
-            else:
+            if num[j] != rows[i][lst[j]]:
                 break
             print(num[j] == rows[i][lst[j]])
             print(rows[i]["name"])
-            return
-
+        
     print("No match")
 
     return
