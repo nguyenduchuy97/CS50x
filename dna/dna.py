@@ -23,6 +23,7 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     lst = list(rows[0])
+    lst.remove("name")
     print(f"Lst {lst}")
     num = []
     print(f"Length {len(rows)}")
