@@ -33,7 +33,11 @@ def main():
 
     # TODO: Check database for matching profiles
     for i in range(len(rows)):
-        if num[i] == rows[i][lst[i]]
+        if num[i] == rows[i][lst[i]]:
+            print(rows[i]["name"])
+            break
+
+    print("No match")
 
     return
 
