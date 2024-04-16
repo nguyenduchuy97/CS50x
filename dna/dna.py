@@ -29,7 +29,8 @@ def main():
         if i == 0:
             continue
         print(i)
-        num[i] = longest_match(seq, lst[i])
+        num.append(longest_match(seq, lst[i]))
+
     # TODO: Check database for matching profiles
     #for i in range(len(rows)):
 
