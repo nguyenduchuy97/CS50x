@@ -25,12 +25,11 @@ def main():
     lst = list(rows[0])
     print(lst)
     num = []
+    print(f"Length {len(rows)}")
+    
     for i in range(len(rows)):
-        if i == 0:
-            continue
-        print(i)
         num.append(longest_match(seq, lst[i]))
-
+    print(num)
     # TODO: Check database for matching profiles
     #for i in range(len(rows)):
 
