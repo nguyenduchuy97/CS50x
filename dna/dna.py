@@ -33,7 +33,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for i in range(len(rows)):
-        if i
+        if num[i] == rows[i]
 
     return
 
