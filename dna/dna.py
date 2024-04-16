@@ -35,9 +35,10 @@ def main():
     # TODO: Check database for matching profiles
     for i in range(len(rows)):
         print(num == rows[i])
-        if num == rows[i]:
-            print(rows[i]["name"])
-            break
+        for j in range(1,len(rows)):
+            if num[i] == rows[i][lst[j]]:
+                print(rows[i]["name"])
+                break
 
     print("No match")
 
