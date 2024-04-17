@@ -30,6 +30,9 @@ def main():
 
     # TODO: Check database for matching profiles
     for i in range(len(rows)):
+        for j in range(len(rows)):
+            if num[j] != rows[i][lst[j]]:
+                break
 
     print("No match")
 
