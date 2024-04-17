@@ -29,14 +29,12 @@ def main():
         num.append(longest_match(seq, lst[i]))
 
     # TODO: Check database for matching profiles
-    match = False
+    
     for i in range(len(rows)):
         for j in range(len(rows)):
             if num[j] != rows[i][lst[j]]:
                 break
 
-    if match == True:
-        print
     print("No match")
 
     return
