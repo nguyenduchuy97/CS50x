@@ -5,9 +5,12 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    if sys.argv[2] == "" or sys.argv[2] == None:
+    if len(sys.argv) != 3 or not all(sys.argv[1:]):
         print(f"Usage: {sys.argv[0]} csv_file_name text_file_name")
         return
+
+    csv_file = argv[1]
+    text_file = argv[2]
 
     # TODO: Read database file into a variable
     rows = []
