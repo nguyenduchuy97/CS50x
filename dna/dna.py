@@ -34,22 +34,20 @@ def main():
     for row in rows:
         for key, value in row.items():
             if key != "name":
-                print(f"Here is the value {key}")
                 longest_matches[key] = longest_match(dna_sequence, key)
 
     # TODO: Check database for matching profiles
-    n = 0
-    for i in range(len(rows)):
-        for j in range(len(rows)):
-            if num[j] != rows[i][lst[j]]:
-                n += 1
-        if n == len(rows):
-            print(rows[i]["name"])
+    for row in rows:
+        match = True
+        for key, value in row.items():
+            if key != "name" and longest_matches[key] != int(value):
+                match = False
+                break
+        if match:
+            print(row["name"])
             return
 
     print("No match")
-    return
-
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
