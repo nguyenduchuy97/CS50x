@@ -32,10 +32,10 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     longest_matches = {}
     for row in rows:
-        for key, value in row:
+        for key, value in row.items():
             if key != "name":
-                print(value)
-                longest_matches[key] = longest_match(dna_sequence, value)
+                print(f"Here is the value {key}")
+                longest_matches[key] = longest_match(dna_sequence, key)
 
     # TODO: Check database for matching profiles
     n = 0
