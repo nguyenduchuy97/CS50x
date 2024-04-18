@@ -13,10 +13,10 @@ def main():
     csv_file = sys.argv[1]
     text_file = sys.argv[2]
 
-    # Check if files exist
+    """{} Check if files exist
     if os.path.isfile(csv_file) or os.path.isfile(text_file):
         print("One of both files do not exist.")
-        return
+        return"""
 
     # TODO: Read database file into a variable
     rows = []
