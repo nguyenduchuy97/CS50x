@@ -10,14 +10,6 @@ def main():
         print(f"Usage: {sys.argv[0]} csv_file_name text_file_name")
         return
 
-    csv_file = sys.argv[1]
-    text_file = sys.argv[2]
-
-    """{} Check if files exist
-    if os.path.isfile(csv_file) or os.path.isfile(text_file):
-        print("One of both files do not exist.")
-        return"""
-
     # TODO: Read database file into a variable
     rows = []
     with open(sys.argv[1]) as file:
@@ -48,6 +40,7 @@ def main():
             return
 
     print("No match")
+
 
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
