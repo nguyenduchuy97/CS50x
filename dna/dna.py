@@ -10,8 +10,8 @@ def main():
         print(f"Usage: {sys.argv[0]} csv_file_name text_file_name")
         return
 
-    csv_file = argv[1]
-    text_file = argv[2]
+    csv_file = sys.argv[1]
+    text_file = sys.argv[2]
 
     # Check if files exist
     if os.path.isfile(csv_file) or os.path.isfile(text_file):
@@ -34,6 +34,7 @@ def main():
     for row in rows:
         for key, value in row:
             if key != "name":
+                print(value)
                 longest_matches[key] = longest_match(dna_sequence, value)
 
     # TODO: Check database for matching profiles
