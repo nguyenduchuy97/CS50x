@@ -27,15 +27,14 @@ def main():
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2], "r") as dna:
-        seq = dna.read()
+        dna_sequence = dna.read()
 
     # TODO: Find longest match of each STR in DNA sequence
     longest_matches = {}
-    
-    num = []
-
-    for i in range(len(rows)):
-        num.append(longest_match(seq, lst[i]))
+    for row in rows:
+        for key, value in row:
+            if key != "name":
+                longest_matches[key] = longest_match(dna_sequence, value)
 
     # TODO: Check database for matching profiles
     n = 0
