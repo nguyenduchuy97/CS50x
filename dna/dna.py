@@ -30,8 +30,8 @@ def main():
         seq = dna.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    lst = list(rows[0])
-    lst.remove("name")
+    longest_matches = {}
+    
     num = []
 
     for i in range(len(rows)):
