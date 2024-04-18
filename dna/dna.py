@@ -1,5 +1,6 @@
 import csv
 import sys
+import os
 
 
 def main():
@@ -11,6 +12,11 @@ def main():
 
     csv_file = argv[1]
     text_file = argv[2]
+
+    # Check if files exist
+    if os.path.isfile(csv_file) or os.path.isfile(text_file):
+        print("One of both files do not exist.")
+        return
 
     # TODO: Read database file into a variable
     rows = []
