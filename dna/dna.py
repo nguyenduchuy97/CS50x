@@ -36,7 +36,6 @@ def main():
             if num[j] != rows[i][lst[j]]:
                 n += 1
         if n == len(rows):
-            print(n)
             print(rows[i]["name"])
             return
 
