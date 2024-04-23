@@ -16,4 +16,10 @@ WHERE id =
             AND birth = "1958"
         )
     )
+)
+EXCEPT id =
+(
+    SELECT id
+    FROM people
+    WHERE name = "Kevin Bacon"
 );
