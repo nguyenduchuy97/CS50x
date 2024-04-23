@@ -2,9 +2,9 @@ SELECT name
 FROM people
 WHERE id IN
 (
-    SELECT person_id
+    SELECT DISTINCT person_id
     FROM stars
-    WHERE movie_id =
+    WHERE movie_id IN
     (
         SELECT id
         FROM movies
@@ -21,10 +21,11 @@ WHERE id IN
             )
         )
     )
-)
-AND id !=
-(
-    SELECT id
-    FROM people
-    WHERE name = "Kevin Bacon"
+    AND person_id !=
+    (
+        SELECT id
+        FROM people
+        WHERE name = "Kevin Bacon"
+        AND birth = "1958"
+    )
 );
