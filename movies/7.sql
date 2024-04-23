@@ -1,4 +1,4 @@
-SELECT m.title, r.rating
+SELECT m.title AS movie_title, r.rating AS movie_rating
 FROM movies AS m
 JOIN ratings AS r
 ON m.id = r.movie_id
