@@ -3,4 +3,5 @@ FROM movies
 JOIN ratings
 ON movies.id = ratings.movie_id
 WHERE movies.year = "2010"
-ORDER BY ratings.rating DESC;
+ORDER BY ratings.rating DESC
+OR ORDER BY movies.title;
