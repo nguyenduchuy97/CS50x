@@ -1,6 +1,6 @@
 SELECT name
 FROM people
-WHERE id =
+WHERE id IN
 (
     SELECT person_id
     FROM stars
@@ -8,11 +8,11 @@ WHERE id =
     (
         SELECT id
         FROM movies
-        WHERE id =
+        WHERE id IN
         (
             SELECT movie_id
             FROM stars
-            WHERE person_id =
+            WHERE person_id IN
             (
                 SELECT id
                 FROM people
@@ -22,7 +22,7 @@ WHERE id =
         )
     )
 )
-EXCEPT id =
+AND id !=
 (
     SELECT id
     FROM people
