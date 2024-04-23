@@ -6,6 +6,8 @@ WHERE id =
     FROM stars
     WHERE movie_id =
     (
-        SELECT
+        SELECT id
+        FROM movies
+        WHERE 
     )
 )
