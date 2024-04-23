@@ -8,4 +8,4 @@ JOIN ratings
 ON ratings.movie_id = movies.id
 WHERE people.name
 LIKE "%Chadwick Boseman%"
-AND 
+AND ratings.rating
