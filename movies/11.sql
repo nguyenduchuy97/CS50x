@@ -6,4 +6,6 @@ JOIN people
 ON people.id = stars.person_id
 JOIN ratings
 ON ratings.movie_id = movies.id
-WHERE (SELECT )
+WHERE people.name
+LIKE "%Chadwick Boseman%"
+AND 
