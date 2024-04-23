@@ -1,3 +1,8 @@
 SELECT name
 FROM people
-WHERE id = (SELECT )
+JOIN directors
+ON people.id = directors.person_id
+JOIN movies
+ON movies.id = directors.movie_id
+JOIN ratings
+ON ratings.
