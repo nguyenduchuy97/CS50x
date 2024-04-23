@@ -8,5 +8,9 @@ WHERE id =
     (
         SELECT movie_id
         FROM ratings
+        WHERE movie_id =
+        (
+            SELECT
+        )
     )
 )
