@@ -1,0 +1,12 @@
+1. If songs.db contains the top 100 songs of one listener from 2018, and we characterize their audio aura based on the average energy, valence, and danceability of those songs, we would essentially be capturing the overall mood and vibe of the music they listened to throughout the year.
+For example, if the average energy is high, it might suggest that the listener enjoys more energetic and upbeat music. A high valence would indicate that the listener's music selection tends to be positive and uplifting, while high danceability implies a preference for music that is easy to dance to.
+So, based on these characteristics, we could characterize the listener's audio aura as being lively, positive, and danceable. This suggests that they likely enjoy music that is energetic, uplifting, and suitable for dancing or mood enhancement.
+
+2. However, this method might not be very representative of the listener because it only considers three specific musical attributes (energy, valence, and danceability) and averages them across the entire top 100 song list. This approach overlooks the diversity and complexity of musical tastes and emotional responses.
+A better way to calculate the audio aura could involve considering a wider range of musical features and their interactions. For example:
++ Genre Analysis: We take into account the diversity of genres represented in the listener's top songs. Different genres evoke different emotions and moods, so analyzing genre distribution could provide a more nuanced understanding of the listener's preferences.
++ Lyric Analysis: Analyze the lyrical content of the songs to capture themes and emotional narratives. This could involve sentiment analysis to understand the overall emotional tone conveyed by the lyrics.
++ Temporal Analysis: Consider how the listener's musical preferences evolve over time, such as seasonal trends or changes in mood throughout the year. This could involve analyzing trends in music tempo, key, or instrumentation.
++ Personalization: Take into account the listener's individual preferences and context, such as their listening habits, user-generated playlists, or explicit feedback on song preferences.
+
+I think by incorperate those additional factors. We can create more comprohensive  and personalized understanding or the listener's audio aura, captureing the richness and complexity of their musical experiences throughout the year.
