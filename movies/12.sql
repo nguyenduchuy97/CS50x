@@ -10,7 +10,7 @@ WHERE id =
     FROM people
     WHERE name = "Bradley Cooper"
     )
-    AND persond_id =
+    AND person_id =
     (
         SELECT id
         FROM people
