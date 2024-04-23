@@ -1,7 +1,7 @@
-SELECT m.title AS movie_title, r.rating AS movie_rating
-FROM movies AS m
-JOIN ratings AS r
-ON m.id = r.movie_id
-WHERE m.year = "2010"
-AND r.rating != 0
-ORDER BY r.rating DESC;
+SELECT movies.title, ratings.rating
+FROM movies
+JOIN ratings
+ON movies.id = ratings.movie_id
+WHERE movies.year = "2010"
+AND ratings.rating != 0
+ORDER BY ratings.rating DESC;
