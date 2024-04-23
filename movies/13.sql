@@ -6,4 +6,5 @@ JOIN movies
 ON movies.id = stars.movie_id
 JOIN ratings
 ON ratings.movie_id = movies.id
-WHERE 
+WHERE ratings.rating = movies.id
+AND people.name
