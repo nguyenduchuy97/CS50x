@@ -9,6 +9,6 @@ WHERE id =
     SELECT id
     FROM people
     WHERE name = "Bradley Cooper"
-    OR name = "Jennifer Lawrence"
+    AND name = "Jennifer Lawrence"
     )
 );
