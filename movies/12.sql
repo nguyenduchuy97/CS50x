@@ -2,13 +2,13 @@ SELECT title
 FROM movies
 WHERE id =
 (
-    SELECT person_id
+    SELECT movie_id
     FROM stars
-    WHERE
+    WHERE person_id =
     (
-    SELECT name
+    SELECT id
     FROM people
     WHERE name = "Bradley Cooper"
     OR name = "Jennifer Lawrence"
     )
-)
+);
