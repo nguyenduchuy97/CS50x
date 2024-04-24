@@ -8,3 +8,4 @@ JOIN ratings
 ON ratings.movie_id = movies.id
 WHERE ratings.rating >= 9.0
 AND directors.person_id = people.id;
+
