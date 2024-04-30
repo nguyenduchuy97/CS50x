@@ -24,7 +24,7 @@ AND month = 7 AND day = 28 AND duration < 60)
 AND passport_number
 IN (SELECT passport_number FROM passengers WHERE flight_id
 IN (SELECT id FROM flights WHERE year = 2023 AND month = 7
-AND day = 29 AND hour = 8 AND minute = 20));
+AND day = 29 ORDER BY hour, minute LIMIT 1));
 
 -- Find the ACCOMPLICE based on the thief was found.
 SELECT * FROM people WHERE phone_number
