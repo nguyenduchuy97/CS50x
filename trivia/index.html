@@ -8,30 +8,13 @@
         <script>
             // TODO: Add code to check answers to questions
             document.addEventListener('DOMContentLoaded', function(){
-            let correct = document.QuerySelector('.correct');
-            correct.addEventListener('click', function(){
-                correct.style.backgroundColor('Green');
-                document.QuerySelector('#feedback1').innerHTML('Correct!');
-            });
+            let corrects = document.querySelectorAll('.correct');
+            for(i = 0; i < corrects.length; i++){
+                corrects[i].addEventListener('click', function(){
+                    
+                });
+            }
 
-            let incorrect = document.QuerySelector('.incorrect');
-            incorrect.addEventListener('click', function(){
-                incorrect.style.backgroundColor('red');
-                document.QuerySelector('feedback1').innerHTML('Incorrect!');
-            });
-
-            let check = document.QuerySelector('#check');
-            let answer = document.QuerySelector('#answer');
-            check.addEventListener('click', function(){
-                if(answer = "Switzerland"){
-                    document.QuerySelector('feedback2').innerHTML('Correct!');
-                    document.QuerySelector('feedback2').style.backgroundColor('green');
-                }
-                else{
-                    document.QuerySelector('feedback2').innerHTML('Incorrect!');
-                    document.QuerySelector('feedback2').style.backgroundColor('red');
-                }
-            });
             });
         </script>
     </head>
