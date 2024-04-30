@@ -27,12 +27,12 @@
             querySelector('#check').addEventListener('click', function(){
                 let input = document.querySelector('input');
                 if(input.value === 'Switzerland'){
-                    document.querySelector('.feedback').style.backgroundColor('Green');
-                    document.querySelector('.feedback').innerHTML = 'Correct!';
+                    input.style.backgroundColor('Green');
+                    input.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
                 }
                 else{
-                    document.querySelector('.feedback').style.backgroundColor('Red');
-                    document.querySelector('.feedback').innerHTML = 'Incorrect!';
+                    input.style.backgroundColor('Red');
+                    input.parentElement.querySelector('.feedback').innerHTML = 'Incorrect!';
                 }
             });
             });
