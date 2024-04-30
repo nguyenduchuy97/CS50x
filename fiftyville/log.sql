@@ -26,7 +26,7 @@ AND month = 7 AND day = 28 AND duration < 60);
 
 -- Based on the results I conclude that the theif actually in the phone call.
 -- So I seek for the receiver of the phone call.
-SELECT * FROM phone_calls WHERE caller = "(130) 555-0289"
-AND year = 2023 AND month = 7 AND day = 28 AND duration < 60;
+SELECT * FROM people WHERE phone_number =
+(SELECT reciever FROM phone_calls WHERE caller = "(130) 555-0289"
+AND year = 2023 AND month = 7 AND day = 28 AND duration < 60);
 
--- 
