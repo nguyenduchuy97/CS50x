@@ -62,5 +62,9 @@ input[type="text"]:hover {
 }
 
 .correct {
+    background-color: green;
+}
+
+.incorrect {
     background-color: red;
 }
