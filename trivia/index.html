@@ -11,7 +11,7 @@
             let corrects = document.querySelectorAll('.correct');
             for(let i = 0; i < corrects.length; i++){
                 corrects[i].addEventListener('click', function(){
-                    corrects[i].style.backgroundColor('Green');
+                    corrects[i].style.backgroundColor = 'Green';
                     corrects[i].parentElement.querySelector('.feedback').innerHTML = 'Correct!';
                 });
             }
@@ -19,7 +19,7 @@
             let incorrects = document.querySelectorAll('.incorrect');
             for(let i = 0; i < incorrects.length; i++){
                 incorrects[i].addEventListener('click', function(){
-                    incorrects[i].style.backgroundColor('Red');
+                    incorrects[i].style.backgroundColor = 'Red';
                     incorrects[i].parentElement.querySelector('.feedback2').innerHTML = 'Incorrect';
                 });
             }
@@ -27,11 +27,11 @@
             querySelector('#check').addEventListener('click', function(){
                 let input = document.querySelector('input');
                 if(input.value === 'Switzerland'){
-                    input.style.backgroundColor('Green');
+                    input.style.backgroundColor = 'Green';
                     input.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
                 }
                 else{
-                    input.style.backgroundColor('Red');
+                    input.style.backgroundColor = 'Red';
                     input.parentElement.querySelector('.feedback').innerHTML = 'Incorrect!';
                 }
             });
