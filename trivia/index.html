@@ -16,7 +16,7 @@
                 });
             }
 
-            let incorrects = document.querySelector('.incorrect');
+            let incorrects = document.querySelectorAll('.incorrect');
             for(i = 0; i < incorrects.length; i++){
                 incorrects[i].addEventListener('click', function(){
                     incorrects[i].style.backgroundColor('Red');
