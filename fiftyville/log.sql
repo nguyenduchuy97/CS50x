@@ -1,7 +1,9 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
--- Find the ID of the airport where the original place of the theft.
-SELECT id, abbreviation, full_name, city FROM airports;
+-- First looking for a crime scene report that matches the date and the location of the crime.
+SELECT * FROM crime_scene_reports WHERE month = 7 AND day = 28;
 
--- Find the origin airport
-SELECT * FROM flights WHERE origin_airport_id = 8 AND day = 28;
+-- See the interview with three transcripts of witnesses.
+SELECT * FROM interviews WHERE year = 2023 AND month = 7 AND day = 28;
+
+-- See 
