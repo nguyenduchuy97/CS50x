@@ -6,27 +6,27 @@ SELECT * FROM crime_scene_reports WHERE month = 7 AND day = 28;
 -- See the interview with three transcripts of witnesses.
 SELECT * FROM interviews WHERE year = 2023 AND month = 7 AND day = 28;
 
--- See Bekery security logs as Ruth have said.
-SELECT * FROM people WHERE license_plate =
-(SELECT license_plate FROM bakery_security_logs
-WHERE month = 7 AND day = 28 AND hour = 10 AND minute > 15
-AND minute < 25 AND activity = "exit");
 
--- See the ATM transaction on Leggett Street
-SELECT * FROM people WHERE id =
-(SELECT person_id FROM bank_accounts WHERE account_number =
-(SELECT account_number FROM atm_transactions WHERE year = 2023
+-- Select Bekery security logs as Ruth have said.
+SELECT * FROM people WHERE license_plate IN
+(SELECT license_plate FROM bakery_security_logs WHERE month = 7
+AND day = 28 AND hour = 10 AND minute > 5 AND minute < 25 AND activity = "exit")
+-- Select the ATM transaction on Leggett Street
+AND id IN (SELECT person_id FROM bank_accounts WHERE account_number
+IN (SELECT account_number FROM atm_transactions WHERE year = 2023
 AND month = 7 AND day = 28 AND atm_location = "Leggett Street"
-AND transaction_type = "withdraw"));
-
--- See the phone calls logs
-SELECT * FROM people WHERE phone_number =
+AND transaction_type = "withdraw"))
+-- Select the phone calls logs
+AND phone_number IN
 (SELECT caller FROM phone_calls WHERE year = 2023
-AND month = 7 AND day = 28 AND duration < 60);
+AND month = 7 AND day = 28 AND duration < 60)
+-- Select the earliest flight on the next day of the theft.
+AND passport_number
+IN (SELECT passport_number FROM passengers WHERE flight_id
+IN (SELECT id FROM flights WHERE year = 2023 AND month = 7
+AND day = 29 AND hour = 8 AND minute = 20));
 
--- Based on the results I conclude that the theif actually in the phone call.
--- So I seek for the receiver of the phone call.
-SELECT * FROM people WHERE phone_number =
-(SELECT reciever FROM phone_calls WHERE caller = "(130) 555-0289"
+-- Find the ACCOMPLICE based on the thief was found.
+SELECT * FROM people WHERE phone_number
+IN (SELECT receiver FROM phone_calls WHERE caller = "(367) 555-5533"
 AND year = 2023 AND month = 7 AND day = 28 AND duration < 60);
-
