@@ -7,17 +7,21 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            function checker1()
-            {
+            document.addEventListener('DOMContentLoaded', function(){
+            let correct = document.QuerySelector('.correct');
+            correct.addEventListener('click', function(){
+                correct.style.backgroundColor('Green');
+                document.QuerySelector('#feedback1').innerHTML('Correct!');
+            });
 
-            }
-            function checker2()
-            {
-                if (document.querySelector(#answer) = "Switzerland")
-                {
+            let incorrect = document.QuerySelector('.incorrect');
+            incorrect.addEventListener('click', function(){
+                incorrect.style.backgroundColor('red');
+                document.QuerySelector('feedback1').innerHTML('Incorrect!');
+            });
 
-                }
-            }
+            let answer
+            });
         </script>
     </head>
     <body>
@@ -52,7 +56,7 @@
                 <button id="check">Check Answer</button>
 
                 <p id="feedback2"></p>
-                
+
             </div>
         </div>
     </body>
