@@ -35,4 +35,5 @@ input[type="text"]:hover {
     font-size: large;
     text-align: left;
     text-indent: 20px;
+    letter-spacing: 1px;
 }
