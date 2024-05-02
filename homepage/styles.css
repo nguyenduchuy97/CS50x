@@ -36,5 +36,8 @@ input[type="text"]:hover {
     text-align: left;
     text-indent: 20px;
     letter-spacing: 1px;
-    
+}
+
+.intro p {
+    text-align: justify;
 }
