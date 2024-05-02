@@ -34,6 +34,6 @@ body {
 /* Interests.html */
 
 .video {
-    float: right;
-    margin-left: 20px;
+    display: flex;
+    justify-content: flex-end;
 }
