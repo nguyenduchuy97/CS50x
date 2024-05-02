@@ -32,6 +32,7 @@ input[type="text"]:hover {
     background-color: #ff5ec0;
     color: #ffff00;
     font-family: "Lucida Handwriting", Cursive;
+    font-size: 15px;
     margin-bottom: 2rem;
     padding: 2rem 1rem;
     text-align: left;
