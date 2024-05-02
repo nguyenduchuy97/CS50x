@@ -33,3 +33,7 @@ body {
 
 /* Interests.html */
 
+.video {
+    float: right;
+    margin-left: 20px;
+}
