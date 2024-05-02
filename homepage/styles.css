@@ -33,4 +33,5 @@ input[type="text"]:hover {
     font-family: Georgia, Serif;
     font-size: large;
     text-align: left;
+    text-indent: 20px;
 }
