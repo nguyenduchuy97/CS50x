@@ -1,32 +1,4 @@
 
-/* CSS for the navigation bar */
-.navbar {
-    overflow: hidden;
-    background-color: #333; /* Background color of the navbar */
-  }
-
-  /* Links inside the navbar */
-.navbar a {
-    float: left;
-    display: inline;
-    color: white;
-    text-align: center;
-    padding: 14px 20px; /* Adjust padding as needed */
-    text-decoration: none;
-  }
-
-  /* Change background color of navbar on hover */
-.navbar a:hover {
-    background-color: #6565;
-    color: black;
-  }
-
-  /* Active/current link */
-.navbar a.active {
-    background-color: #4CAF50; /* Color for active link */
-    color: white;
-  }
-
 /* Index.html */
 body {
     background-color: #ffcccc;
@@ -69,15 +41,12 @@ body {
     font-size: large;
     text-indent: 20px;
     letter-spacing: 1px;
-    flex: 1;
-}
-#container {
-  display: flex;
-  justify-content: space-between;
+
 }
 
 
 #video {
     display: flex;
-    justify-content: space-between;;
+    justify-content: center;
+    position
 }
