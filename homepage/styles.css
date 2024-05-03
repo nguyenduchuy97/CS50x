@@ -6,7 +6,7 @@
   }
 
   /* Links inside the navbar */
-  .navbar a {
+.navbar a {
     float: left;
     display: inline;
     color: white;
@@ -16,13 +16,13 @@
   }
 
   /* Change background color of navbar on hover */
-  .navbar a:hover {
+.navbar a:hover {
     background-color: #6565;
     color: black;
   }
 
   /* Active/current link */
-  .navbar a.active {
+.navbar a.active {
     background-color: #4CAF50; /* Color for active link */
     color: white;
   }
