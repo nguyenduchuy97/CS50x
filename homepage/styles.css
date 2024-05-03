@@ -41,15 +41,10 @@ body {
     font-size: large;
     text-indent: 20px;
     letter-spacing: 1px;
-
 }
 
 
 #videos {
-    width: 200px;
-    height: 400px;
-    object-fit: enable;
-    object-position: 5px 10%;
-    border: 5px solid red;
-    position: 
+  display: flex;
+  justify-content: flex-end;
 }
