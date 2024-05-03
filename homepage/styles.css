@@ -69,11 +69,7 @@ body {
     font-size: large;
     text-indent: 20px;
     letter-spacing: 1px;
-    border: 1px #1d0000;
-    margin-top: 1px;
-    margin-bottom: 72px;
-    margin-right: 100px;
-    margin-left: 1px;
+    flex: 1;
 }
 
 
