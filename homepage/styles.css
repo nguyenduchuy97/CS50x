@@ -8,11 +8,11 @@
   /* Links inside the navbar */
   .navbar a {
     float: left;
-    display: block;
+    display: inline;
     color: white;
     text-align: center;
     padding: 14px 20px; /* Adjust padding as needed */
-    text-decoration: none;
+    text-decoration: overline;
   }
 
   /* Change background color of navbar on hover */
