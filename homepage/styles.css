@@ -71,6 +71,10 @@ body {
     letter-spacing: 1px;
     flex: 1;
 }
+#container {
+  display: flex;
+  justify-content: space-between;
+}
 
 
 #video {
