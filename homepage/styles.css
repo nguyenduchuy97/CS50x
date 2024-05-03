@@ -1,19 +1,24 @@
 /* Navigation bar*/
 
 .topnav {
-  background-color: #333;
+  background-color: #ffff00;
   overflow: hidden;
 }
 
 .topnav a {
   float: left; /* Float the links to the left */
   display: block; /* Display the links as block elements */
-  color: #f2f2f2; /* Text color of the links */
+  color: #ff0000; /* Text color of the links */
   text-align: center; /* Center-align the text within the links */
-  padding: 10px 20px; /* Add padding to the links */
+  padding: 1px 10px; /* Add padding to the links */
   text-decoration: none; /* Remove underline from the links */
   height: 40px; /* Set height of the links */
   line-height: 40px; /* Center-align text vertically */
+  family-font:'ABeeZee';
+  font-size: 20px;
+
+
+
 }
 
 /* Change color of links on hover */
@@ -39,7 +44,7 @@
 }
 
 .intro {
-    background-color: #1d0000;
+    background-color: #00ff00;
     color: #ffff00;
     font-family: Georgia, Serif;
     font-size: large;
