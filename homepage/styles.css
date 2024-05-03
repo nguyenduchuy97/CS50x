@@ -33,6 +33,16 @@ body {
 
 /* Interests.html */
 
+.intro-interest {
+    background-color: #1d0000;
+    color: #ffff00;
+    font-family: Georgia, Serif;
+    font-size: large;
+    text-indent: 20px;
+    letter-spacing: 1px;
+}
+
+
 .video {
     display: flex;
     justify-content: flex-end;
