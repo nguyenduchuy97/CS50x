@@ -10,8 +10,10 @@
   display: block; /* Display the links as block elements */
   color: #f2f2f2; /* Text color of the links */
   text-align: center; /* Center-align the text within the links */
-  padding: 14px 16px; /* Add padding to the links */
+  padding: 10px 20px; /* Add padding to the links */
   text-decoration: none; /* Remove underline from the links */
+  height: 40px; /* Set height of the links */
+  line-height: 40px; /* Center-align text vertically */
 }
 
 /* Change color of links on hover */
