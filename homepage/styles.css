@@ -69,7 +69,6 @@ body {
     font-size: large;
     text-indent: 20px;
     letter-spacing: 1px;
-    padding-right:530px;
     border: 1px #1d0000;
     margin-top: 1px;
     margin-bottom: 72px;
@@ -79,9 +78,6 @@ body {
 
 
 #video {
-    position: absolute;
-    top: 123px;
-    left: 832px;
     display: flex;
     justify-content: flex-end;
 }
