@@ -37,7 +37,8 @@ body {
 #intro-interest {
     background-color: #00ffbf;
     color: #000000;
-    font-family: 'Abhaya Libre';font-size: 22px;
+    font-family: 'Abhaya Libre';
+    font-size: large;
     text-indent: 20px;
     letter-spacing: 1px;
     margin-top: 0.05rem;
