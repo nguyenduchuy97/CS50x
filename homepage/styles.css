@@ -45,25 +45,11 @@ body {
 }
 
 
-video.videos {
+#videos {
     width: 200px;
     height: 400px;
     object-fit: enable;
     object-position: 5px 10%;
     border: 5px solid red;
-}
-
-
-.container {
-  display: flex;
-  flex-wrap: wrap; /* Allow flex items to wrap */
-}
-
-.text {
-  flex: 1 0 auto; /* Allow text to grow, but not shrink, and auto width */
-}
-
-.video-container {
-  flex: 0 0 auto; /* Don't grow or shrink, and auto width */
-  margin-left: 20px; /* Optional: Add margin between text and video */
+    position: 
 }
