@@ -29,13 +29,13 @@
 
 /* Index.html */
 .outer {
-    background-color: #00ff00;
+    background-color: #ffe6e6;
     padding: 10px 20px 20px;
 }
 
 .welcome {
-    background-color: #00bfff;
-    color: #ffff00;
+    background-color: #ffe6e6;
+    color: red;
     font-family: 'ABeeZee';
     font-size: 50px;
     margin-bottom: 0.05rem;
@@ -44,8 +44,8 @@
 }
 
 .intro {
-    background-color: #00ff00;
-    color: #ff0000;
+    background-color: #ffe6e6;
+    color: #0;
     font-family: Georgia, Serif;
     font-size: large;
     text-indent: 20px;
