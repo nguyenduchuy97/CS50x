@@ -16,9 +16,6 @@
   line-height: 40px; /* Center-align text vertically */
   family-font:'ABeeZee';
   font-size: 20px;
-
-
-
 }
 
 /* Change color of links on hover */
@@ -33,6 +30,9 @@
     padding: 10px 20px 20px;
 }
 
+body {
+  background-color: #2691d9;
+}
 .welcome {
     background-color: #2691d9;
     color: #0099ff;
