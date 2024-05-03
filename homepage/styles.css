@@ -35,13 +35,14 @@ body {
 /* Interests.html */
 
 #intro-interest {
-    background-color: #1d0000;
+    background-color: #0080ff;
     color: #ffff00;
     font-family: Georgia, Serif;
     font-size: large;
     text-indent: 20px;
     letter-spacing: 1px;
     margin-top: 0.05rem;
+    padding: 20px;
 }
 
 
