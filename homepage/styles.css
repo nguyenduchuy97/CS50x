@@ -40,11 +40,14 @@ body {
     font-size: large;
     text-indent: 20px;
     letter-spacing: 1px;
-    padding-right:500px
+    padding-right:530px
 }
 
 
 .video {
+    position: absolute;
+    top: 123px;
+    left: 832px;
     display: flex;
     justify-content: flex-end;
 }
