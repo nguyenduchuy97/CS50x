@@ -48,7 +48,7 @@ body {
 video.videos {
     width: 200px;
     height: 400px;
-    object-fit: none;
+    object-fit: enable;
     object-position: 5px 10%;
     border: 5px solid red;
 }
