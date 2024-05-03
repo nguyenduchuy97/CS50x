@@ -1,11 +1,23 @@
 /* Navigation bar*/
-#navbar{
-  position: relative;
-  display: block;
-  height: 100%;
-  padding-right: 5px;
-  right: 0;
+
+.topnav {
+  background-color: #333;
   overflow: hidden;
+}
+
+.topnav a {
+  float: left; /* Float the links to the left */
+  display: block; /* Display the links as block elements */
+  color: #f2f2f2; /* Text color of the links */
+  text-align: center; /* Center-align the text within the links */
+  padding: 14px 16px; /* Add padding to the links */
+  text-decoration: none; /* Remove underline from the links */
+}
+
+/* Change color of links on hover */
+.topnav a:hover {
+  background-color: #ddd; /* Change background color on hover */
+  color: black; /* Change text color on hover */
 }
 
 /* Index.html */
