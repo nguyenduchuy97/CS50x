@@ -45,8 +45,10 @@ body {
 }
 
 
-#video {
-    display: flex;
-    justify-content: center;
-    position
+video.a {
+    width: 200px;
+    height: 400px;
+    object-fit: none;
+    object-position: 5px 10%;
+    border: 5px solid red;
 }
