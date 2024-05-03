@@ -1,3 +1,12 @@
+/* Navigation bar*/
+#navbar{
+  position: relative;
+  display: block;
+  height: 100%;
+  padding-right: 5px;
+  right: 0;
+  overflow: hidden;
+}
 
 /* Index.html */
 body {
