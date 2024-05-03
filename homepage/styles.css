@@ -33,7 +33,7 @@ body {
 
 /* Interests.html */
 
-.intro-interest {
+#intro-interest {
     background-color: #1d0000;
     color: #ffff00;
     font-family: Georgia, Serif;
@@ -44,7 +44,7 @@ body {
 }
 
 
-.video {
+#video {
     position: absolute;
     top: 123px;
     left: 832px;
