@@ -16,7 +16,7 @@ body {
 .welcome {
     background-color: #ff5ec0;
     color: #ffff00;
-    font-family: "Brush Script MT", Cursive;
+    font-family: 'ABeeZee';
     margin-bottom: 0.05rem;
     padding: 2rem 1rem;
     text-align: center;
@@ -37,8 +37,8 @@ body {
 #intro-interest {
     background-color: #00ffbf;
     color: #000000;
-    font-family: 'Bree Serif';;
-    font-size: large;
+    font-family: 'ABeeZee';
+    font-size: 20px;
     text-indent: 20px;
     letter-spacing: 1px;
     margin-top: 0.05rem;
