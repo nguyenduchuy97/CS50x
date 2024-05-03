@@ -23,14 +23,6 @@
 }
 
 /* Index.html */
-body {
-    background-color: #ffcccc;
-    color: #212529;
-    font-size: 0rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
 .outer {
     background-color: #1d0000;
     padding: 10px 20px 20px;
