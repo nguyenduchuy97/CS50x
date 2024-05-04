@@ -1,7 +1,7 @@
 /* Navigation bar*/
 
 .topnav {
-  background: linear-gradient(to bottom, #ffff00 0%, #00ffff 100%);
+  background: linear-gradient(to bottom, #00ffff 0%, #ffff00 100%);
   overflow: hidden;
 }
 
