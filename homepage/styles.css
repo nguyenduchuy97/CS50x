@@ -40,7 +40,7 @@ header {
 }
 
 .welcome {
-    background-color: #2691d9;
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
     color: #0099ff;
     font-family: 'Bungee Spice';
     margin-bottom: 0.05rem;
