@@ -6,22 +6,22 @@
 }
 
 .topnav a {
-  float: left; /* Float the links to the left */
-  display: block; /* Display the links as block elements */
-  color: #ff0000; /* Text color of the links */
-  text-align: center; /* Center-align the text within the links */
-  padding: 1px 10px; /* Add padding to the links */
-  text-decoration: none; /* Remove underline from the links */
-  height: 40px; /* Set height of the links */
-  line-height: 40px; /* Center-align text vertically */
+  float: left;
+  display: block;
+  color: #ff0000;
+  text-align: center;
+  padding: 10px 90px;
+  text-decoration: none;
+  height: 60px;
+  line-height: 40px;
   family-font:'ABeeZee';
   font-size: 20px;
 }
 
-/* Change color of links on hover */
+
 .topnav a:hover {
-  background-color: #ddd; /* Change background color on hover */
-  color: black; /* Change text color on hover */
+  background-color: #ddd;
+  color: black;
 }
 
 /* Index.html */
