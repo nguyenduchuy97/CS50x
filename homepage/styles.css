@@ -31,7 +31,7 @@
 }
 
 body {
-  background-color: #2691d9;
+  background-color: #ffffff;
 }
 
 .welcome {
@@ -74,9 +74,10 @@ body {
 }
 
 footer {
-  background-color: #2691d9;
+  background-color: #ffffff;
   color: #0099ff;
   font-family: 'ABeeZee';
+  font-size: 20px;
   margin-bottom: 0.05rem;
   padding: 2rem 1rem;
   text-align: center;
