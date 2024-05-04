@@ -34,6 +34,10 @@ body {
   background-color: #ffffff;
 }
 
+header {
+  font-weight: bold;
+}
+
 .welcome {
     background-color: #2691d9;
     color: #0099ff;
