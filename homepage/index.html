@@ -20,6 +20,12 @@
             }
         </style>
 
+            <script>
+            document.addEventListener('DOMContentLoaded',setInterval(function() {
+                var blinkingText = document.getElementById('blinkingText');
+                blinkingText.classList.toggle('blinking');
+            }, 900););
+        </script>
     </head>
     <body>
         <header>
@@ -82,11 +88,5 @@
         Email: <a href="mailto:nguyenduchuy.it@hotmail.com">nguyenduchuy.it@hotmail.com</a></p>
         Facebook: <a href="https://www.facebook.com/traizin.97/">Duc Huy</a>
       </footer>
-      <script>
-        setInterval(function() {
-            var blinkingText = document.getElementById('blinkingText');
-            blinkingText.classList.toggle('blinking');
-        }, 900);
-    </script>
     </body>
 </html>
