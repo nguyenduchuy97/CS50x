@@ -3,7 +3,7 @@ Ten HTML tags:
 
 1. <header>:  represents a container for introductory of my content.
 2. <nav>: a set of navigation links to navigate through every page
-3. <div>: 
+3. <div>:  divide into the sections in HTML document, make more clean and easy to make up.
 4.
 5.
 6.
