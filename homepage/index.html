@@ -10,10 +10,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Homepage</title>
         <script>
-            setInterval(function() {
+            document.addEventListener('DOMContentLoaded',setInterval(function() {
                 var blinkingText = document.getElementById('blinkingText');
                 blinkingText.classList.toggle('blinking');
-            }, 1000);
+            }, 100);
+        );
         </script>
     </head>
     <body>
