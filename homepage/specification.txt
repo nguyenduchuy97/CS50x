@@ -8,14 +8,15 @@ Ten HTML tags:
 5. <main>:  represents a container for main content of a document.
 6. <footer>: represents a container for footer of document about authorship, contact informations.
 7. <br>: inserts a single line break.
-8. <h4>: 
-9.
-10.
+8. <h4> <h3>: Add HTML headings for document.
+9. <iframe>: Embed the video on site from another source.
+10. <strong> <b>: make the text bold and important.
 
 Five CSS properties:
 
-1.
-2.
-3.
-4.
-5.
+1. background-color: set the background color.
+2. color: set the text color.
+3. font-family: set the font type.
+4. font-size: set he font size.
+5. text-align: set the text alignment.
+6. letter-spacing: set the letters space
