@@ -8,6 +8,12 @@
         <link href="styles.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Homepage</title>
+        <script>
+            setInterval(function() {
+                var blinkingText = document.getElementById('blinkingText');
+                blinkingText.classList.toggle('blinking');
+            }, 1000);
+        </script>
     </head>
     <body>
         <header>
