@@ -30,8 +30,11 @@ def index():
         name = request.form.get("name")
         month = request.form.get("month")
         day = request.form.get("day")
-        if name and month and day and month in range(1,13) and day in range(1,32):
-            db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+        try:
+            if name and month and day and month in range(1,13) and day in range(1,32):
+                db.execute("INSERT INTO birthdays (name, month, day) VALUES(?, ?, ?)", name, month, day)
+        except ValueError:
+            return redirect("/")
 
         return redirect("/")
 
