@@ -17,8 +17,8 @@
                 <!-- TODO: Create a form for users to submit a name, a month, and a day -->
                 <form action="/" method="POST">
                     <input name="name" type="text" placeholder="Name">
-                    <input name="month" type="number" placeholder="Month">
-                    <input name="day" type="number" placeholder="Day">
+                    <input name="month" type="number" min="1" max="12" placeholder="Month">
+                    <input name="day" type="number" min="1" max="31" placeholder="Day">
                     <button>Add Birthday</button>
                 </form>
             </div>
