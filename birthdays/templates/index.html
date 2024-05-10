@@ -30,13 +30,13 @@
                     <thead>
                         <tr>
                             <th>Name</th>
-                            {% for name in names %}
-                            <th>name</th>
+                            {% for n in data %}
+                            <th>{{ n.name }}</th><br>
                             {% endfor %}
 
                             <th>Birthday</th>
-                            {% for month in month_days %}
-                            <th>month</th>
+                            {% for d in data %}
+                            <th>{{d.month}}/{{d.day}}</th><br>
                             {% endfor %}
                         </tr>
                     </thead>
