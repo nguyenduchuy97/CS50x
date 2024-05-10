@@ -38,9 +38,8 @@ def index():
 
         # TODO: Display the entries in the database on index.html
         names = db.execute("SELECT name FROM birthdays")
-        months = db.execute("SELECT month FROM birthdays")
-        days = db.execute("SELECT day FROM birthdays")
+        month_days = db.execute("SELECT month,day FROM birthdays")
 
-        return render_template("index.html", names=names, months=months, days=days)
+        return render_template("index.html", names=names, month_days=month_days)
 
 
