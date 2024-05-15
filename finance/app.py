@@ -147,7 +147,7 @@ def register():
         confirm = request.form.get("confirmation")
 
         if password != confirm:
-            return apology("Passwords do not matched")
+            return apology("Passwords do not matched", 403)
 
         hash_password = generate_password_hash(request.form.get("password"))
         db.execute(
