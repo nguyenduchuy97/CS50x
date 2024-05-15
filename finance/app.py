@@ -140,11 +140,12 @@ def register():
 
         if password !== confirm:
             return apology("Passwords do not matched")
-        
+
         hash_password = generate_password_hash(request.form.get("password"))
         db.execute(
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
+        return "You have successfully registered an account"
 
     return apology("TODO")
 
