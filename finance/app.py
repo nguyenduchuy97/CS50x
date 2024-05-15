@@ -132,9 +132,9 @@ def register():
             return apology("username already existed", 403)
 
         username = request.form.get("username")
-        hash = generate_password_hash(request.form.get("password"))
+        hash_password = generate_password_hash(request.form.get("password"))
         db.execute(
-            "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash
+            "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
 
     return apology("TODO")
