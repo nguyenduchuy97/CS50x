@@ -124,8 +124,16 @@ def register():
         # Ensure password was submitted
         if not request.from.get("password"):
             return apology("must provide password", 403)
+
+        user_exist = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+            )
+        if user_exist:
+            return apology("username already existed", 403)
+
         username = request.form.get("username")
-        
+        password = generate_password_hash(request.form.get("password"))
+        db.execute("INSERT INTO users)
 
     return apology("TODO")
 
