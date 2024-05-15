@@ -146,8 +146,10 @@ def register():
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
         return apology("You have successfully registered an account", 201)
-
-    return apology("try again", 200)
+    
+    # User reached route via GET ( as by clicking a link or via redirect)
+    else:
+        return render_template("register.html")
 
 
 @app.route("/sell", methods=["GET", "POST"])
