@@ -114,6 +114,7 @@ def quote():
             return apology("Please enter a stock symbol", 200)
 
         symbol_result = lookup(symbol)
+        return symbol_result
 
 
 @app.route("/register", methods=["GET", "POST"])
