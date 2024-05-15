@@ -145,9 +145,9 @@ def register():
         db.execute(
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
-        return "You have successfully registered an account"
+        return apology("You have successfully registered an account", 201)
 
-    return apology("TODO")
+    return apology("try again", 200)
 
 
 @app.route("/sell", methods=["GET", "POST"])
