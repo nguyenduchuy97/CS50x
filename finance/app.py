@@ -115,7 +115,17 @@ def register():
     #clear session
     session.clear()
 
-    # 
+    #
+    if request.method == "POST":
+        # Ensure username was submitted
+        if not request.form.get("username"):
+            return apology("must provide username", 403)
+
+        # Ensure password was submitted
+        if not request.from.get("password"):
+            return apology("must provide password", 403)
+        
+
     return apology("TODO")
 
 
