@@ -135,6 +135,12 @@ def register():
             return apology("username already existed", 403)
 
         username = request.form.get("username")
+        password = request.form.get("password")
+        confirm = request.form.get("confirmation")
+
+        if password !== confirm:
+            return apology("Passwords do not matched")
+
         hash_password = generate_password_hash(request.form.get("password"))
         db.execute(
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
