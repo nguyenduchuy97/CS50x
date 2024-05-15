@@ -114,7 +114,8 @@ def register():
     """Register user"""
     #clear session
     session.clear()
-    
+
+    # 
     return apology("TODO")
 
 
