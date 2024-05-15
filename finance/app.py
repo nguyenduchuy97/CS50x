@@ -133,12 +133,16 @@ def register():
         if not request.form.get("password"):
             return apology("must provide password", 403)
 
+        # Ensure confimation was submitted
         if not request.form.get("confirmation"):
             return apology("must confirm the password", 403)
 
+        # Query database for username
         user_exist = db.execute(
             "SELECT * FROM users WHERE username = ?", request.form.get("username")
             )
+
+        # Ensure username does not exist
         if user_exist:
             return apology("username already existed", 403)
 
