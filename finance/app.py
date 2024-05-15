@@ -122,7 +122,7 @@ def register():
             return apology("must provide username", 403)
 
         # Ensure password was submitted
-        if not request.from.get("password"):
+        if not request.form.get("password"):
             return apology("must provide password", 403)
 
         user_exist = db.execute(
