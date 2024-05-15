@@ -106,6 +106,7 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
+    
     return apology("TODO")
 
 
@@ -146,7 +147,7 @@ def register():
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
         return apology("You have successfully registered an account", 201)
-    
+
     # User reached route via GET ( as by clicking a link or via redirect)
     else:
         return render_template("register.html")
