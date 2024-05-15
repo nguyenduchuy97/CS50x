@@ -124,6 +124,7 @@ def register():
         # Ensure password was submitted
         if not request.from.get("password"):
             return apology("must provide password", 403)
+        username = request.form.get("username")
         
 
     return apology("TODO")
