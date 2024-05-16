@@ -113,9 +113,9 @@ def quote():
         if not symbol:
             return apology("Please enter a stock symbol", 200)
 
-        symbol_result = lookup(symbol)
+        symbols = lookup(symbol)
 
-        return render_template("quoted.html", )
+        return render_template("quoted.html", symbols=symbols)
 
 
 @app.route("/register", methods=["GET", "POST"])
