@@ -158,8 +158,9 @@ def register():
         db.execute(
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
-
-        return apology("You have successfully registered an account", 201)
+        flask("Registered successfully! Please login.")
+        
+        return redirect("/login")
 
     # User reached route via GET ( as by clicking a link or via redirect)
     else:
