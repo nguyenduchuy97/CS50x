@@ -137,26 +137,28 @@ def register():
         if not request.form.get("confirmation"):
             return apology("must confirm the password", 403)
 
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirm = request.form.get("confirmation")
+
         # Query database for username
         user_exist = db.execute(
-            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+            "SELECT * FROM users WHERE username = ?", username
             )
 
         # Ensure username does not exist
         if user_exist:
             return apology("username already existed", 403)
 
-        username = request.form.get("username")
-        password = request.form.get("password")
-        confirm = request.form.get("confirmation")
-
         if password != confirm:
             return apology("Passwords do not matched", 403)
 
         hash_password = generate_password_hash(request.form.get("password"))
+
         db.execute(
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
+        
         return apology("You have successfully registered an account", 201)
 
     # User reached route via GET ( as by clicking a link or via redirect)
