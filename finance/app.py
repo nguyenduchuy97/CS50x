@@ -158,8 +158,8 @@ def register():
         db.execute(
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
-        flask("Registered successfully! Please login.")
-        
+        flash("Registered successfully! Please login.")
+
         return redirect("/login")
 
     # User reached route via GET ( as by clicking a link or via redirect)
