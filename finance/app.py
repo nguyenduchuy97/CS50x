@@ -153,12 +153,12 @@ def register():
         if password != confirm:
             return apology("Passwords do not matched", 403)
 
-        hash_password = generate_password_hash(request.form.get("password"))
+        hash_password = generate_password_hash(password)
 
         db.execute(
             "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
             )
-        
+
         return apology("You have successfully registered an account", 201)
 
     # User reached route via GET ( as by clicking a link or via redirect)
