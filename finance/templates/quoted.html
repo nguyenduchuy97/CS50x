@@ -17,8 +17,8 @@
             <tbody>
                 {% for symbol in symbols %}
                 <tr>
-                    <td>{%  %}</td>
-                    <td>{%  %}</td>
+                    <td>{% symbol["symbol"] %}</td>
+                    <td>{% symbol["price"] %}</td>
                 </tr>
                 {% endfor %}
             </tbody>
