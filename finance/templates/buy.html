@@ -5,6 +5,17 @@
 {% endblock %}
 
 {% block main %}
+    <form action="/buy" method="POST">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirmation" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
     <div>
         <h1>Bought!</h1>
         <table>
