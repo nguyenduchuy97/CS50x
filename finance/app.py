@@ -48,7 +48,7 @@ def buy():
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
         price = lookup(symbol)
-        cash = 
+        cash = db.execute("SELECT cash FROM users WHERE")
     return apology("TODO")
 
 
