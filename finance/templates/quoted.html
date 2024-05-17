@@ -16,10 +16,12 @@
             </thead>
             <tbody>
                 {% for symbol in symbols %}
+                {% i = 0 %}
                 <tr>
-                    <td>{% symbol[0]["symbol"] %}</td>
-                    <td>{% symbol[0]["price"] %}</td>
+                    <td>{% symbol[i]["symbol"] %}</td>
+                    <td>{% symbol[i]["price"] %}</td>
                 </tr>
+                {% i += 1 %}
                 {% endfor %}
             </tbody>
         </table>
