@@ -47,6 +47,8 @@ def buy():
     else:
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
+        price = lookup(symbol)
+        cash = 
     return apology("TODO")
 
 
