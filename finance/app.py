@@ -44,6 +44,9 @@ def buy():
     """Buy shares of stock"""
     if request.method == "GET":
         render_template("buy.html")
+    else:
+        symbol = request.form.get("symbol")
+        shares = int(request.form.get("shares"))
     return apology("TODO")
 
 

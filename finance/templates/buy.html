@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block main %}
+
+<h1>Bought!</h1>
+
     <form action="/buy" method="POST">
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
@@ -12,26 +15,8 @@
         <div class="mb-3">
             <input class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
         </div>
-        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-primary" type="submit">Buy</button>
     </form>
 
-    <div>
-        <h1>Bought!</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Symbol</th>
-                    <th>Price</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for symbol in symbols %}
-                <tr>
-                    <td>{{ symbol["symbol"] }}</td>
-                    <td>{{ symbol["price"] }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+
 {% endblock %}
