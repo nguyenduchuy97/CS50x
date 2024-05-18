@@ -69,11 +69,12 @@ def buy():
             )
         if cash < (shares * price):
             return apology("Symbol does not exist.", 403)
-
-        db.execute(
+        else:
+            db.execute(
             "INSERT INTO purchase (user, shares, price, date) VALUES(?, ?, ?, ?)",
             user, shares, price, date
             )
+            db.execute("UPDATE")
 
         return redirect("/")
 
