@@ -1,4 +1,5 @@
 import os
+import datetime
 
 from cs50 import SQL
 from flask import Flask, flash, redirect, render_template, request, session
@@ -55,11 +56,22 @@ def buy():
             return apology("The shares must be positive number", 403)
 
         output = lookup(input)
+        if not output:
+            return apology("Symbol does not exist.", 403)
+
         price = output["price"]
+        date = datetime.datetime.now()
         cash = db.execute(
             "SELECT cash FROM users WHERE id = ?", session["user_id"]
             )
-        
+        user = db.execute(
+            "SELECT username FROM users WHERE id = ?", session["user_id"]
+            )
+
+        db.execute(
+            "INSERT INTO purchase (user, shares, price, date) VALUES(?, ?, ?, ?)",
+            user, shares, price, date
+            )
 
 
 
