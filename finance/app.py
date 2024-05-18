@@ -51,6 +51,8 @@ def buy():
         cash = db.execute(
             "SELECT cash FROM users WHERE id = ?", session["user_id"]
             )
+
+        if 
         return render_template("buy.html")
 
 
