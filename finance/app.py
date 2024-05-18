@@ -61,9 +61,10 @@ def buy():
 
         price = output["price"]
         date = datetime.datetime.now()
-        cash = db.execute(
+        cash_result = db.execute(
             "SELECT cash FROM users WHERE id = ?", session["user_id"]
             )
+        cash = cash_result[0]["price"]
         user = db.execute(
             "SELECT username FROM users WHERE id = ?", session["user_id"]
             )
