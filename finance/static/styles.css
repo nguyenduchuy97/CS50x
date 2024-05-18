@@ -39,6 +39,8 @@ table {
 }
 
 .bought {
-    background-color: rgb(175, 225, 237, 0.3)
-    color
+    background-color: rgb(175, 225, 237, 0.3);
+    color: rgb(0, 59, 253);
+    margin-bottom: 3rem;
+
 }
