@@ -43,8 +43,10 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
+    # GET request
     if request.method == "GET":
         return render_template("buy.html")
+    # POST request
     else:
         input = request.form.get("symbol")
         shares = int(request.form.get("shares"))
