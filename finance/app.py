@@ -70,6 +70,7 @@ def buy():
             "SELECT username FROM users WHERE id = ?", session["user_id"]
             )
         user = user_result[0]["username"]
+
         if cash < (shares * price):
             return apology("Symbol does not exist.", 403)
         else:
@@ -77,7 +78,7 @@ def buy():
             "INSERT INTO purchase (user, shares, price, date) VALUES(?, ?, ?, ?)",
             user, shares, price, date
             )
-            db.execute("UPDATE users SET price = ? WHERE username = ?", price, user)
+            db.execute("UPDATE users SET price = price - ? WHERE username = ?", shares * price, user)
 
         return redirect("/")
 
