@@ -64,10 +64,12 @@ def buy():
         cash_result = db.execute(
             "SELECT cash FROM users WHERE id = ?", session["user_id"]
             )
-        cash = cash_result[0]["price"]
-        user = db.execute(
+        cash = cash_result[0]["cash"]
+
+        user_result = db.execute(
             "SELECT username FROM users WHERE id = ?", session["user_id"]
             )
+        user = user_result[0]["username"]
         if cash < (shares * price):
             return apology("Symbol does not exist.", 403)
         else:
