@@ -37,3 +37,7 @@ table {
     margin-bottom: 1rem;
     width: 100%;
 }
+
+.bought {
+    background-color: rgb(200, 200, 200, 0.3)
+}
