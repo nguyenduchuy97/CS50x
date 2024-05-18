@@ -74,7 +74,7 @@ def buy():
             "INSERT INTO purchase (user, shares, price, date) VALUES(?, ?, ?, ?)",
             user, shares, price, date
             )
-            db.execute("UPDATE")
+            db.execute("UPDATE users SET price = ? WHERE username = ?", price, user)
 
         return redirect("/")
 
