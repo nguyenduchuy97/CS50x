@@ -52,7 +52,12 @@ def buy():
             "SELECT cash FROM users WHERE id = ?", session["user_id"]
             )
 
-        if 
+        if not symbol:
+            return apology("Please input a stock’s symbol.", 403)
+        if not shares or shares < 0:
+            return apology("The shares must be positive number", 403)
+        
+
         return render_template("buy.html")
 
 
