@@ -46,20 +46,21 @@ def buy():
         return render_template("buy.html")
     else:
         input = request.form.get("symbol")
+        shares = int(request.form.get("shares"))
 
         if not input:
             return apology("Please input a stock’s symbol.", 403)
 
-        shares = int(request.form.get("shares"))
+        if not shares or shares < 0:
+            return apology("The shares must be positive number", 403)
+
         output = lookup(input)
         price = output["price"]
-
         cash = db.execute(
             "SELECT cash FROM users WHERE id = ?", session["user_id"]
             )
 
-        if not shares or shares < 0:
-            return apology("The shares must be positive number", 403)
+
 
 
         return redirect("/")
