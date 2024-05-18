@@ -43,14 +43,16 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "GET":
-        render_template("buy.html")
+        return render_template("buy.html")
     else:
         symbol = request.form.get("symbol")
         shares = int(request.form.get("shares"))
         price = lookup(symbol)
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        
-    return apology("TODO")
+        cash = db.execute(
+            "SELECT cash FROM users WHERE id = ?", session["user_id"]
+            )
+        return render_template("buy.html")
+
 
 
 @app.route("/history")
