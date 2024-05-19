@@ -22,6 +22,7 @@
         <select name="symbol">
             {% for i in symbols %}
         <option value="{{ i['symbol'] }}">{{ i['symbol'].upper() }}</option>
+            {% endfor %}
         </select>
         </div>
 

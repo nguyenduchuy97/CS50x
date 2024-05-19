@@ -243,4 +243,4 @@ def sell():
         render_template("sell.html", symbols=symbols)
     else:
         pass
-    return render_template("sell.html")
+    return redirect("/")
