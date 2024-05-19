@@ -36,7 +36,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    
+
 
     return render_template("index.html")
 
@@ -80,7 +80,7 @@ def buy():
             return apology("Symbol does not exist.", 403)
         else:
             db.execute(
-            "INSERT INTO purchase (user, shares, price, date) VALUES(?, ?, ?, ?)",
+            "INSERT INTO purchase (symbol, user, shares, price, date) VALUES(?, ?, ?, ?, ?)", input,
             user, shares, price, date
             )
             db.execute("UPDATE users SET cash = ? WHERE id = ?", total, session["user_id"])
