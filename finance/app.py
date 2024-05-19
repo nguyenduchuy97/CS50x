@@ -239,7 +239,7 @@ def sell():
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
     if request.method == "GET":
-        symbols = db.execute("SELECT symbol FROM buy WHERE user = ?", user)
+        symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
         render_template("sell.html", symbols=symbols)
     else:
         pass
