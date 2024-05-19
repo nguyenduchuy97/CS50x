@@ -88,12 +88,12 @@ def buy():
         if total_costs > cash:
             return apology("Your cash under the price", 403)
         else:
-            new_cash_balance 
+            new_balance = cash - total_costs
             db.execute(
             "INSERT INTO purchase (symbol, user, shares, price, date) VALUES(?, ?, ?, ?, ?)", input,
             user, shares, price, date
             )
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - total_costs, session["user_id"])
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
         return redirect("/")
 
