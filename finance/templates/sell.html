@@ -21,7 +21,7 @@
         <label for="symbol">Choose a stock: </label>
         <select name="symbol">
             {% for i in symbols %}
-        <option value="{{ i['symbol'] }}"></option>
+        <option value="{{ i['symbol'] }}">{{ i['symbol'].upper() }}</option>
         </select>
         </div>
 
