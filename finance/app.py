@@ -86,7 +86,7 @@ def buy():
         total_costs = shares * price
 
         if total_costs > cash:
-            return apology("Symbol does not exist.", 403)
+            return apology("You", 403)
         else:
             db.execute(
             "INSERT INTO purchase (symbol, user, shares, price, date) VALUES(?, ?, ?, ?, ?)", input,
