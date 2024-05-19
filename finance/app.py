@@ -247,11 +247,13 @@ def sell():
     else:
         symbol = request.form.get("symbol")
         input = int(request.form.get("shares"))
+        if not symbol:
+            return apology("Please enter the symbol to sell.", 403)
+        if not input or input < 0:
+            return apology("Please enter the number of shares to sell.", 403)
 
-        share = db.execute("SELECT SUM(shares) FROM buys WHERE user = ? AND symbol = ?", user, symbol)
-
-
-
-        if not input or input < 0 or shares > share:
+        share = db.execute("SELECT SUM(shares) as shares_result FROM buys WHERE user = ? AND symbol = ?", user, symbol)
+        shares = share[0]["shares_result"]
+        
 
         return redirect("/")
