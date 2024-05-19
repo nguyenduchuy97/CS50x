@@ -85,7 +85,7 @@ def buy():
         user = user_result[0]["username"]
         total_costs = cash - (shares * price)
 
-        if total < 0:
+        if total_costs < 0:
             return apology("Symbol does not exist.", 403)
         else:
             db.execute(
