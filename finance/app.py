@@ -51,7 +51,8 @@ def index():
                 )
             total_shares = share_result[0]["total_shares"]
             current.append({"symbol": sym, "price": price, "shares": total_shares})
-
+    total = 
+    cash
     return render_template("index.html", current=current)
 
 
