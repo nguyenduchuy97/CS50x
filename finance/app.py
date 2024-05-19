@@ -238,15 +238,18 @@ def sell():
     """Sell shares of stock"""
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
-    symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
-    if not symbols:
-        return apology("You don't have any stocks to sell.", 403)
-
-    shares = db.execute("SELECT SUM(shares) FROM buys WHERE user = ? AND symbol = ?", user, )
 
     if request.method == "GET":
-
+        symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
+        if not symbols:
+            return apology("You don't have any stocks to sell.", 403)
         render_template("sell.html", symbols=symbols)
     else:
-        pass
+        shares = int(request.form.get("shares"))
+        share = db.execute("SELECT SUM(shares) FROM buys WHERE user = ? AND symbol = ?", user, shares)
+
+        symbol = request.form.get("symbol")
+
+        if not shares or shares < 0 or shares > share:
+
         return redirect("/")
