@@ -20,12 +20,10 @@
         </thead>
         <tbody>
             <tr>
-                {% for i in info %}
-                <td>{{ i["symbol"] }}</td>
-                <td>{{ i["shares"] }}</td>
+                <td>{{ info["symbol"] }}</td>
+                <td>{{ info["shares"] }}</td>
                 <td>{{ i["price"] }}</td>
                 <td>{{ i["total"] }}</td>
-                {% endfor %}
             </tr>
 
         </tbody>
