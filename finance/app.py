@@ -38,14 +38,17 @@ def index():
     """Show portfolio of stocks"""
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
-    symbol = db.execute("SELECT symbol FROM purchase WHERE user = ? GROUP BY symbol", user)
+    symbols = db.execute("SELECT symbol FROM purchase WHERE user = ? GROUP BY symbol", user)
     current = []
-    for i in symbol:
-        current.append(dict("symbol": i,lookup(i)))
+
+    for row in symbols:
+        symbol = row["symbol"]
+        symbol_info = lookup(row)
+        current.append({})
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-    return render_template("index.html", symbol=symbol, current=current)
+    return render_template("index.html", symbols=symbols, current=current)
 
 
 @app.route("/buy", methods=["GET", "POST"])
