@@ -38,7 +38,7 @@ def index():
     """Show portfolio of stocks"""
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
-    symbols = db.execute("SELECT symbol FROM purchase WHERE user = ? GROUP BY symbol", user)
+    symbols = db.execute("SELECT symbol FROM buys WHERE user = ? GROUP BY symbol", user)
     current = []
 
     for row in symbols:
@@ -94,8 +94,8 @@ def buy():
         else:
             new_balance = cash - total_costs
             db.execute(
-            "INSERT INTO purchase (symbol, user, shares, price, date) VALUES(?, ?, ?, ?, ?)", input,
-            user, shares, price, date
+            "INSERT INTO buys (symbol, user, shares, price, total, date) VALUES(?, ?, ?, ?, ?, ?)", input,
+            user, shares, price, total, date
             )
             db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
