@@ -39,7 +39,7 @@ def index():
     user = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     info = db.execute("SELECT * FROM purchase WHERE user = ?", user)
 
-    return render_template("index.html", )
+    return render_template("index.html", info=info)
 
 
 @app.route("/buy", methods=["GET", "POST"])
