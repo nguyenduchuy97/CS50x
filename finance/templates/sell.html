@@ -9,17 +9,21 @@
     <h5>Buy</h5>
 </div>
 
-<div>
+
     <form action="/sell.html" method="POST">
+        <div>
         <label for="symbol">Choose a stock:</label>
         <select name="symbol">
         <option value=""></option>
         </select>
-        <br>
+        </div>
         
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
+        </div>
         <br><br>
         <input type="submit" value="Submit">
     </form>
-</div>
+
 
 {% endblock %}
