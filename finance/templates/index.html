@@ -19,13 +19,14 @@
             </tr>
         </thead>
         <tbody>
+            {% for i in current %}
             <tr>
-                <td>{{ num_symbol }}</td>
-                <td>{{ num_shares }}</td>
-                <td>{{ num_price }}</td>
-                <td></td>
+                <td>{{ i }}</td>
+                <td>{{ shares }}</td>
+                <td>{{ price }}</td>
+                <td>{{ total }}</td>
             </tr>
-
+            {% endfor %}
         </tbody>
     </table>
 </div>
