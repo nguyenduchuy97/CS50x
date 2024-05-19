@@ -240,13 +240,17 @@ def sell():
     user = user_result[0]["username"]
 
     if request.method == "GET":
+        symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
+        if not symbols:
+            return apology("You don't have any stocks to sell.", 403)
         render_template("sell.html", symbols=symbols)
     else:
+        symbol = request.form.get("symbol")
         input = int(request.form.get("shares"))
 
-        share = db.execute("SELECT SUM(shares) FROM buys WHERE user = ? AND symbol = ?", user, shares)
+        share = db.execute("SELECT SUM(shares) FROM buys WHERE user = ? AND symbol = ?", user, symbol)
 
-        symbol = request.form.get("symbol")
+
 
         if not input or input < 0 or shares > share:
 
