@@ -83,9 +83,9 @@ def buy():
             "SELECT username FROM users WHERE id = ?", session["user_id"]
             )
         user = user_result[0]["username"]
-        total_costs = cash - (shares * price)
+        total_costs = shares * price
 
-        if total_costs < 0:
+        if total_costs > cash:
             return apology("Symbol does not exist.", 403)
         else:
             db.execute(
