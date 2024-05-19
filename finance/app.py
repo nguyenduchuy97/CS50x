@@ -44,8 +44,9 @@ def index():
     for row in symbols:
         symbol = row["symbol"]
         info = lookup(symbol)
+        shares = db.execute("SELECT shares FROM purchase")
         if info is not None:
-            current.append({"symbol": symbol, **info})
+            current.append(info)
 
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
