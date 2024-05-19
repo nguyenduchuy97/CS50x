@@ -38,7 +38,8 @@ def index():
     """Show portfolio of stocks"""
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
-    symbols = db.execute("SELECT symbol FROM buys WHERE user = ? GROUP BY symbol", user)
+    symbol = db.execute("SELECT symbol FROM buys WHERE user = ? GROUP BY symbol", user)
+    symbols = symbol["symbol"]
     current = []
 
     for row in symbols:
