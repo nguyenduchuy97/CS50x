@@ -237,7 +237,8 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.form.get("GET"):
-        redirect("sell.html")
+        
+        render_template("sell.html")
     else:
-
-    return apology("TODO")
+        pass
+    return render_template("sell.html")
