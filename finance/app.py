@@ -254,6 +254,8 @@ def sell():
 
         share = db.execute("SELECT SUM(shares) as shares_result FROM buys WHERE user = ? AND symbol = ?", user, symbol)
         shares = share[0]["shares_result"]
-        
+
+        if shares < input:
+            return apology("Not enough shares to sell.", 403)
 
         return redirect("/")
