@@ -45,7 +45,9 @@ def index():
         sym = row["symbol"]
         info = lookup(sym)
         if info is not None:
-            share = db.execute("SELECT shares FROM buys WHERE symbol = ?", sym)
+            share_result = db.execute(
+                "SELECT SUM(shares) FROM buys WHERE symbol = ? AND user = ?", sym, user
+                )
             shares = share["shares"]
             current.append(**info, **shares)
 
