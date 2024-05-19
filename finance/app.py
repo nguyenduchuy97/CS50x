@@ -38,16 +38,15 @@ def index():
     """Show portfolio of stocks"""
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
-    symbol = db.execute("SELECT symbol FROM buys WHERE user = ? GROUP BY symbol", user)
-    symbols = symbol["symbol"]
+    symbols = db.execute("SELECT symbol FROM buys WHERE user = ? GROUP BY symbol", user)
     current = []
 
     for row in symbols:
         sym = row["symbol"]
         info = lookup(sym)
-        share = db.execute("SELECT shares FROM buys WHERE symbol = ?", sym)
-        shares = share["shares"]
         if info is not None:
+            share = db.execute("SELECT shares FROM buys WHERE symbol = ?", sym)
+            shares = share["shares"]
             current.append(**info, **shares)
 
     return render_template("index.html", current=current)
