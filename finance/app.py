@@ -43,8 +43,8 @@ def index():
 
     for row in symbols:
         symbol = row["symbol"]
-        info = lookup(symbol)
-        current.append({"symbol": symbol, dict()})
+        dict = lookup(symbol)
+        current.append({"symbol": symbol}).update(dict)
 
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
