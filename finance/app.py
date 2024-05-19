@@ -242,6 +242,8 @@ def sell():
     if not symbols:
         return apology("You don't have any stocks to sell.", 403)
 
+    shares = db.execute("SELECT SUM(shares) FROM buys WHERE user = ? AND symbol = ?", user, )
+
     if request.method == "GET":
 
         render_template("sell.html", symbols=symbols)
