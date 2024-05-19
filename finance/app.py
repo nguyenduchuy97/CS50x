@@ -42,8 +42,9 @@ def index():
     current = []
 
     for row in symbols:
-        current.append({"symbol": row})
-        
+        info = lookup(row)
+        current.append({"symbol": row, info})
+
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
