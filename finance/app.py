@@ -236,5 +236,8 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    
+    if request.form.get("GET"):
+        redirect("/")
+    else:
+        
     return apology("TODO")
