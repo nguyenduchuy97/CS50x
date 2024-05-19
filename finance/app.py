@@ -46,10 +46,10 @@ def index():
         info = lookup(sym)
         if info is not None:
             share_result = db.execute(
-                "SELECT SUM(shares) FROM buys WHERE symbol = ? AND user = ?", sym, user
+                "SELECT SUM(shares) as total_shares FROM buys WHERE symbol = ? AND user = ?", sym, user
                 )
-            shares = share["shares"]
-            current.append(**info, **shares)
+            total_shares = share_result[0]["total_shares"]
+            current.append({"symbol": sym, }})
 
     return render_template("index.html", current=current)
 
