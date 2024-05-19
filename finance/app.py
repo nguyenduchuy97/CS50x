@@ -41,7 +41,7 @@ def index():
     symbol = db.execute("SELECT symbol FROM purchase WHERE user = ? GROUP BY symbol", user)
     current = []
     for i in symbol:
-        current.append(lookup(i))
+        current.append(dict("symbol": i,lookup(i)))
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
