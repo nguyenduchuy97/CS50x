@@ -38,9 +38,9 @@ def index():
     """Show portfolio of stocks"""
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
-    info = db.execute("SELECT * FROM purchase WHERE user = ?", user)
-    if not info:
-        return apology("You haven't purchased anythong yet.\n Go and buy some shares", 403)
+    symbol = db.execute("SELECT symbol FROM purchase WHERE user = ?", user)
+    shares = db.execute("SELECT shares FROM purchase WHERE user = ?", user)
+    price = db.execute("SELECT price FROM purchase WHERE user = ?", user)
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     total = info[0]["shares"] * info[0]["price"]
