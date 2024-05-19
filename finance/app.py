@@ -39,6 +39,8 @@ def index():
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
     symbols = db.execute("SELECT symbol FROM buys WHERE user = ? GROUP BY symbol", user)
+    total = 10000.00
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     current = []
 
     for row in symbols:
@@ -51,9 +53,8 @@ def index():
                 )
             total_shares = share_result[0]["total_shares"]
             current.append({"symbol": sym, "price": price, "shares": total_shares})
-    total = 
-    cash
-    return render_template("index.html", current=current)
+
+    return render_template("index.html", current=current, cash=cash, total=total)
 
 
 @app.route("/buy", methods=["GET", "POST"])
