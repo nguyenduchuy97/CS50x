@@ -95,7 +95,7 @@ def buy():
             new_balance = cash - total_costs
             db.execute(
             "INSERT INTO buys (symbol, user, shares, price, total, date) VALUES(?, ?, ?, ?, ?, ?)", input,
-            user, shares, price, total, date
+            user, shares, price, total_costs, date
             )
             db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
