@@ -39,15 +39,12 @@ def index():
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
     symbol = db.execute("SELECT symbol FROM purchase WHERE user = ? GROUP BY symbol", user)
-    num_symbol = len(symbol)
-    shares = db.execute("SELECT shares FROM purchase WHERE user = ? GROUP BY shares", user)
-    num_shares = len(shares)
-    price = db.execute("SELECT price FROM purchase WHERE user = ? GROUP BY price", user)
-    num_price = len(price)
+    for i in symbol:
+        lookup(i)
 
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-    return render_template("index.html", num_symbol=num_symbol, num_shares=num_shares, num_price=num_price)
+    return render_template("index.html")
 
 
 @app.route("/buy", methods=["GET", "POST"])
