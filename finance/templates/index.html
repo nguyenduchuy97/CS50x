@@ -23,10 +23,11 @@
             <tr>
                 <td>{{ i["symbol"] }}</td>
                 <td>{{ i["shares"] }}</td>
-                <td>{{ i["price"] }}</td>
-                <td>{{  }}</td>
+                <td>{{ i["price"] | usd }}</td>
+                <td>{{ i["shares"] * i["price"] | usd }}</td>
             </tr>
             {% endfor %}
+            
         </tbody>
     </table>
 </div>
