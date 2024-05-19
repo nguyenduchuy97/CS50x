@@ -22,36 +22,3 @@ nav .navbar-brand .green
     color: #2e944b;
 }
 
-table th {
-    padding: 0.75rem;
-    vertical-align: middle;
-    font-weight: 900;
-}
-
-table td {
-    padding: 0.75rem;
-    vertical-align: middle;
-    font-weight: 630;
-}
-
-tbody tr:nth-of-type(odd) {
-    background-color: rgb(200, 200, 200, 0.3)
-}
-
-table {
-    background-color: transparent;
-    margin-bottom: 1rem;
-    width: 100%;
-}
-
-.bought {
-    background-color: rgb(38, 158, 225, 0.5);
-    color: rgb(0, 59, 253);
-    margin-bottom: 3rem;
-    padding-top: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    padding-left: 10px;
-    border: 1px solid rgb(38, 85, 225);
-    border-radius: 10px;
-}
