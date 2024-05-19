@@ -40,7 +40,8 @@ def index():
     user = user_result[0]["username"]
     symbols = db.execute("SELECT symbol FROM buys WHERE user = ? GROUP BY symbol", user)
     total = 10000.00
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    cash_result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    cash = cash_result[0]["cash"]
     current = []
 
     for row in symbols:
