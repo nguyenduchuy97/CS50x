@@ -43,15 +43,12 @@ def index():
     current = []
 
     for row in symbols:
-        symbol = row["symbol"]
-        info = lookup(symbol)
-        share = db.execute("SELECT shares FROM buys WHERE symbol = ?", symbol)
+        sym = row["symbol"]
+        info = lookup(sym)
+        share = db.execute("SELECT shares FROM buys WHERE symbol = ?", sym)
         shares = share["shares"]
         if info is not None:
             current.append(**info, **shares)
-
-
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
     return render_template("index.html", current=current)
 
