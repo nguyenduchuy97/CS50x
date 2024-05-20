@@ -260,7 +260,7 @@ def sell():
         price_result = lookup("symbol")
         price = price_result("price")
         db.execute(
-            "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, ?, datetime('now'))", input,
+            "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, ?, datetime('now'))", symbol,
             user, shares, price
             )
 
