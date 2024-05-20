@@ -19,14 +19,13 @@
             </tr>
         </thead>
         <tbody>
-            {% a = current | length %}
             {% for i in current %}
             <tr>
                 <td>{{ i["symbol"] }}</td>
                 <td>{{ i["shares"] }}</td>
                 <td>{{ i["price"] | usd }}</td>
             {% endfor %}
-                <td>{{  a * (i["shares"] * i["price"]) | usd }}</td>
+                <td>{{  length * (i["shares"] * i["price"]) | usd }}</td>
             </tr>
 
             <tr>

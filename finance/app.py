@@ -55,8 +55,9 @@ def index():
                 )
             total_shares = share_result[0]["total_shares"]
             current.append({"symbol": sym, "price": price, "shares": total_shares})
+    length = len(current)
 
-    return render_template("index.html", current=current, cash=cash, total=total)
+    return render_template("index.html", current=current, cash=cash, total=total, length=length)
 
 
 @app.route("/buy", methods=["GET", "POST"])
