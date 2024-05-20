@@ -20,7 +20,14 @@
             </tr>
         </thead>
         <tbody>
-
+            {% for i in bought%}
+            <tr>
+                <td>{{ i["symbol"] }}</td>
+                <td>{{ i["shares"] }}</td>
+                <td>{{ i["price"] }}</td>
+                <td>{{ i["dates"] }}</td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
@@ -41,7 +48,14 @@
             </tr>
         </thead>
         <tbody>
-
+            {% for i in sold %}
+            <tr>
+                <td>{{ i["symbol"] }}</td>
+                <td>{{ i["shares"] }}</td>
+                <td>{{ i["price"] }}</td>
+                <td>{{ i["date"] }}</td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
 </div>
