@@ -19,28 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            {% for i in current %}
-            <tr>
-                <td>{{ i["symbol"] }}</td>
-                <td>{{ i["shares"] }}</td>
-                <td>{{ i["price"] | usd }}</td>
-                <td>{{ i["shares"] * i["price"] | usd }}</td>
-            </tr>
-            {% endfor %}
-            <tr>
-                <th></th>
-                <th></th>
-                <th>Cash</th>
-                <td>{{ cash | usd }}</td>
-            </tr>
-
-            <tr>
-                <th></th>
-                <th></th>
-                <th>TOTAL</th>
-                <td>{{ total | usd }}</td>
-            </tr>
-
+ 
         </tbody>
     </table>
 </div>
