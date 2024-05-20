@@ -182,7 +182,7 @@ def quote():
     else:
         symbol = request.form.get("symbol")
         # Handle input
-        if not symbol:
+        if not symbol or symbol[0]["symbol"] is None:
             return apology("Please enter a stock symbol", 200)
 
         symbols = lookup(symbol)
