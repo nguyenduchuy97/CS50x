@@ -253,6 +253,7 @@ def sell():
             return apology("Please enter the number of shares to sell.", 403)
 
         share = db.execute("SELECT SUM(shares) as shares_result FROM buys WHERE user = ? AND symbol = ?", user, symbol)
+        # Handle whether user's input match their bought's symbol
         if not share or share[0]["shares_result"] is None:
             return apology("You don't have the symbol.", 403)
         shares = share[0]["shares_result"]
