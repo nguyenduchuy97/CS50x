@@ -98,8 +98,8 @@ def buy():
         else:
             new_balance = cash - total_costs
             db.execute(
-            "INSERT INTO buys (symbol, user, shares, price, total, date) VALUES(?, ?, ?, ?, ?, ?)", input,
-            user, shares, price, total_costs, date
+            "INSERT INTO buys (symbol, user, shares, price, total, date) VALUES(?, ?, ?, ?, ?, datetime('now'))", input,
+            user, shares, price, total_costs
             )
             db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
@@ -259,6 +259,9 @@ def sell():
             return apology("Not enough shares to sell.", 403)
         price_result = lookup("symbol")
         price = price_result("price")
-        
+        db.execute(
+            "INSERT INTO sells (symbol, user, shares, price, date) VALUES(?, ?, ?, ?, ?, datetime('now'))", input,
+            user, shares, price
+            )
 
         return redirect("/")
