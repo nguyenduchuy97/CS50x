@@ -56,13 +56,7 @@ def index():
                 "SELECT SUM(shares) as total_shares FROM buys WHERE symbol = ? AND user = ?", sym, user
                 )
             total_shares = share_result[0]["total_shares"]
-            current.append({"symbol": sym, "price": price, "shares": total_shares})
-
-    total_price = 0
-    for i in current:
-        total_price += i["price"] * i["shares"]
-
-    length = len(current)
+            current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
 
     return render_template("index.html", current=current, cash=cash, total=total, length=length, total_price=total_price)
 
