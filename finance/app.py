@@ -55,6 +55,8 @@ def index():
                 )
             total_shares = share_result[0]["total_shares"]
             current.append({"symbol": sym, "price": price, "shares": total_shares})
+
+    total_price = 
     length = len(current)
 
     return render_template("index.html", current=current, cash=cash, total=total, length=length)
