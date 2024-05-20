@@ -42,7 +42,9 @@ def index():
     total_result = totals[0]["sum_price"] if totals[0]["sum_price"] is not None else 0
     cash_result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     cash = cash_result[0]["cash"]
-    total = cash + total_result
+    shares_result = db.execute("SELECT SUM(shares) as sum_shares FROM buys WHERE user = ?", user)
+    shares = shares_result[0]["sum_shares"]
+    total = cash + (total_result * shares)
     current = []
 
     for row in symbols:
