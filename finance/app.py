@@ -168,14 +168,18 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
+    # Handle GET requests
     if request.method == "GET":
         return render_template("quote.html")
+    # Handle GET requests
     else:
         symbol = request.form.get("symbol")
+        # Handle input
         if not symbol:
             return apology("Please enter a stock symbol", 200)
 
         symbols = lookup(symbol)
+        # Handle input
         if not symbols:
             return apology("Symbol does not exist!", 403)
 
