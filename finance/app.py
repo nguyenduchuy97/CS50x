@@ -82,7 +82,6 @@ def buy():
             return apology("Symbol does not exist.", 403)
 
         price = output["price"]
-        date = datetime.datetime.now()
         cash_result = db.execute(
             "SELECT cash FROM users WHERE id = ?", session["user_id"]
             )
