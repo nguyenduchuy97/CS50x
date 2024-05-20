@@ -39,7 +39,7 @@ def index():
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
     symbols = db.execute("SELECT symbol FROM buys WHERE user = ? GROUP BY symbol", user)
-    total = db.execute("SELECT SUM(price) as sum_price FROM buys WHERE user = ? GROUP BY user")
+    total = db.execute("SELECT SUM(price) as sum_price FROM buys WHERE user = ? GROUP BY user", session["user_id"])
     cash_result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     cash = cash_result[0]["cash"]
     current = []
