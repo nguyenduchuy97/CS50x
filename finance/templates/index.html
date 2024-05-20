@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            {% a= len(current) %}
+            {% a = current | length %}
             {% for i in current %}
             <tr>
                 <td>{{ i["symbol"] }}</td>
