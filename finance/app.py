@@ -40,8 +40,7 @@ def index():
     user = user_result[0]["username"]
     symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
     totals = db.execute("SELECT SUM(price) as sum_price FROM buys WHERE user = ?", user)
-    if not totals or totals is None:
-    total = totals[0]["sum_price"]
+    total = totals[0]["sum_price"] if totals[0]["sum_price"] is not None else 0
     cash_result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     cash = cash_result[0]["cash"]
     current = []
