@@ -50,7 +50,7 @@
         <tbody>
             {% for i in sold %}
             <tr>
-                <td>{{ i["symbol"] }}</td>
+                <td>{{ i["symbol"] | upper }}</td>
                 <td>{{ i["shares"] }}</td>
                 <td>{{ i["price"] }}</td>
                 <td>{{ i["date"] }}</td>
