@@ -118,7 +118,7 @@ def history():
     user = user_result[0]["username"]
     bought = db.execute("SELECT * FROM buys WHERE user = ?", user)
     sold = db.execute("SELECT * FROM sells WHERE user = ?", user)
-    return apology("TODO")
+    return reder_template("history.html", bought=bought, sold=sold)
 
 
 @app.route("/login", methods=["GET", "POST"])
