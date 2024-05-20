@@ -112,7 +112,12 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    
+    user_result = db.execute(
+            "SELECT username FROM users WHERE id = ?", session["user_id"]
+            )
+    user = user_result[0]["username"]
+    bought = db.execute("SELECT * FROM buys WHERE user = ?", user)
+    sold = db.execute("SELECT * FROM sells WHERE user = ?", user)
     return apology("TODO")
 
 
