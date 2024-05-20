@@ -24,8 +24,8 @@
                 <td>{{ i["symbol"] | upper }}</td>
                 <td>{{ i["shares"] }}</td>
                 <td>{{ i["price"] | usd }}</td>
+                <td>{{ i["total"] | usd }}</td>
             {% endfor %}
-                <td>{{  total_price | usd }}</td>
             </tr>
 
             <tr>
