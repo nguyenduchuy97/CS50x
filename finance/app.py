@@ -37,6 +37,7 @@ def index():
     """Show portfolio of stocks"""
     user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
     user = user_result[0]["username"]
+    
     symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
     totals = db.execute("SELECT SUM(price) as sum_price FROM buys WHERE user = ?", user)
     total_result = totals[0]["sum_price"] if totals[0]["sum_price"] is not None else 0
