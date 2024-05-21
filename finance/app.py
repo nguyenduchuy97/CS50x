@@ -64,7 +64,7 @@ def index():
             current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
 
     for i in current:
-        
+        db.execute("SELECT symbol FROM sells WHERE ")
 
     return render_template("index.html", current=current, cash=cash, total=total)
 
