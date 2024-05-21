@@ -276,10 +276,10 @@ def sell():
         if shares < input:
             return apology("Not enough shares to sell.", 403)
 
-        price_result = lookup(symbol)
-        if not price_result:
+        prices = lookup(symbol)
+        if not prices:
             return apology("Symbol does not exist.", 403)
-        price = price_result("price")
+        price = prices("price")
 
         db.execute(
             "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", symbol,
