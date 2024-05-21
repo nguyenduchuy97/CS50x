@@ -48,7 +48,7 @@ def index():
 
     shares_result = db.execute("SELECT SUM(shares) as sum_shares FROM buys WHERE user = ?", user)
     shares = shares_result[0]["sum_shares"]
-    
+
     total = cash + (total_result * shares)
     current = []
 
@@ -62,6 +62,9 @@ def index():
                 )
             total_shares = share_result[0]["total_shares"]
             current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
+
+    for i in current:
+        
 
     return render_template("index.html", current=current, cash=cash, total=total)
 
