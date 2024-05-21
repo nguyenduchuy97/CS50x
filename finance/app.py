@@ -279,7 +279,7 @@ def sell():
         prices = lookup(symbol)
         if not prices:
             return apology("Symbol does not exist.", 403)
-        price = prices("price")
+        price = prices["price"]
 
         db.execute(
             "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", symbol,
