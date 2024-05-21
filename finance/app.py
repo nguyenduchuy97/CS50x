@@ -277,6 +277,8 @@ def sell():
             return apology("Not enough shares to sell.", 403)
 
         price_result = lookup(symbol)
+        if not price_result:
+            return apology("Symbol does not exist.", 403)
         price = price_result("price")
 
         db.execute(
