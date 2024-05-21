@@ -283,5 +283,6 @@ def sell():
             "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", symbol,
             user, shares, price
             )
+        db.execute("")
 
         return redirect("/")
