@@ -290,5 +290,6 @@ def sell():
         total_price = price * shares
         new_balance = cash + total_price
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
+        db.execute("UPDATE buys SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
         return redirect("/")
