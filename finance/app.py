@@ -256,7 +256,7 @@ def sell():
         symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
         if not symbols:
             return apology("You don't have any stocks to sell.", 403)
-        return render_template("homepage.html", symbols=symbols)
+        return render_template("sell.html", symbols=symbols)
     else:
         symbol = request.form.get("symbol")
         input = int(request.form.get("shares"))
