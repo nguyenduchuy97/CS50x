@@ -278,7 +278,7 @@ def sell():
 
         price_result = lookup("symbol")
         price = price_result("price")
-        new_balance = 
+        
         db.execute(
             "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", symbol,
             user, shares, price
