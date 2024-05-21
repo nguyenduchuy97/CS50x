@@ -278,11 +278,14 @@ def sell():
 
         price_result = lookup("symbol")
         price = price_result("price")
-        
+
         db.execute(
             "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", symbol,
             user, shares, price
             )
+        
+        total_price = price * shares
+        new_balance =
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
         return redirect("/")
