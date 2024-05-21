@@ -276,7 +276,7 @@ def sell():
         if shares < input:
             return apology("Not enough shares to sell.", 403)
 
-        price_result = lookup("symbol")
+        price_result = lookup(symbol)
         price = price_result("price")
 
         db.execute(
