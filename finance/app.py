@@ -58,17 +58,12 @@ def index():
         buys = db.execute("SELECT * FROM buys WHERE symbol = ?", sym)
         sells = db.execute("SELECT * FROM sells WHERE symbol = ?", sym)
 
-
-
         info = lookup(sym)
         price = info["price"]
-        if info is not None:
-            share_result = db.execute(
-                "SELECT SUM(shares) as total_shares FROM buys WHERE symbol = ? AND user = ?", sym, user
-                )
-            total_shares = 
-            total_shares = share_result[0]["total_shares"]
-            current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
+
+        total_shares = buys
+        total_shares = share_result[0]["total_shares"]
+        current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
 
     return render_template("index.html", current=current, cash=cash, total=total)
 
