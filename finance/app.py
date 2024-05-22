@@ -305,6 +305,10 @@ def sell():
         if not input or input < 0:
             return apology("Please enter the number of shares to sell.", 403)
 
+        for stock in portfolio:
+            if stock["symbol"] == symbol:
+                shares = stock["total_shares"]
+                
         share = db.execute(
             "SELECT SUM(shares) as shares_result FROM buys WHERE user = ? AND symbol = ?",
               user, symbol)
