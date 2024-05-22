@@ -68,7 +68,11 @@ def index():
             "total": stock_total
         })
 
-    return render_template("index.html", current=current, cash=cash, total_stock_price=total_stock_price)
+    return render_template(
+        "index.html",
+         current=current,
+         cash=cash,
+         total_stock_price=total_stock_price)
 
 
 @app.route("/buy", methods=["GET", "POST"])
