@@ -35,8 +35,11 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
-    user = user_result[0]["username"]
+    user_data = db.execute("SELECT username, cash FROM users WHERE id = ?", session["user_id"])
+    user = user_data[0]["username"]
+    cash = user_data[0]["cash"]
+
+
 
     symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
 
