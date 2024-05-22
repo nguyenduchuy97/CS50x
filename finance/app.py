@@ -54,6 +54,7 @@ def index():
 
     for row in symbols:
         sym = row["symbol"]
+
         info = lookup(sym)
         price = info["price"]
         if info is not None:
@@ -64,7 +65,7 @@ def index():
             current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
 
     for i in current:
-        x = db.execute("SELECT * FROM sells WHERE symbol = ?", i["symbol"])
+
         if x:
             i["price"] = i["price"] - x["price"]
             i["price"] = i["price"] - x["price"]
