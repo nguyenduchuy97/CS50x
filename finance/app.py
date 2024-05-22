@@ -295,7 +295,7 @@ def sell():
     """, user, user)
 
     if request.method == "GET":
-        return render_template("sell.html", symbols=symbols)
+        return render_template("sell.html", portfolio=portfolio)
     else:
         symbol = request.form.get("symbol")
         input = int(request.form.get("shares"))
