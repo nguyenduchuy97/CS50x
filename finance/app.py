@@ -55,6 +55,12 @@ def index():
     for row in symbols:
         sym = row["symbol"]
 
+        sells = db.execute("SELECT * FROM sells WHERE symbol = ?", i["symbol"])
+        if x:
+            i["price"] = i["price"] - x["price"]
+            i["price"] = i["price"] - x["price"]
+            i["price"] = i["price"] - x["price"]
+
         info = lookup(sym)
         price = info["price"]
         if info is not None:
@@ -66,10 +72,7 @@ def index():
 
     for i in current:
 
-        if x:
-            i["price"] = i["price"] - x["price"]
-            i["price"] = i["price"] - x["price"]
-            i["price"] = i["price"] - x["price"]
+
 
     return render_template("index.html", current=current, cash=cash, total=total)
 
