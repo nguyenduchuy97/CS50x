@@ -304,11 +304,10 @@ def sell():
             return apology("Please enter the symbol to sell.", 403)
         if not input or input < 0:
             return apology("Please enter the number of shares to sell.", 403)
-
+        shares = 0
         for stock in portfolio:
             if stock["symbol"] == symbol:
                 shares = stock["total_shares"]
-
         if shares < input:
             return apology("Not enough shares to sell.", 403)
 
