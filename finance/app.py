@@ -60,19 +60,21 @@ def index():
         price = info["price"]
 
         total_stock_price = price * total_shares
+        total = total_stock_price + cash
 
         current.append({
             "symbol": symbol,
             "price": price,
             "shares": total_shares,
-            "total": stock_total
+            "total": total_stock_price
         })
 
     return render_template(
         "index.html",
          current=current,
          cash=cash,
-         total_stock_price=total_stock_price)
+         total_stock_price=total_stock_price,
+         total=total)
 
 
 @app.route("/buy", methods=["GET", "POST"])
