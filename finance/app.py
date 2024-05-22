@@ -66,7 +66,9 @@ def index():
     for i in current:
         x = db.execute("SELECT * FROM sells WHERE symbol = ?", i["symbol"])
         if x:
-            x[]
+            i["price"] = i["price"] - x["price"]
+            i["price"] = i["price"] - x["price"]
+            i["price"] = i["price"] - x["price"]
 
     return render_template("index.html", current=current, cash=cash, total=total)
 
