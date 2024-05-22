@@ -282,9 +282,17 @@ def sell():
     user_result = db.execute("SELECT username FROM users WHERE id = ?",
                              session["user_id"])
     user = user_result[0]["username"]
-    symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
-        if not symbols:
-            return apology("You don't have any stocks to sell.", 403)
+    portfolio = db.execute("""
+        SELECT symbol, SUM(CASE WHEN type = 'buy' THEN shares ELSE -shares END)
+        AS total_shares
+        FROM (
+            SELECT symbol, shares, 'buy' AS type FROM buys WHERE user = ?
+            UNION ALL
+            SELECT symbol, shares, 'sell' AS type FROM sells WHERE user = ?
+        )
+        GROUP BY symbol
+        HAVING total_shares > 0
+    """, user, user)
 
     if request.method == "GET":
         return render_template("sell.html", symbols=symbols)
