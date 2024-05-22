@@ -55,7 +55,7 @@ def index():
     for row in symbols:
         sym = row["symbol"]
 
-        sells = db.execute("SELECT * FROM sells WHERE symbol = ?", i["symbol"])
+        sells = db.execute("SELECT * FROM sells WHERE symbol = ?", sym)
         if x:
             i["price"] = i["price"] - x["price"]
             i["price"] = i["price"] - x["price"]
