@@ -66,6 +66,7 @@ def index():
             share_result = db.execute(
                 "SELECT SUM(shares) as total_shares FROM buys WHERE symbol = ? AND user = ?", sym, user
                 )
+            total_shares = 
             total_shares = share_result[0]["total_shares"]
             current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
 
