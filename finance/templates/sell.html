@@ -12,14 +12,14 @@
 
     <form action="/sell" method="POST">
         <div class="mb-3">
-            <label for="shares"> Number of shares</label>
-            <input class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
+            <label for="share"> Number of shares</label>
+            <input id="share" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
         </div>
         <br><br>
 
         <div class="sell">
-        <label for="symbol">Choose a stock: </label>
-        <select name="symbol">
+        <label for="symbols">Choose a stock: </label>
+        <select name="symbol" id="symbols">
             {% for i in portfolio %}
         <option value="{{ i['symbol'] }}">{{ i['symbol'].upper() }}</option>
             {% endfor %}
