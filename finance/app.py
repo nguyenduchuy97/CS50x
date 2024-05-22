@@ -54,6 +54,11 @@ def index():
     current = []
 
     for stock in portfolio:
+        symbol = stock["symbol"]
+        total_shares = stock["total_shares"]
+
+        info = lookup(symbol)
+        price = info["price"]
         
 
         current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
