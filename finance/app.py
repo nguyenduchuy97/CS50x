@@ -50,7 +50,6 @@ def index():
         HAVING total_shares > 0
     """, user, user)
 
-    total_value = cash
     current = []
 
     for stock in portfolio:
@@ -59,9 +58,15 @@ def index():
 
         info = lookup(symbol)
         price = info["price"]
-        
 
-        current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
+        total_stock = price * total_shares
+
+        current.append({
+            "symbol": symbol,
+            "price": price,
+            "shares": total_shares,
+            "total": stock_total
+        })
 
     return render_template("index.html", current=current, cash=cash, total=total)
 
