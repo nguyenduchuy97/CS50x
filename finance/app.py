@@ -35,12 +35,17 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    user_data = db.execute("SELECT username, cash FROM users WHERE id = ?", session["user_id"])
+    user_data = db.execute(
+        "SELECT username, cash FROM users WHERE id = ?",
+        session["user_id"]
+        )
+
     user = user_data[0]["username"]
     cash = user_data[0]["cash"]
 
     portfolio = db.execute("""
-        SELECT symbol, SUM(CASE WHEN type = 'buy' THEN shares ELSE -shares END) AS total_shares
+        SELECT symbol, SUM(CASE WHEN type = 'buy' THEN shares ELSE -shares END)
+        AS total_shares
         FROM (
             SELECT symbol, shares, 'buy' AS type FROM buys WHERE user = ?
             UNION ALL
@@ -101,12 +106,14 @@ def buy():
 
         price = output["price"]
         cash_result = db.execute(
-            "SELECT cash FROM users WHERE id = ?", session["user_id"]
+            "SELECT cash FROM users WHERE id = ?",
+            session["user_id"]
             )
         cash = cash_result[0]["cash"]
 
         user_result = db.execute(
-            "SELECT username FROM users WHERE id = ?", session["user_id"]
+            "SELECT username FROM users WHERE id = ?",
+            session["user_id"]
             )
         user = user_result[0]["username"]
         total_costs = shares * price
@@ -116,10 +123,14 @@ def buy():
         else:
             new_balance = cash - total_costs
             db.execute(
-            "INSERT INTO buys (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", input,
-            user, shares, price
+            "INSERT INTO buys (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))",
+              input, user, shares, price
             )
-            db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
+            
+            db.execute(
+                "UPDATE users SET cash = ? WHERE id = ?",
+            new_balance, session["user_id"]
+            )
 
         return redirect("/")
 
