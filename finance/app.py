@@ -39,37 +39,24 @@ def index():
     user = user_data[0]["username"]
     cash = user_data[0]["cash"]
 
+    portfolio = db.execute("""
+        SELECT symbol, SUM(CASE WHEN type = 'buy' THEN shares ELSE -shares END) AS total_shares
+        FROM (
+            SELECT symbol, shares, 'buy' AS type FROM buys WHERE user = ?
+            UNION ALL
+            SELECT symbol, shares, 'sell' AS type FROM sells WHERE user = ?
+        )
+        GROUP BY symbol
+        HAVING total_shares > 0
+    """, user, user)
 
-
-    symbols = db.execute("SELECT symbol FROM buys WHERE user = ?", user)
-
-    totals = db.execute("SELECT SUM(price) as sum_price FROM buys WHERE user = ?", user)
-    total_result = totals[0]["sum_price"] if totals[0]["sum_price"] is not None else 0
-
-    cash_result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-    cash = cash_result[0]["cash"]
-
-    shares_result = db.execute("SELECT SUM(shares) as sum_shares FROM buys WHERE user = ?", user)
-    shares = shares_result[0]["sum_shares"]
-
-    total = cash + (total_result * shares)
+    total_value = cash
     current = []
 
-
-    for row in symbols:
-        i = 0
-        sym = row["symbol"]
-
-        buys = db.execute("SELECT * FROM buys WHERE symbol = ?", sym)
-        sells = db.execute("SELECT * FROM sells WHERE symbol = ?", sym)
-
-        info = lookup(sym)
-        price = info["price"]
-
-        total_shares = buys[i][sym] - sells[i][sym]
+    for stock in portfolio:
+        
 
         current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
-        i += 1
 
     return render_template("index.html", current=current, cash=cash, total=total)
 
