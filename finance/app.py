@@ -55,11 +55,10 @@ def index():
     for row in symbols:
         sym = row["symbol"]
 
+        buys = db.execute("SELECT * FROM buys WHERE symbol = ?", sym)
         sells = db.execute("SELECT * FROM sells WHERE symbol = ?", sym)
-        if x:
-            i["price"] = i["price"] - x["price"]
-            i["price"] = i["price"] - x["price"]
-            i["price"] = i["price"] - x["price"]
+
+        
 
         info = lookup(sym)
         price = info["price"]
