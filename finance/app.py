@@ -52,7 +52,9 @@ def index():
     total = cash + (total_result * shares)
     current = []
 
+
     for row in symbols:
+        i = 0
         sym = row["symbol"]
 
         buys = db.execute("SELECT * FROM buys WHERE symbol = ?", sym)
@@ -61,9 +63,10 @@ def index():
         info = lookup(sym)
         price = info["price"]
 
-        total_shares = buys
-        total_shares = share_result[0]["total_shares"]
+        total_shares = buys[i][sym] - sells[i][sym]
+
         current.append({"symbol": sym, "price": price, "shares": total_shares, "total": price * total_shares})
+        i += 1
 
     return render_template("index.html", current=current, cash=cash, total=total)
 
