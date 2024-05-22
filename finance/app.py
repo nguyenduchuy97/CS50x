@@ -126,7 +126,7 @@ def buy():
             "INSERT INTO buys (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))",
               input, user, shares, price
             )
-            
+
             db.execute(
                 "UPDATE users SET cash = ? WHERE id = ?",
             new_balance, session["user_id"]
@@ -141,7 +141,8 @@ def buy():
 def history():
     """Show history of transactions"""
     user_result = db.execute(
-            "SELECT username FROM users WHERE id = ?", session["user_id"]
+            "SELECT username FROM users WHERE id = ?",
+            session["user_id"]
             )
     user = user_result[0]["username"]
     bought = db.execute("SELECT * FROM buys WHERE user = ?", user)
@@ -168,7 +169,8 @@ def login():
 
         # Query database for username
         rows = db.execute(
-            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+            "SELECT * FROM users WHERE username = ?",
+            request.form.get("username")
         )
 
         # Ensure username exists and password is correct
@@ -261,8 +263,9 @@ def register():
         hash_password = generate_password_hash(password)
 
         db.execute(
-            "INSERT INTO users (username, hash) VALUES(?, ?)", username, hash_password
-            )
+            "INSERT INTO users (username, hash) VALUES(?, ?)",
+            username, hash_password)
+
         flash("Registered successfully! Please login.")
 
         return redirect("/login")
@@ -276,7 +279,8 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    user_result = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+    user_result = db.execute("SELECT username FROM users WHERE id = ?",
+                             session["user_id"])
     user = user_result[0]["username"]
 
     if request.method == "GET":
