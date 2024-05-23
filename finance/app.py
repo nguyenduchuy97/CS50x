@@ -386,18 +386,13 @@ def deposit():
     else:
 
         # Ensure password was submitted
-        if not request.form.get("password"):
-            return apology("must provide password", 403)
+        if not request.form.get("amount"):
+            return apology("You must input number of money.", 403)
 
-        # Ensure confimation was submitted
-        if not request.form.get("confirmation"):
-            return apology("must confirm the password", 403)
-
-        password = request.form.get("password")
-        confirm = request.form.get("confirmation")
+        amount = int(request.form.get("amount"))
 
         # Ensure password and confirmation matched
-        if password != confirm:
+        if amount < 10:
             return apology("Passwords do not matched", 403)
 
         hash_password = generate_password_hash(password)
