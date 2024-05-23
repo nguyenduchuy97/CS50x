@@ -334,3 +334,8 @@ def sell():
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
         return redirect("/")
+
+@app.route("/reset", methods=["GET", "POST"])
+@login_required
+def reset():
+    
