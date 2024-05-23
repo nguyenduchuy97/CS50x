@@ -222,12 +222,12 @@ def quote():
         symbol = request.form.get("symbol")
         # Handle input
         if not symbol:
-            return apology("Please enter a stock symbol", 200)
+            return apology("Please enter a stock symbol", 400)
 
         symbols = lookup(symbol)
         # Handle input
         if not symbols or not symbols["symbol"]:
-            return apology("Symbol does not exist!", 403)
+            return apology("Symbol does not exist!", 400)
 
         return render_template("quoted.html", symbols=symbols)
 
