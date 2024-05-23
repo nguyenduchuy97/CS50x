@@ -98,12 +98,15 @@ def buy():
     # POST request
     else:
         input = request.form.get("symbol")
-        shares = int(request.form.get("shares"))
+        share = request.form.get("shares")
 
         if not input:
             return apology("Please input a stock’s symbol.", 403)
 
-        if not shares or shares < 0:
+        if not share or not share.isdigit():
+            return apology("The shares must be a number", 403)
+        shares = int(share)
+        if shares < 1:
             return apology("The shares must be positive number", 403)
 
         output = lookup(input)
@@ -305,13 +308,15 @@ def sell():
         return render_template("sell.html", portfolio=portfolio)
     else:
         symbol = request.form.get("symbol")
-        input = int(request.form.get("shares"))
+        inputs = request.form.get("shares")
         # Handle inputs
         if not symbol:
             return apology("Please enter the symbol to sell.", 403)
-        if not input or input < 0:
-            return apology("Please enter the number of shares to sell.", 403)
-        shares = 0
+        if not inputs or not inputs.isdigit():
+            return apology("The number of shares must be a valid number", 403)
+        shares = int(inputs)
+        if shares < 1:
+            return apology("The number of shares must be a positive integer.", 403)
         for stock in portfolio:
             if stock["symbol"] == symbol:
                 shares = stock["total_shares"]
