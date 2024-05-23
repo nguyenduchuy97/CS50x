@@ -398,7 +398,7 @@ def deposit():
         cash = cash_result[0]["cash"]
         new_balance = cash + amount
         db.execute(
-            "UPDATE users SET cash = ? WHERE id = ?)",
+            "UPDATE users SET cash = ? WHERE id = ?",
             new_balance, session["user_id"])
 
         flash("Deposited successful!")
