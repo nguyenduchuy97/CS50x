@@ -392,14 +392,14 @@ def deposit():
         amount = int(request.form.get("amount"))
 
         # Ensure password and confirmation matched
-        if amount < 10:
-            return apology("Passwords do not matched", 403)
-
-        hash_password = generate_password_hash(password)
-
+        if amount < 100:
+            return apology("Minimum amount deposit: $100", 403)
+        cash_result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        cash = cash_result[0]["cash"]
+        new_balance = cash + amount
         db.execute(
-            "UPDATE users SET hash = ? WHERE id = ?)",
-            hash_password, session["user_id"])
+            "UPDATE users SET cash = ? WHERE id = ?)",
+            new_balance, session["user_id"])
 
-        flash("Changed password successfully!")
+        flash("Deposited successful!")
         return redirect("/")
