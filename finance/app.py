@@ -309,8 +309,8 @@ def sell():
         for stock in portfolio:
             if stock["symbol"] == symbol:
                 shares = stock["total_shares"]
-        if shares < input:
-            return apology("Not enough shares to sell.", 403)
+                if shares < input:
+                    continue
 
         prices = lookup(symbol)
         if not prices:
