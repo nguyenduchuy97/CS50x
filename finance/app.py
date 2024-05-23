@@ -345,9 +345,6 @@ def reset():
 
     else:
 
-        if not request.form.get("username"):
-            return apology("must provide username", 403)
-
         # Ensure password was submitted
         if not request.form.get("password"):
             return apology("must provide password", 403)
@@ -356,17 +353,8 @@ def reset():
         if not request.form.get("confirmation"):
             return apology("must confirm the password", 403)
 
-        username = request.form.get("username")
         password = request.form.get("password")
         confirm = request.form.get("confirmation")
-
-        # Query database for username
-        user_exist = db.execute(
-            "SELECT username FROM users WHERE username = ?", username
-            )
-        # Ensure username does not exist
-        if user_exist:
-            return apology("username already existed", 403)
 
         # Ensure password and confirmation matched
         if password != confirm:
