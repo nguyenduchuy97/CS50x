@@ -344,7 +344,7 @@ def reset():
         return render_template("reset.html")
 
     else:
-        
+
         if not request.form.get("username"):
             return apology("must provide username", 403)
 
@@ -362,5 +362,5 @@ def reset():
 
         # Query database for username
         user_exist = db.execute(
-            "SELECT * FROM users WHERE username = ?", username
+            "SELECT username FROM users WHERE username = ?", username
             )
