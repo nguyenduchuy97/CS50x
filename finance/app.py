@@ -319,7 +319,9 @@ def sell():
             return apology("The number of shares must be a positive integer.", 403)
         for stock in portfolio:
             if stock["symbol"] == symbol:
-                shares = stock["total_shares"]
+                total_shares = stock["total_shares"]
+                if shares > total_shares:
+                    return apology("The number of shares must equal or less than your's", 403)
 
         if shares == 0:
             return apology("You don't have any shares of this stock.", 403)
