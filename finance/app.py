@@ -372,3 +372,7 @@ def reset():
 
         flash("Changed password successfully!")
         return redirect("/")
+
+@app.route("/deposit", methods=["GET", "POST"])
+@login_required
+def deposit():
