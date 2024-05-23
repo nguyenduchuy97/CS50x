@@ -376,3 +376,35 @@ def reset():
 @app.route("/deposit", methods=["GET", "POST"])
 @login_required
 def deposit():
+    """Reset password"""
+    if not session["user_id"]:
+            return apology("You are not logged in.", 403)
+
+    if request.method == "GET":
+        return render_template("deposit.html")
+
+    else:
+
+        # Ensure password was submitted
+        if not request.form.get("password"):
+            return apology("must provide password", 403)
+
+        # Ensure confimation was submitted
+        if not request.form.get("confirmation"):
+            return apology("must confirm the password", 403)
+
+        password = request.form.get("password")
+        confirm = request.form.get("confirmation")
+
+        # Ensure password and confirmation matched
+        if password != confirm:
+            return apology("Passwords do not matched", 403)
+
+        hash_password = generate_password_hash(password)
+
+        db.execute(
+            "UPDATE users SET hash = ? WHERE id = ?)",
+            hash_password, session["user_id"])
+
+        flash("Changed password successfully!")
+        return redirect("/")
