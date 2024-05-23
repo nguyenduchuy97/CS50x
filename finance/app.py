@@ -60,11 +60,17 @@ def index():
     for stock in portfolio:
         symbol = stock["symbol"]
         total_shares = stock["total_shares"]
+        if not total_shares:
+            continue
 
         info = lookup(symbol)
+        if not info:
+            continue
         price = info["price"]
 
         total_stock_price = price * total_shares
+        if not info:
+            continue
         total = total_stock_price + cash
 
         current.append({
