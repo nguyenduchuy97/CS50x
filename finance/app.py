@@ -56,18 +56,18 @@ def index():
     """, user, user)
 
     current = []
-    total_stock_price = 0
-    total = 0
+    total_value = cash
     for stock in portfolio:
         symbol = stock["symbol"]
         total_shares = stock["total_shares"]
-        if not total_shares:
+
+        if total_shares is None:
             total_shares = 0
 
         info = lookup(symbol)
+        if info is None:
+            continue
         price = info["price"]
-        if not price:
-            price = 0
 
         total_stock_price = price * total_shares
         if not info:
