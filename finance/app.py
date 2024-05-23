@@ -386,10 +386,12 @@ def deposit():
             return apology("You must input number of money.", 403)
 
         inputs = request.form.get("amount")
-        if not inputs.isnumeric():
-            flash("You must input number only.")
+        try:
+            amount = float(inputs)
+        except ValueError:
+            flash("You must input a valid number.")
             return redirect("/deposit")
-        amount = float(inputs)
+
         # Ensure password and confirmation matched
         if amount < 100:
             return apology("Minimum amount deposit: $100", 403)
