@@ -321,7 +321,7 @@ def sell():
             if stock["symbol"] == symbol:
                 total_shares = stock["total_shares"]
                 if shares > total_shares:
-                    return apology("The number of shares must equal or less than your's", 403)
+                    return apology("The number of shares must equal or less than yours", 403)
 
         if shares == 0:
             return apology("You don't have any shares of this stock.", 403)
