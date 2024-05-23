@@ -62,7 +62,7 @@ def index():
         total_shares = stock["total_shares"]
 
         if total_shares is None:
-            total_shares = 0
+            continue
 
         info = lookup(symbol)
         if info is None:
@@ -70,8 +70,7 @@ def index():
         price = info["price"]
 
         total_stock_price = price * total_shares
-        if not info:
-            total_stock_price = 0
+
         total = total_stock_price + cash
 
         current.append({
