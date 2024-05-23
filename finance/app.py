@@ -311,24 +311,24 @@ def sell():
         inputs = request.form.get("shares")
         # Handle inputs
         if not symbol:
-            return apology("Please enter the symbol to sell.", 403)
+            return apology("Please enter the symbol to sell.", 400)
         if not inputs or not inputs.isdigit():
-            return apology("The number of shares must be a valid number", 403)
+            return apology("The number of shares must be a valid number", 400)
         shares = int(inputs)
         if shares < 1:
-            return apology("The number of shares must be a positive integer.", 403)
+            return apology("The number of shares must be a positive integer.", 400)
         for stock in portfolio:
             if stock["symbol"] == symbol:
                 total_shares = stock["total_shares"]
                 if shares > total_shares:
-                    return apology("The number of shares must equal or less than yours", 403)
+                    return apology("The number of shares must equal or less than yours", 400)
 
         if shares == 0:
-            return apology("You don't have any shares of this stock.", 403)
+            return apology("You don't have any shares of this stock.", 400)
 
         prices = lookup(symbol)
         if not prices:
-            return apology("Symbol does not exist.", 403)
+            return apology("Symbol does not exist.", 400)
         price = prices["price"]
 
         db.execute(
