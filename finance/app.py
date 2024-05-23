@@ -71,14 +71,14 @@ def index():
 
         total_stock_price = price * total_shares
 
-        total = total_stock_price + cash
-
         current.append({
             "symbol": symbol,
             "price": price,
             "shares": total_shares,
             "total": total_stock_price
         })
+
+        total = total_stock_price + cash
 
     return render_template(
         "index.html",
