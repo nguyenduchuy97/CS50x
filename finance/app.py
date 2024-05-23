@@ -322,8 +322,6 @@ def sell():
             "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", symbol,
             user, shares, price
             )
-        buys_shares_result = db.execute("SELECT shares FROM buys WHERE user = ? AND ")
-        total_price = price * shares
         new_balance = cash + total_price
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
