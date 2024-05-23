@@ -364,4 +364,7 @@ def reset():
             return apology("Passwords do not matched", 403)
 
         hash_password = generate_password_hash(password)
-        
+
+        db.execute(
+            "UPDATE users SET(username, hash) VALUES(?, ?)",
+            username, hash_password)
