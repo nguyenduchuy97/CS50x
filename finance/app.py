@@ -388,7 +388,7 @@ def deposit():
         amount = int(request.form.get("amount"))
 
         # Ensure password and confirmation matched
-        if amount < 100:
+        if amount < 100 AND not amount:
             return apology("Minimum amount deposit: $100", 403)
 
         cash_result = db.execute(
