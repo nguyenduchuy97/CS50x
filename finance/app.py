@@ -345,9 +345,6 @@ def reset():
         return render_template("reset.html")
 
     else:
-        # User have to loggedin to reset their password.
-        if not session["user_id"]:
-            return apology("You are not logged in.", 403)
 
         # Ensure password was submitted
         if not request.form.get("password"):
@@ -376,9 +373,8 @@ def reset():
 @app.route("/deposit", methods=["GET", "POST"])
 @login_required
 def deposit():
-    """Reset password"""
-    if not session["user_id"]:
-            return apology("You are not logged in.", 403)
+    """Deposit into account"""
+
 
     if request.method == "GET":
         return render_template("deposit.html")
@@ -398,7 +394,7 @@ def deposit():
         cash_result = db.execute(
             "SELECT cash FROM users WHERE id = ?",
             session["user_id"])
-        
+
         cash = cash_result[0]["cash"]
         new_balance = cash + amount
         db.execute(
