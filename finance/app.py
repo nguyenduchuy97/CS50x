@@ -56,7 +56,7 @@ def index():
     """, user, user)
 
     current = []
-    total_value = cash
+    total = cash
     for stock in portfolio:
         symbol = stock["symbol"]
         total_shares = stock["total_shares"]
@@ -78,7 +78,7 @@ def index():
             "total": total_stock_price
         })
 
-        total = total_stock_price + cash
+        total += total_stock_price
 
     return render_template(
         "index.html",
