@@ -309,7 +309,10 @@ def sell():
         for stock in portfolio:
             if stock["symbol"] == symbol:
                 shares = stock["total_shares"]
-        
+
+        if shares == 0:
+            return apology("You don't have any shares of this stock.", 403)
+
         prices = lookup(symbol)
         if not prices:
             return apology("Symbol does not exist.", 403)
@@ -322,8 +325,8 @@ def sell():
 
         total_price = price * shares
         new_balance = cash + total_price
-        new_shares =
+        new_buys_shares = 
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
-        db.execute("UPDATE buys SET shares = ? WHERE id = ? AND symbol = ?", new_shares, session["user_id"], )
+        db.execute("UPDATE buys SET shares = ? WHERE id = ? AND symbol = ?", new_buys_shares, session["user_id"], symbol)
 
         return redirect("/")
