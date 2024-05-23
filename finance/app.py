@@ -309,9 +309,7 @@ def sell():
         for stock in portfolio:
             if stock["symbol"] == symbol:
                 shares = stock["total_shares"]
-                if shares < input:
-                    continue
-
+        
         prices = lookup(symbol)
         if not prices:
             return apology("Symbol does not exist.", 403)
