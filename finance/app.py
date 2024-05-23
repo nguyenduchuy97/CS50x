@@ -101,17 +101,17 @@ def buy():
         share = request.form.get("shares")
 
         if not input:
-            return apology("Please input a stock’s symbol.", 403)
+            return apology("Please input a stock’s symbol.", 400)
 
         if not share or not share.isdigit():
-            return apology("The shares must be a number", 403)
+            return apology("The shares must be a number", 400)
         shares = int(share)
         if shares < 1:
-            return apology("The shares must be positive number", 403)
+            return apology("The shares must be positive number", 400)
 
         output = lookup(input)
         if not output:
-            return apology("Symbol does not exist.", 403)
+            return apology("Symbol does not exist.", 400)
 
         price = output["price"]
         cash_result = db.execute(
@@ -128,7 +128,7 @@ def buy():
         total_costs = shares * price
 
         if total_costs > cash:
-            return apology("Your cash under the price", 403)
+            return apology("Your cash under the price", 400)
         else:
             new_balance = cash - total_costs
             db.execute(
