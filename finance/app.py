@@ -386,7 +386,7 @@ def deposit():
             return apology("You must input number of money.", 403)
 
         inputs = request.form.get("amount")
-        if not inputs.isdigit():
+        if not inputs.isnumeric():
             flash("You must input number only.")
             return redirect("/deposit")
         amount = float(inputs)
