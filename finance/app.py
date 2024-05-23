@@ -385,10 +385,13 @@ def deposit():
         if not request.form.get("amount"):
             return apology("You must input number of money.", 403)
 
-        amount = int(request.form.get("amount"))
-
+        inputs = request.form.get("amount")
+        if not inputs.isdigit():
+            flash("You must input number only.")
+            return redirect("/deposit")
+        amount = int(inputs)
         # Ensure password and confirmation matched
-        if amount < 100 AND not amount:
+        if amount < 100:
             return apology("Minimum amount deposit: $100", 403)
 
         cash_result = db.execute(
