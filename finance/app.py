@@ -364,3 +364,12 @@ def reset():
         user_exist = db.execute(
             "SELECT username FROM users WHERE username = ?", username
             )
+        # Ensure username does not exist
+        if user_exist:
+            return apology("username already existed", 403)
+
+        # Ensure password and confirmation matched
+        if password != confirm:
+            return apology("Passwords do not matched", 403)
+
+        hash_password = generate_password_hash(password)
