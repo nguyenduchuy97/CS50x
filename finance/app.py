@@ -366,5 +366,5 @@ def reset():
         hash_password = generate_password_hash(password)
 
         db.execute(
-            "UPDATE users SET(username, hash) VALUES(?, ?)",
-            username, hash_password)
+            "UPDATE users SET hash = ? WHERE id = ?)",
+            hash_password, session["user_id"])
