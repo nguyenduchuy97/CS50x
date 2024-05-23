@@ -342,5 +342,25 @@ def reset():
 
     if request.method == "GET":
         return render_template("reset.html")
+
     else:
-        pass
+        
+        if not request.form.get("username"):
+            return apology("must provide username", 403)
+
+        # Ensure password was submitted
+        if not request.form.get("password"):
+            return apology("must provide password", 403)
+
+        # Ensure confimation was submitted
+        if not request.form.get("confirmation"):
+            return apology("must confirm the password", 403)
+
+        username = request.form.get("username")
+        password = request.form.get("password")
+        confirm = request.form.get("confirmation")
+
+        # Query database for username
+        user_exist = db.execute(
+            "SELECT * FROM users WHERE username = ?", username
+            )
