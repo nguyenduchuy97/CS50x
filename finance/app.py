@@ -279,9 +279,10 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    user_result = db.execute("SELECT username FROM users WHERE id = ?",
+    user_result = db.execute("SELECT username, cash FROM users WHERE id = ?",
                              session["user_id"])
     user = user_result[0]["username"]
+    cash = user_result[0]["cash"]
     portfolio = db.execute("""
         SELECT symbol, SUM(CASE WHEN type = 'buy' THEN shares ELSE -shares END)
         AS total_shares
@@ -320,11 +321,10 @@ def sell():
             "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", symbol,
             user, shares, price
             )
-        cash_result =  db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-        cash = cash_result[0]["cash"]
+        
         total_price = price * shares
         new_balance = cash + total_price
-        new_shares = 
+        new_shares =
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
         db.execute("UPDATE buys SET shares = ? WHERE id = ?", new_balance, session["user_id"])
 
