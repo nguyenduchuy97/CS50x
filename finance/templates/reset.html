@@ -1,11 +1,11 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Register
+    Change password
 {% endblock %}
 
 {% block main %}
-    <form action="/register" method="POST">
+    <form action="/reset" method="POST">
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
         </div>
@@ -13,6 +13,6 @@
             <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="text">
             <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirmation" type="text">
         </div>
-        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-primary" type="submit">Change</button>
     </form>
 {% endblock %}
