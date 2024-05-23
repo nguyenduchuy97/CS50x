@@ -324,7 +324,8 @@ def sell():
         cash = cash_result[0]["cash"]
         total_price = price * shares
         new_balance = cash + total_price
+        new_shares = 
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
-        db.execute("UPDATE buys SET cash = ? WHERE id = ?", new_balance, session["user_id"])
+        db.execute("UPDATE buys SET shares = ? WHERE id = ?", new_balance, session["user_id"])
 
         return redirect("/")
