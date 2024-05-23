@@ -338,4 +338,9 @@ def sell():
 @app.route("/reset", methods=["GET", "POST"])
 @login_required
 def reset():
-    
+    """Reset password"""
+
+    if request.method == "GET":
+        return render_template("reset.html")
+    else:
+        pass
