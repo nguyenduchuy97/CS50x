@@ -339,6 +339,9 @@ def sell():
 @login_required
 def reset():
     """Reset password"""
+    # User have to loggedin to reset their password.
+    if not session["user_id"]:
+        return apology("You are not logged in.", 403)
 
     if request.method == "GET":
         return render_template("reset.html")
@@ -361,3 +364,4 @@ def reset():
             return apology("Passwords do not matched", 403)
 
         hash_password = generate_password_hash(password)
+        
