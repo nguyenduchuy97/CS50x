@@ -344,7 +344,7 @@ def reset():
         return render_template("reset.html")
 
     else:
-        if 
+        if session["user_id"] is None
         # Ensure password was submitted
         if not request.form.get("password"):
             return apology("must provide password", 403)
