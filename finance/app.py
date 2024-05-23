@@ -56,7 +56,6 @@ def index():
     """, user, user)
 
     current = []
-    total = cash
     total_stock_price = 0
     for stock in portfolio:
         symbol = stock["symbol"]
