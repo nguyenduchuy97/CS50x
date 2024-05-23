@@ -273,7 +273,7 @@ def register():
             "INSERT INTO users (username, hash) VALUES(?, ?)",
             username, hash_password)
 
-        flash("Registered successfully! Please login.")
+        success = ("Registered successfully! Please login.")
 
         return redirect("/login")
 
