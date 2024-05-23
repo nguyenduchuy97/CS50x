@@ -273,7 +273,7 @@ def register():
             "INSERT INTO users (username, hash) VALUES(?, ?)",
             username, hash_password)
 
-        success = ("Registered successfully! Please login.")
+        flash("Registered successfully! Please login.")
 
         return redirect("/login")
 
@@ -339,15 +339,16 @@ def sell():
 @login_required
 def reset():
     """Reset password"""
-    # User have to loggedin to reset their password.
-    if not session["user_id"]:
-        return apology("You are not logged in.", 403)
+
 
     if request.method == "GET":
         return render_template("reset.html")
 
     else:
-        if session["user_id"] is None
+        # User have to loggedin to reset their password.
+        if not session["user_id"]:
+            return apology("You are not logged in.", 403)
+
         # Ensure password was submitted
         if not request.form.get("password"):
             return apology("must provide password", 403)
@@ -368,3 +369,6 @@ def reset():
         db.execute(
             "UPDATE users SET hash = ? WHERE id = ?)",
             hash_password, session["user_id"])
+
+        flash("Changed password successfully!")
+        return redirect("/")
