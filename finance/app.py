@@ -395,7 +395,10 @@ def deposit():
         if amount < 100:
             return apology("Minimum amount deposit: $100", 403)
 
-        cash_result = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        cash_result = db.execute(
+            "SELECT cash FROM users WHERE id = ?",
+            session["user_id"])
+        
         cash = cash_result[0]["cash"]
         new_balance = cash + amount
         db.execute(
