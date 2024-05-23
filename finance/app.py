@@ -389,7 +389,7 @@ def deposit():
         if not inputs.isdigit():
             flash("You must input number only.")
             return redirect("/deposit")
-        amount = int(inputs)
+        amount = float(inputs)
         # Ensure password and confirmation matched
         if amount < 100:
             return apology("Minimum amount deposit: $100", 403)
