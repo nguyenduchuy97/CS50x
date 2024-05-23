@@ -57,6 +57,7 @@ def index():
 
     current = []
     total = cash
+    total_stock_price = 0
     for stock in portfolio:
         symbol = stock["symbol"]
         total_shares = stock["total_shares"]
@@ -75,7 +76,7 @@ def index():
             "symbol": symbol,
             "price": price,
             "shares": total_shares,
-            "total": price * total_shares
+            "total": total_stock_price
         })
 
         total += total_stock_price
@@ -84,7 +85,7 @@ def index():
         "index.html",
          current=current,
          cash=cash,
-         total_stock_price=price * total_shares,
+         total_stock_price=total_stock_price,
          total=total)
 
 
