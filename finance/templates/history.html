@@ -52,7 +52,7 @@
             <tr>
                 <td>{{ i["symbol"] | upper }}</td>
                 <td>{{ i["shares"] }}</td>
-                <td>{{ i["price"] }}</td>
+                <td>{{ i["price"] | usd }}</td>
                 <td>{{ i["dates"] }}</td>
             </tr>
             {% endfor %}
