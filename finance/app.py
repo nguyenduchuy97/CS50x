@@ -226,7 +226,7 @@ def quote():
 
         symbols = lookup(symbol)
         # Handle input
-        if not symbols or not symbols["symbol"]:
+        if not symbols:
             return apology("Symbol does not exist!", 400)
 
         return render_template("quoted.html", symbols=symbols)
