@@ -38,7 +38,7 @@ def index():
     user_data = db.execute(
         "SELECT username, cash FROM users WHERE id = ?",
         session["user_id"]
-        )
+    )
 
     user = user_data[0]["username"]
     cash = user_data[0]["cash"]
@@ -82,10 +82,10 @@ def index():
     total = total_stock_price + cash
     return render_template(
         "index.html",
-         current=current,
-         cash=cash,
-         total_stock_price=total_stock_price,
-         total=total)
+        current=current,
+        cash=cash,
+        total_stock_price=total_stock_price,
+        total=total)
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -117,13 +117,13 @@ def buy():
         cash_result = db.execute(
             "SELECT cash FROM users WHERE id = ?",
             session["user_id"]
-            )
+        )
         cash = cash_result[0]["cash"]
 
         user_result = db.execute(
             "SELECT username FROM users WHERE id = ?",
             session["user_id"]
-            )
+        )
         user = user_result[0]["username"]
         total_costs = shares * price
 
@@ -132,17 +132,16 @@ def buy():
         else:
             new_balance = cash - total_costs
             db.execute(
-            "INSERT INTO buys (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))",
-              input, user, shares, price
+                "INSERT INTO buys (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))",
+                input, user, shares, price
             )
 
             db.execute(
                 "UPDATE users SET cash = ? WHERE id = ?",
-            new_balance, session["user_id"]
+                new_balance, session["user_id"]
             )
 
         return redirect("/")
-
 
 
 @app.route("/history")
@@ -150,9 +149,9 @@ def buy():
 def history():
     """Show history of transactions"""
     user_result = db.execute(
-            "SELECT username FROM users WHERE id = ?",
-            session["user_id"]
-            )
+        "SELECT username FROM users WHERE id = ?",
+        session["user_id"]
+    )
     user = user_result[0]["username"]
     bought = db.execute("SELECT * FROM buys WHERE user = ?", user)
     sold = db.execute("SELECT * FROM sells WHERE user = ?", user)
@@ -235,7 +234,7 @@ def quote():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
-    #clear session
+    # clear session
     session.clear()
 
     #
@@ -259,7 +258,7 @@ def register():
         # Query database for username
         user_exist = db.execute(
             "SELECT * FROM users WHERE username = ?", username
-            )
+        )
 
         # Ensure username does not exist
         if user_exist:
@@ -334,18 +333,18 @@ def sell():
         db.execute(
             "INSERT INTO sells (symbol, user, shares, price, dates) VALUES(?, ?, ?, ?, datetime('now'))", symbol,
             user, shares, price
-            )
+        )
         total_price = price * shares
         new_balance = cash + total_price
         db.execute("UPDATE users SET cash = ? WHERE id = ?", new_balance, session["user_id"])
 
         return redirect("/")
 
+
 @app.route("/reset", methods=["GET", "POST"])
 @login_required
 def reset():
     """Reset password"""
-
 
     if request.method == "GET":
         return render_template("reset.html")
@@ -376,11 +375,11 @@ def reset():
         flash("Changed password successfully!")
         return redirect("/")
 
+
 @app.route("/deposit", methods=["GET", "POST"])
 @login_required
 def deposit():
     """Deposit into account"""
-
 
     if request.method == "GET":
         return render_template("deposit.html")
