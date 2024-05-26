@@ -13,4 +13,6 @@ print(greet2)
 
 def main(hash):
     if not hash:
-        print("Choose one of the hash algorithms.\nMD5, SHA1, SHA")
+        print("""Choose one of the hash algorithms.\n
+              SHA-1, SHA-224, SHA-256, SHA-384,SHA512, SHA3_224,
+              SHA3_256, SHA3_384, SHA3_512""")
