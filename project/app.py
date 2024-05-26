@@ -27,7 +27,9 @@ def main():
             text = input("Input your password: ")
             if len(text) > 50 or len(text) < 1:
                 print("Your password length between 1 to 50 characters")
-
+            if hash_type == "SHAKE_128" or hash_type == "SHAKE_128":
+                shake_time = input("Input number of ")
+                hashee = hash_generator(hash_type, text, )
             hashee = hash_generator(hash_type, text)
             print(f"{hash_type} hash: {hashee}")
         else:
