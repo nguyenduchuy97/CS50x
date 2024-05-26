@@ -1,5 +1,5 @@
 from art import text2art
-
+import sys
 
 
 # Generate ASCII art text
