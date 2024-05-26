@@ -11,7 +11,7 @@ print(greet2)
 
 
 def main():
-    alg  = ["MD5", "SHA_1", "SHA_224", "SHA_256", "SHA_384", "SHA512", "SHA3_224", "SHA3_256", "SHA3_384", "SHA3_512"]
+    alg  = ["MD5", "SHA_1", "SHA_224", "SHA_256", "SHA_384", "SHA512", "SHA3_224", "SHA3_256", "SHA3_384", "SHA3_512", "SHAKE_128", "SHAKE_256"]
     while True:
         print("""Choose one of the hash algorithms: MD5 , SHA_1 , SHA_224 , SHA_256 , SHA_384 , SHA512 , SHA3_224 , SHA3_256 , SHA3_384 , SHA3_512
             SHAKE_128 , SHAKE_256
@@ -65,6 +65,12 @@ def hash_generator(hash_alg, text):
 
     elif hash_alg == 'SHA3_512':
         return hashlib.sha3_512(text.encode()).hexdigest()
+
+    elif hash_alg == 'SHAKE_128':
+        return hashlib.shake_128(text.encode()).hexdigest()
+
+    elif hash_alg == 'SHAKE_256':
+        return hashlib.shake_256(text.encode()).hexdigest()
 
 if __name__ == '__main__':
     main()
