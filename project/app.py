@@ -43,7 +43,7 @@ def main():
             print("Invalid hash type.")
         break
 
-def hash_generator(hash_alg, text, length):
+def hash_generator(hash_alg, text, length=None):
 
     if hash_alg == 'MD5':
         return hashlib.md5(text.encode()).hexdigest()
