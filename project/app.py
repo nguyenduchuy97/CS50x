@@ -31,7 +31,9 @@ def main():
             print(hashee)
 
 def hash_generator(hash_alg, text):
-    
+    match hash_alg:
+        case 'SHA_1':
+            return
     pass
 
 if __name__ == '__main__':
