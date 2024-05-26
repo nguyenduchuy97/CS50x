@@ -27,42 +27,41 @@ def main():
             text = input("Input your password")
             if len(text) > 50 or len(text) < 1:
                 print("Your password length between 1 to 50 characters")
-            en_text = text.encode()
-            hashee = hash_generator(hash_alg, en_text)
+
+            hashee = hash_generator(hash_alg, text)
             print(hashee)
 
 def hash_generator(hash_alg, text):
     match hash_alg:
         case 'MD5':
-            return hashlib.md5(text)
+            return hashlib.md5(text.encode())
 
         case 'SHA_1':
-            return hashlib.sha1(text)
+            return hashlib.sha1(text.encode())
 
         case 'SHA_224':
-            return hashlib.sha224(text)
+            return hashlib.sha224(text.encode())
 
         case 'SHA_256':
-            return hashlib.sha256(text)
+            return hashlib.sha256(text.encode())
 
         case 'SHA_384':
-            return hashlib.sha384(text)
+            return hashlib.sha384(text.encode())
 
         case 'SHA512':
-            return hashlib.sha512(text)
+            return hashlib.sha512(text.encode())
 
         case 'SHA3_224':
-            return hashlib.sha3_224(text)
+            return hashlib.sha3_224(text.encode())
 
         case 'SHA3_256':
-            return hashlib.sha3_256(text)
+            return hashlib.sha3_256(text.encode())
 
         case 'SHA3_384':
-            return hashlib.sha3_384(text)
+            return hashlib.sha3_384(text.encode())
 
         case 'SHA3_512':
-            return hashlib.sha3_512(text)
-    pass
+            return hashlib.sha3_512(text.encode())
 
 if __name__ == '__main__':
     main()
