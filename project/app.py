@@ -33,34 +33,34 @@ def main():
 def hash_generator(hash_alg, text):
     match hash_alg:
         case 'MD5':
-            return hashlib.md5
+            return hashlib.md5(text)
 
         case 'SHA_1':
-            return hashlib.sha1
+            return hashlib.sha1(text)
 
         case 'SHA_224':
-            return hashlib.sha224
+            return hashlib.sha224(text)
 
-        case 'SHA_1':
-            return hashlib.sha256
+        case 'SHA_256':
+            return hashlib.sha256(text)
 
-        case 'SHA_1':
-            return hashlib.sha384
+        case 'SHA_384':
+            return hashlib.sha384(text)
 
-        case 'SHA_1':
-            return hashlib.sha512
+        case 'SHA512':
+            return hashlib.sha512(text)
 
-        case 'SHA_1':
-            return hashlib.sha3_224
+        case 'SHA3_224':
+            return hashlib.sha3_224(text)
 
-        case 'SHA_1':
-            return hashlib.sha3_256
+        case 'SHA3_256':
+            return hashlib.sha3_256(text)
 
-        case 'SHA_1':
-            return hashlib.sha3_384
+        case 'SHA3_384':
+            return hashlib.sha3_384(text)
 
-        case 'SHA_1':
-            return hashlib.sha3_512
+        case 'SHA3_512':
+            return hashlib.sha3_512(text)
     pass
 
 if __name__ == '__main__':
