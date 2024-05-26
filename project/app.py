@@ -29,40 +29,42 @@ def main():
                 print("Your password length between 1 to 50 characters")
 
             hashee = hash_generator(hash_type, text)
-            print(hashee)
-            break
+            print(f"{hash_type} hash: {hashee}")
+        else:
+            print("Invalid hash type.")
+        break
 
 def hash_generator(hash_alg, text):
 
     if hash_alg == 'MD5':
-        return hashlib.md5(text.encode())
+        return hashlib.md5(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA_1':
-        return hashlib.sha1(text.encode())
+        return hashlib.sha1(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA_224':
-        return hashlib.sha224(text.encode())
+        return hashlib.sha224(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA_256':
-        return hashlib.sha256(text.encode())
+        return hashlib.sha256(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA_384':
-        return hashlib.sha384(text.encode())
+        return hashlib.sha384(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA512':
-        return hashlib.sha512(text.encode())
+        return hashlib.sha512(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA3_224':
-        return hashlib.sha3_224(text.encode())
+        return hashlib.sha3_224(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA3_256':
-        return hashlib.sha3_256(text.encode())
+        return hashlib.sha3_256(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA3_384':
-        return hashlib.sha3_384(text.encode())
+        return hashlib.sha3_384(text.encode()).hexdigest()
 
     elif hash_alg == 'SHA3_512':
-        return hashlib.sha3_512(text.encode())
+        return hashlib.sha3_512(text.encode()).hexdigest()
 
 if __name__ == '__main__':
     main()
