@@ -27,9 +27,11 @@ def main():
             text = input("Input your password")
             if len(text) > 50 or len(text) < 1:
                 print("Your password length between 1 to 50 characters")
-            
+            hashee = hash_generator(hash_alg, text)
+            print(hashee)
 
-def hash_generator(hash_alg,text):
+def hash_generator(hash_alg, text):
+    
     pass
 
 if __name__ == '__main__':
