@@ -45,42 +45,44 @@ def main():
 
 def hash_generator(hash_alg, text, length=None):
 
+    match hash_alg:
 
-    if hash_alg == 'MD5':
-        return hashlib.md5(text.encode()).hexdigest()
+        case 'MD5':
+            return hashlib.md5(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA_1':
-        return hashlib.sha1(text.encode()).hexdigest()
+        case 'SHA_1':
+            return hashlib.sha1(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA_224':
-        return hashlib.sha224(text.encode()).hexdigest()
+        case 'SHA_224':
+            return hashlib.sha224(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA_256':
-        return hashlib.sha256(text.encode()).hexdigest()
+        case 'SHA_256':
+            return hashlib.sha256(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA_384':
-        return hashlib.sha384(text.encode()).hexdigest()
+        case 'SHA_384':
+            return hashlib.sha384(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA512':
-        return hashlib.sha512(text.encode()).hexdigest()
+        case 'SHA512':
+            return hashlib.sha512(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA3_224':
-        return hashlib.sha3_224(text.encode()).hexdigest()
+        case 'SHA3_224':
+            return hashlib.sha3_224(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA3_256':
-        return hashlib.sha3_256(text.encode()).hexdigest()
+        case 'SHA3_256':
+            return hashlib.sha3_256(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA3_384':
-        return hashlib.sha3_384(text.encode()).hexdigest()
+        case 'SHA3_384':
+            return hashlib.sha3_384(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHA3_512':
-        return hashlib.sha3_512(text.encode()).hexdigest()
+        case 'SHA3_512':
+            return hashlib.sha3_512(text.encode()).hexdigest()
 
-    elif hash_alg == 'SHAKE_128':
-        return hashlib.shake_128(text.encode()).hexdigest(length)
+        case 'SHAKE_128':
+            return hashlib.shake_128(text.encode()).hexdigest(length)
 
-    elif hash_alg == 'SHAKE_256':
-        return hashlib.shake_256(text.encode()).hexdigest(length)
+        case 'SHAKE_256':
+            return hashlib.shake_256(text.encode()).hexdigest(length)
+        
 
 if __name__ == '__main__':
     main()
