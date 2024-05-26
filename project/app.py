@@ -17,7 +17,7 @@ def main():
 
 !!! Press "Ctrl + C" or "exit()" to quit.
               """)
-        
+
         hash_type = input("Choose a hash algorithm: ").upper()
 
         if hash_type == 'exit()':
@@ -25,9 +25,9 @@ def main():
 
         if hash_type in alg:
             text = input("Input your password")
-            if len(text) > 50:
-                print("Your password maximum length is 50 characters")
-
+            if len(text) > 50 or len(text) < 1:
+                print("Your password length between 1 to 50 characters")
+            
 
 def hash_generator(hash_alg,text):
     pass
