@@ -17,6 +17,7 @@ def main():
 
 !!! Press "Ctrl + C" or "exit()" to quit.
               """)
+        
         hash_type = input("Choose a hash algorithm: ").upper()
 
         if hash_type == 'exit()':
