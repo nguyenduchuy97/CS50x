@@ -32,12 +32,13 @@ def main():
                 if length < 1 or length > 99:
                     print("\nThe length must be between 1 - 255 chars\n")
                     break
+
                 hashee = hash_generator(hash_type, text, length)
                 print(f"{hash_type} hash: {hashee}\n Length: {length}")
                 break
-
-            hashe = hash_generator(hash_type, text)
-            print(f"{hash_type} hash: {hashe}")
+            else:
+                hashee = hash_generator(hash_type, text)
+                print(f"{hash_type} hash: {hashee}")
         else:
             print("Invalid hash type.")
         break
