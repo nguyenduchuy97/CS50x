@@ -11,5 +11,5 @@ print(greet1)
 print(greet2)
 
 
-def hash_type():
-    
+def main():
+
