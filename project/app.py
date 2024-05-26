@@ -1,6 +1,5 @@
 from art import text2art
-import sys
-
+import hashlib
 
 # Generate ASCII art text
 greet1 = text2art("Hash Generator by")
@@ -12,18 +11,20 @@ print(greet2)
 
 
 def main():
+    alg  = ["SHA_1", "SHA_224", "SHA_256", "SHA_384", "SHA512", "SHA3_224", "SHA3_256", "SHA3_384", "SHA3_512"]
     while True:
-        print("""Choose one of the hash algorithms:
+        print("""Choose one of the hash algorithms: SHA_1 , SHA_224 , SHA_256 , SHA_384 , SHA512 , SHA3_224 , SHA3_256 , SHA3_384 , SHA3_512
 
-SHA-1 ___ SHA-224 ___ SHA-256 ___ SHA-384 ___ SHA512
-  SHA3_224 ___ SHA3_256 ___ SHA3_384 ___ SHA3_512
-
-    *! Press "Ctrl + C" or "exit()" to quit.
+!!! Press "Ctrl + C" or "exit()" to quit.
               """)
-        hash_type = input("Choose a hash algorithm: ").lower()
+        hash_type = input("Choose a hash algorithm: ").upper()
 
         if hash_type == 'exit()':
             break
+
+        if hash_type in alg:
+            pass
+
 
 if __name__ == '__main__':
     main()
