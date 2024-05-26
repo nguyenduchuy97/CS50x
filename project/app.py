@@ -30,38 +30,39 @@ def main():
 
             hashee = hash_generator(hash_type, text)
             print(hashee)
+            break
 
 def hash_generator(hash_alg, text):
-    match hash_alg:
-        case 'MD5':
-            return hashlib.md5(text.encode())
 
-        case 'SHA_1':
-            return hashlib.sha1(text.encode())
+    if hash_alg == 'MD5':
+        return hashlib.md5(text.encode())
 
-        case 'SHA_224':
-            return hashlib.sha224(text.encode())
+    elif hash_alg == 'SHA_1':
+        return hashlib.sha1(text.encode())
 
-        case 'SHA_256':
-            return hashlib.sha256(text.encode())
+    elif hash_alg == 'SHA_224':
+        return hashlib.sha224(text.encode())
 
-        case 'SHA_384':
-            return hashlib.sha384(text.encode())
+    elif hash_alg == 'SHA_256':
+        return hashlib.sha256(text.encode())
 
-        case 'SHA512':
-            return hashlib.sha512(text.encode())
+    elif hash_alg == 'SHA_384':
+        return hashlib.sha384(text.encode())
 
-        case 'SHA3_224':
-            return hashlib.sha3_224(text.encode())
+    elif hash_alg == 'SHA512':
+        return hashlib.sha512(text.encode())
 
-        case 'SHA3_256':
-            return hashlib.sha3_256(text.encode())
+    elif hash_alg == 'SHA3_224':
+        return hashlib.sha3_224(text.encode())
 
-        case 'SHA3_384':
-            return hashlib.sha3_384(text.encode())
+    elif hash_alg == 'SHA3_256':
+        return hashlib.sha3_256(text.encode())
 
-        case 'SHA3_512':
-            return hashlib.sha3_512(text.encode())
+    elif hash_alg == 'SHA3_384':
+        return hashlib.sha3_384(text.encode())
+
+    elif hash_alg == 'SHA3_512':
+        return hashlib.sha3_512(text.encode())
 
 if __name__ == '__main__':
     main()
