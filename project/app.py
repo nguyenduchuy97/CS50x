@@ -17,4 +17,6 @@ def main(hashee):
         print("""Choose one of the hash algorithms.\n
               SHA-1, SHA-224, SHA-256, SHA-384,SHA512, SHA3_224,
               SHA3_256, SHA3_384, SHA3_512""")
-        
+
+if __name__ == '__main__':
+    main()
