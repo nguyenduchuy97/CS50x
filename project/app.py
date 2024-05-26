@@ -67,10 +67,10 @@ def hash_generator(hash_alg, text):
         return hashlib.sha3_512(text.encode()).hexdigest()
 
     elif hash_alg == 'SHAKE_128':
-        return hashlib.shake_128(text.encode()).hexdigest()
+        return hashlib.shake_128(text.encode()).hexdigest(20)
 
     elif hash_alg == 'SHAKE_256':
-        return hashlib.shake_256(text.encode()).hexdigest()
+        return hashlib.shake_256(text.encode()).hexdigest(20)
 
 if __name__ == '__main__':
     main()
