@@ -23,8 +23,13 @@ def main():
             break
 
         if hash_type in alg:
-            pass
+            text = input("Input your password")
+            if len(text) > 50:
+                print("Your password maximum length is 50 characters")
 
+
+def hash_generator(hash_alg,text):
+    pass
 
 if __name__ == '__main__':
     main()
