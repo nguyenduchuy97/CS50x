@@ -24,7 +24,7 @@ def main():
             break
 
         if hash_type in alg:
-            text = input("Input your password")
+            text = input("Input your password: ")
             if len(text) > 50 or len(text) < 1:
                 print("Your password length between 1 to 50 characters")
 
