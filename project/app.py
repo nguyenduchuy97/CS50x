@@ -35,9 +35,9 @@ def main():
                 hashee = hash_generator(hash_type, text, length)
                 print(f"{hash_type} hash: {hashee}\n Length: {length}")
                 break
-            
-            hashee = hash_generator(hash_type, text)
-            print(f"{hash_type} hash: {hashee}")
+
+            hashe = hash_generator(hash_type, text)
+            print(f"{hash_type} hash: {hashe}")
         else:
             print("Invalid hash type.")
         break
