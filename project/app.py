@@ -1,7 +1,9 @@
 from art import text2art
 
 # Generate ASCII art text
-ascii_art = text2art('Hello, World!', font='block')
+
+art = text2art("GFG", font='block', chr_ignore=True)
 
 # Print the ASCII art
 print(ascii_art)
+print(art)
