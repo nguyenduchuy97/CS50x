@@ -15,12 +15,13 @@ def main():
     while True:
         print("""Choose one of the hash algorithms:
 
-                'SHA-1' - 'SHA-224' - 'SHA-256' - 'SHA-384' - 'SHA512'
-                'SHA3_224' - 'SHA3_256' - 'SHA3_384' - 'SHA3_512'
+SHA-1"___"SHA-224"___"SHA-256"___"SHA-384"___"SHA512"
+"SHA3_224"___"SHA3_256"___"SHA3_384"___"SHA3_512"
 
-    *! Press 'Ctrl + C' or 'exit()' to quit.
+    *! Press "Ctrl + C" or "exit()" to quit.
               """)
         hash_type = input("Choose a hash algorithm: ").lower()
+
         if hash_type == 'exit()':
             break
 
