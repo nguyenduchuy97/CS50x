@@ -29,7 +29,7 @@ def main():
                 print("Your password length between 1 to 50 characters")
                 continue
 
-            if hash_type == "SHAKE_128" or hash_type == "SHAKE_128":
+            if hash_type == "SHAKE_128" or hash_type == "SHAKE_256":
                 try:
                     length = int(input("Input length hash: "))
                     if length < 1 or length > 99:
