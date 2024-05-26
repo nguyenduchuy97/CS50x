@@ -14,7 +14,7 @@ def main():
     alg  = ["MD5", "SHA_1", "SHA_224", "SHA_256", "SHA_384", "SHA512", "SHA3_224", "SHA3_256", "SHA3_384", "SHA3_512"]
     while True:
         print("""Choose one of the hash algorithms: MD5 , SHA_1 , SHA_224 , SHA_256 , SHA_384 , SHA512 , SHA3_224 , SHA3_256 , SHA3_384 , SHA3_512
-
+            SHAKE_128 , SHAKE_256
 !!! Press "Ctrl + C" or "exit()" to quit.
               """)
 
