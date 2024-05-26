@@ -1,9 +1,9 @@
 from art import text2art
 
 # Generate ASCII art text
+greet1 = text2art("Hash Generator by")
+greet2 = text2art(" Huy", font='block', chr_ignore=True)
 
-art = text2art("GFG", font='block', chr_ignore=True)
-a = text2art("Hello")
 # Print the ASCII art
-print(a)
-print(art)
+print(greet1)
+print(greet2)
