@@ -43,7 +43,7 @@ def main():
             print("Invalid hash type.")
         break
 
-def hash_generator(hash_alg, text, length):
+def hash_generator(hash_alg, text, length=None):
 
     match hash_alg:
 
