@@ -29,9 +29,9 @@ def main():
                 print("Your password length between 1 to 50 characters")
             if hash_type == "SHAKE_128" or hash_type == "SHAKE_128":
                 length = int(input("Input length hash: "))
-                if length < 0:
-                    print("the length must be between 1 - 255 chars")
-
+                if length < 1:
+                    print("\nThe length must be between 1 - 255 chars\n")
+                    break
                 hashee = hash_generator(hash_type, text, length)
                 print(f"{hash_type} hash: {hashee}\n Length: {length}")
                 break
