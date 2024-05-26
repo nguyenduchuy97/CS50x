@@ -11,5 +11,6 @@ print(greet1)
 print(greet2)
 
 
-def main():
-
+def main(hash):
+    if not hash:
+        print("Choose one of the hash algorithms.\nMD5, SHA1, SHA")
