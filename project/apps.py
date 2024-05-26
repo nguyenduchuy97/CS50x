@@ -43,7 +43,7 @@ def main():
             print("Invalid hash type.")
         break
 
-def hash_generator(hash_alg, text, length=None):
+def hash_generator(hash_alg, text, length):
 
     match hash_alg:
 
@@ -82,7 +82,7 @@ def hash_generator(hash_alg, text, length=None):
 
         case 'SHAKE_256':
             return hashlib.shake_256(text.encode()).hexdigest(length)
-        
+
 
 if __name__ == '__main__':
     main()
