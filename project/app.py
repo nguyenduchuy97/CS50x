@@ -28,15 +28,19 @@ def main():
             if len(text) > 50 or len(text) < 1:
                 print("Your password length between 1 to 50 characters")
             if hash_type == "SHAKE_128" or hash_type == "SHAKE_128":
-                shake_time = input("Input number of ")
-                hashee = hash_generator(hash_type, text, )
+                length = input("Input length hash: ")
+                if length < 0:
+                    print("the length must be between 1 - 255 chars")
+
+                hashee = hash_generator(hash_type, text, length)
+                print(f"{hash_type} hash: {hashee}\n Length: {length}")
             hashee = hash_generator(hash_type, text)
             print(f"{hash_type} hash: {hashee}")
         else:
             print("Invalid hash type.")
         break
 
-def hash_generator(hash_alg, text):
+def hash_generator(hash_alg, text, length):
 
     if hash_alg == 'MD5':
         return hashlib.md5(text.encode()).hexdigest()
