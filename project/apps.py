@@ -32,7 +32,7 @@ def main():
             if hash_type == "SHAKE_128" or hash_type == "SHAKE_256":
                 try:
                     length = int(input("Input length hash: "))
-                    if length < 1 or length > 99:
+                    if length < 1 or length > 99 or not length:
                         print("\nThe length must be between 1 - 255 chars\n")
                         continue
 
