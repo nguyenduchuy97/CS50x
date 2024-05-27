@@ -9,22 +9,27 @@ greet2 = text2art(" Huy", font='block', chr_ignore=True)
 print(greet1)
 print(greet2)
 
-
+# Main function
 def main():
+    # Hashing Algorithms in use.
     alg  = ["MD5", "SHA_1", "SHA_224", "SHA_256", "SHA_384", "SHA512", "SHA3_224", "SHA3_256", "SHA3_384", "SHA3_512", "SHAKE_128", "SHAKE_256"]
+    # Make a loop for input.
     while True:
+        # Print description of algorithms in use.
         print("""Choose one of the hash algorithms: MD5 , SHA_1 , SHA_224 , SHA_256 , SHA_384 , SHA512 ,
               SHA3_224 , SHA3_256 , SHA3_384 , SHA3_512 , SHAKE_128 , SHAKE_256
 !!! Press "Ctrl + C" or "exit()" to quit.
               """)
-
+        # Input a hashing algorithm type.
         hash_type = input("Choose a hash algorithm: ").upper()
 
+        # Set a command for exit out of program.
         if hash_type == 'exit()':
             break
-
+        # Look into algorithm list for which user want to use.
         if hash_type in alg:
             text = input("Input your password: ")
+            # 
             if len(text) > 50 or len(text) < 1:
                 print("Your password length between 1 to 50 characters")
                 continue
