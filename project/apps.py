@@ -29,14 +29,16 @@ def main():
         # Look into algorithm list for which user want to use.
         if hash_type in alg:
             text = input("Input your password: ")
-            # 
+
+            # Limit the length of the password.
             if len(text) > 50 or len(text) < 1:
                 print("Your password length between 1 to 50 characters")
                 continue
-
+            # Add an additional variable for SHAKE-type algorithms.
             if hash_type == "SHAKE_128" or hash_type == "SHAKE_256":
                 try:
                     length = int(input("Input length hash: "))
+                    # Limit the length of the algorithm output.
                     if length < 1 or length > 99 or not length:
                         print("\nThe length must be between 1 - 255 chars\n")
                         continue
@@ -44,17 +46,19 @@ def main():
                 except ValueError:
                     print("Invalid length. Please enter a number between 1 and 255 of hash length.")
                     continue
-
+                # Output of SHAKE-types
                 hashee = hash_generator(hash_type, text, length)
                 print(f"{hash_type} hash: {hashee}\n Length: {length}")
                 break
             else:
+                # Output of SHA-types
                 hashee = hash_generator(hash_type, text)
                 print(f"{hash_type} hash: {hashee}")
         else:
             print("Invalid hash type.")
         break
 
+# Hash generator function
 def hash_generator(hash_alg, text, length=None):
 
     match hash_alg:
