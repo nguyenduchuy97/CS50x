@@ -37,7 +37,7 @@ def main():
                         continue
 
                 except ValueError:
-                    print("Invalid length. Please enter a number between 1 and 255.")
+                    print("Invalid length. Please enter a number between 1 and 255 of hash length.")
                     continue
 
                 hashee = hash_generator(hash_type, text, length)
