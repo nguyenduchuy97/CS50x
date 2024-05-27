@@ -1,6 +1,6 @@
 # Password Hashing Generator
 #### Video Demo:  <URL HERE>
-#### Description: 
+#### Description: Password Hashing Generator
 Password Hashing Generator is a lightweight tool for hashing password.
 It contains almost SHA hash type and there are SHAKE-128 and SHAKE-256.
 You just open it up and input hashing agorithm type, then the password you want to hash,
