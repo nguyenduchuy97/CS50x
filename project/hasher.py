@@ -61,7 +61,7 @@ def hash_file(file_path, algorithm):
     except ValueError:
         pass
 
-    # If hashlib fails, try pycryptodome
+    # If hashlib fails, try pycryptodome.
     try:
         if algorithm in pycryptodome_algorithms:
             if algorithm.startswith('SHAKE'):
