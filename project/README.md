@@ -23,19 +23,19 @@ This is the main script of the project. It handles command-line arguments, proce
     - Attempts to create a hash using `hashlib` first. If unsuccessful, it tries `pycryptodome`.
     - Returns the hexadecimal digest of the hashed message.
 
-4. Function hash_file:
+4. Function `hash_file`:
 
     - Takes a file path (string) and an algorithm (string) as input.
     - Reads the file in chunks to handle large files efficiently.
-    - Attempts to create a hash using hashlib first. If unsuccessful, it tries pycryptodome.
+    - Attempts to create a hash using `hashlib` first. If unsuccessful, it tries `pycryptodome`.
     - Returns the hexadecimal digest of the hashed file contents.
 
 5. Function main:
 
-    - Uses argparse to handle command-line arguments.
-    - Combines available algorithms from hashlib and pycryptodome.
+    - Uses `argparse` to handle command-line arguments.
+    - Combines available algorithms from `hashlib` and `pycryptodome`.
     - Validates the specified algorithm.
-    - Calls hash_message or hash_file based on the input type (message or file).
+    - Calls `hash_message` or `hash_file` based on the input type (message or file).
     - Prints the resulting hash to the console.
 
 #### Design Choices
