@@ -87,7 +87,7 @@ def main():
 
     args = parser.parse_args()
 
-    # Get the list of available algorithms from both libraries
+    # Get the list of available algorithms from both libraries.
     hashlib_algorithms = hashlib.algorithms_available
     pycryptodome_algorithms_list = list(pycryptodome_algorithms.keys())
     all_algorithms = sorted(set(hashlib_algorithms).union(pycryptodome_algorithms_list))
