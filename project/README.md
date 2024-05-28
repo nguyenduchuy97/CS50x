@@ -58,4 +58,9 @@ If you are using Unix-like you can do as following:<br>
 Add executable permission for `hasher` with command: `chmod +x hasher`<br>
 Then you can execute the program without preceeding python: `hasher sha256 -m "Hello, world!"`
 
-
+##### Hashing a File
+To hash a file using the SHA-256 algorithm with one of these commands:
+To hash a message using the `SHA-256` algorithm:`python hasher sha256 -m "Hello, world!"`<br>
+If you are using Unix-like you can do as following:<br>
+Add executable permission for `hasher` with command: `chmod +x hasher`<br>
+Then you can execute the program without preceeding python: `hasher sha256 -m "Hello, world!"`
