@@ -72,4 +72,5 @@ To display the help message and see all available options:
 #### My words
 The Extended Hashing Program is a powerful and flexible tool for generating cryptographic hashes. By combining the capabilities of hashlib and pycryptodome, it offers extensive algorithm support. Its command line interface ensures ease of use in various environments, making it a valuable tool for us. This project demonstrates careful consideration of user needs and efficient handling of different data types, from short messages to large files.
 <br>
-As I was playing CTF challlenges, I met a lot of them and have to use different tools for different algorithms. So I'm free for those that makes me sick out of its way now.
+As I was playing CTF challlenges, I met a lot of them and have to use different tools for different algorithms. So I'm free for those that makes me sick out of its way now. I hope this tool helps someone like me can play CTF with smoothiest experiences.<br>
+Thanks for reading.
