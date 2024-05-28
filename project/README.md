@@ -38,4 +38,24 @@ This is the main script of the project. It handles command-line arguments, proce
     - Calls hash_message or hash_file based on the input type (message or file).
     - Prints the resulting hash to the console.
 
+#### Design Choices
+
+##### Combining `hashlib` and `pycryptodome`
+One of the primary design decisions was to combine `hashlib` and `pycryptodome` to leverage the strengths of both libraries. `hashlib` is part of the Python standard library and provides robust implementations of common hashing algorithms. However, its algorithm set is somewhat limited. `pycryptodome` extends the range of available algorithms significantly, including less common ones like `MD2` and `BLAKE2`. This combination ensures that users have access to a comprehensive set of cryptographic hash functions.
+
+##### Command-Line Interface (CLI)
+Another key design choice was to implement the program as a command-line tool. The CLI approach makes the tool flexible and easy to use in various environments, including scripts and automation pipelines. The use of `argparse` ensures that the tool can handle multiple input types and provides a user-friendly interface with clear usage instructions.
+
+##### Handling Large Files
+When designing the `hash_file` function, special consideration was given to efficiently handle large files. Reading the file in chunks (using `iter(lambda: f.read(4096), b"")`) prevents excessive memory usage, making the tool suitable for hashing files of virtually any size.
+
+#### Usage
+The Extended Hashing Program can be used to hash messages and files using a variety of algorithms. Below are some examples of how to use the tool from the command line.
+
+##### Hashing a Message
+To hash a message using the `SHA-256` algorithm:`python hasher sha256 -m "Hello, world!"`<br>
+If you are using Unix-like you can do as following:<br>
+Add executable permission for `hasher` with command: `chmod +x hasher`<br>
+Then you can execute the program without preceeding python: `hasher sha256 -m "Hello, world!"`
+
 
