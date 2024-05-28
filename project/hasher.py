@@ -16,13 +16,13 @@ pycryptodome_algorithms = {
 }
 
 def hash_message(message, algorithm):
-    """
-    Hash a message using the specified algorithm.
 
-    :param message: The message to hash (string).
-    :param algorithm: The hashing algorithm to use (string).
-    :return: The hexadecimal hash of the message.
-    """
+    # Hash a message using the specified algorithm.
+
+    # parameter message: The message to hash (string).
+    # parameter algorithm: The hashing algorithm to use (string).
+    # return: The hexadecimal hash of the message.
+
     # Try hashlib first.
     try:
         hash_obj = hashlib.new(algorithm)
@@ -45,13 +45,13 @@ def hash_message(message, algorithm):
         return str(e)
 
 def hash_file(file_path, algorithm):
-    """
-    Hash a file using the specified algorithm.
 
-    :param file_path: The path to the file to hash (string).
-    :param algorithm: The hashing algorithm to use (string).
-    :return: The hexadecimal hash of the file.
-    """
+    # Hash a file using the specified algorithm.
+
+    # parameter file_path: The path to the file to hash (string).
+    # parameter algorithm: The hashing algorithm to use (string).
+    # return: The hexadecimal hash of the file.
+
     try:
         hash_obj = hashlib.new(algorithm)
         with open(file_path, 'rb') as f:
@@ -78,7 +78,7 @@ def hash_file(file_path, algorithm):
         return str(e)
 
 def main():
-    # Command-line argument parsing.
+    # Command line argument parsing.
     parser = argparse.ArgumentParser(description='Hashing tool supporting various algorithms.')
     parser.add_argument('algorithm', type=str, help='The hashing algorithm to use.')
     group = parser.add_mutually_exclusive_group(required=True)
@@ -101,7 +101,7 @@ def main():
         hashed_message = hash_message(args.message, args.algorithm)
         print(f"Hashed message using {args.algorithm}: {hashed_message}")
     elif args.file:
-        # Hash the file using the specified algorithm
+        # Hash the file using the specified algorithm.
         hashed_file = hash_file(args.file, args.algorithm)
         print(f"Hashed file using {args.algorithm}: {hashed_file}")
 
