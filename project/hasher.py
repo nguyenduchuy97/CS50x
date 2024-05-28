@@ -97,7 +97,7 @@ def main():
         return
 
     if args.message:
-        # Hash the message using the specified algorithm
+        # Hash the message using the specified algorithm.
         hashed_message = hash_message(args.message, args.algorithm)
         print(f"Hashed message using {args.algorithm}: {hashed_message}")
     elif args.file:
