@@ -78,7 +78,7 @@ def hash_file(file_path, algorithm):
         return str(e)
 
 def main():
-    # Command-line argument parsing
+    # Command-line argument parsing.
     parser = argparse.ArgumentParser(description='Hashing tool supporting various algorithms.')
     parser.add_argument('algorithm', type=str, help='The hashing algorithm to use.')
     group = parser.add_mutually_exclusive_group(required=True)
