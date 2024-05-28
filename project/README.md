@@ -59,7 +59,7 @@ Add executable permission for `hasher` with command: `chmod +x hasher`<br>
 Then you can execute the program without preceeding python: `hasher sha256 -m "Hello, world!"`
 
 ##### Hashing a File
-To hash a file using the SHA-256 algorithm with one of these commands:
+To hash a file using the `SHA-256` algorithm with one of these commands:
 To hash a message using the `SHA-256` algorithm:`python hasher sha256 -f path/to/your/file.txt`<br>
 If you are using Unix-like you can do as following:<br>
 Add executable permission for `hasher` with command: `chmod +x hasher`<br>
@@ -70,7 +70,7 @@ To display the help message and see all available options:
 `python hasher -h` or `hasher -h`
 
 #### My words
-The Extended Hashing Program is a powerful and flexible tool for generating cryptographic hashes. By combining the capabilities of hashlib and pycryptodome, it offers extensive algorithm support. Its command line interface ensures ease of use in various environments, making it a valuable tool for us. This project demonstrates careful consideration of user needs and efficient handling of different data types, from short messages to large files.
+This is an extended hashing program I build for my own and also for you all. It is a powerful and flexible tool for generating cryptographic hashes. By combining the capabilities of `hashlib` and `pycryptodome`, it has extensive algorithm support. Its command-line interface ensures ease of use in various environments, making it a valuable tool for us. This project demonstrates careful consideration of users needs and efficient handling of different data types, from short messages to large files.
 <br>
 As I was playing CTF challlenges, I met a lot of them and have to use different tools for different algorithms. So I'm free for those that makes me sick out of its way now. I hope this tool helps someone like me can play CTF with smoothiest experiences.<br>
 Thanks for reading.
