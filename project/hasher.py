@@ -22,7 +22,7 @@ def hash_message(message, algorithm):
     :param algorithm: The hashing algorithm to use (string).
     :return: The hexadecimal hash of the message.
     """
-    # Try hashlib first
+    # Try hashlib first.
     try:
         hash_obj = hashlib.new(algorithm)
         hash_obj.update(message.encode('utf-8'))
@@ -30,7 +30,7 @@ def hash_message(message, algorithm):
     except ValueError:
         pass
 
-    # If hashlib fails, try pycryptodome
+    # If hashlib fails, try pycryptodome.
     try:
         if algorithm in pycryptodome_algorithms:
             if algorithm.startswith('SHAKE'):
@@ -44,14 +44,14 @@ def hash_message(message, algorithm):
         return str(e)
 
 def main():
-    # Get the list of available algorithms from both libraries
+    # Get the list of available algorithms from both libraries.
     hashlib_algorithms = hashlib.algorithms_available
     pycryptodome_algorithms_list = list(pycryptodome_algorithms.keys())
     all_algorithms = sorted(set(hashlib_algorithms).union(pycryptodome_algorithms_list))
 
     print("Available algorithms:", ", ".join(all_algorithms))
 
-    # Get user input for the message and algorithm
+    # Get user input for the message and algorithm.
     message = input("Enter the message to hash: ")
     algorithm = input("Enter the hashing algorithm to use: ")
 
