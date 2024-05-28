@@ -50,11 +50,11 @@ Another key design choice was to implement the program as a command-line tool. T
 When designing the `hash_file` function, special consideration was given to efficiently handle large files. Reading the file in chunks (using `iter(lambda: f.read(4096), b"")`) prevents excessive memory usage, making the tool suitable for hashing files of virtually any size.
 
 #### Usage
-The Extended Hashing Program can be used to hash messages and files using a variety of algorithms. Below are some examples of how to use the tool from the command line.
+The Extended Hashing Program can be used to hash messages and files using a variety of algorithms. Below are some examples of how to use the tool from the command-line.
 
 ##### Hashing a Message
 To hash a message using the `SHA-256` algorithm:`python hasher sha256 -m "Hello, world!"`<br>
-If you are using Unix-like you can do as following:<br>
+If you are using Unix-like OS you can do as following:<br>
 Add executable permission for `hasher` with command: `chmod +x hasher`<br>
 Then you can execute the program without preceeding python: `hasher sha256 -m "Hello, world!"`
 
