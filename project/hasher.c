@@ -147,6 +147,7 @@ int main(int argc, char *argv[]) {
     // Determine the type of input and hash accordingly
     if (strcmp(input, "-") == 0) {
         hash_stdin(algorithm);
+    // Ensure the string was quoted
     } else if (input[0] == '\"' && input[strlen(input) - 1] == '\"') {
         // Remove the surrounding quotes from the input string
         size_t len = strlen(input);
