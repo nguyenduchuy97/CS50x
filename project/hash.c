@@ -1,56 +1,50 @@
-#include <openssl/md5.h>
-#include <openssl/sha.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <openssl/evp.h>
 
-// Function to print the hash
-void print_hash(unsigned char *hash, int length) {
-    for (int i = 0; i < length; i++) {
-        printf("%02x", hash[i]);
+void print_hash(const char *algorithm, const unsigned char *digest, unsigned int length) {
+    printf("%s: ", algorithm);
+    for (unsigned int i = 0; i < length; i++) {
+        printf("%02x", digest[i]);
     }
     printf("\n");
 }
 
-// Function to hash using MD5
-void hash_md5(const char *data) {
-    unsigned char hash[MD5_DIGEST_LENGTH];
-    MD5((unsigned char*)data, strlen(data), hash);
-    printf("MD5: ");
-    print_hash(hash, MD5_DIGEST_LENGTH);
+void hash_input(const char *input, const char *algorithm) {
+    EVP_MD_CTX *mdctx;
+    const EVP_MD *md;
+    unsigned char digest[EVP_MAX_MD_SIZE];
+    unsigned int digest_len;
+
+    md = EVP_get_digestbyname(algorithm);
+    if (!md) {
+        printf("Unknown message digest %s\n", algorithm);
+        exit(1);
+    }
+
+    mdctx = EVP_MD_CTX_new();
+    EVP_DigestInit_ex(mdctx, md, NULL);
+    EVP_DigestUpdate(mdctx, input, strlen(input));
+    EVP_DigestFinal_ex(mdctx, digest, &digest_len);
+    EVP_MD_CTX_free(mdctx);
+
+    print_hash(algorithm, digest, digest_len);
 }
 
-// Function to hash using SHA1
-void hash_sha1(const char *data) {
-    unsigned char hash[SHA_DIGEST_LENGTH];
-    SHA1((unsigned char*)data, strlen(data), hash);
-    printf("SHA1: ");
-    print_hash(hash, SHA_DIGEST_LENGTH);
-}
+int main(int argc, char *argv[]) {
+    if (argc != 3) {
+        printf("Usage: %s <algorithm> <input>\n", argv[0]);
+        return 1;
+    }
 
-// Function to hash using SHA256
-void hash_sha256(const char *data) {
-    unsigned char hash[SHA256_DIGEST_LENGTH];
-    SHA256((unsigned char*)data, strlen(data), hash);
-    printf("SHA256: ");
-    print_hash(hash, SHA256_DIGEST_LENGTH);
-}
+    const char *algorithm = argv[1];
+    const char *input = argv[2];
 
-// Function to hash using SHA512
-void hash_sha512(const char *data) {
-    unsigned char hash[SHA512_DIGEST_LENGTH];
-    SHA512((unsigned char*)data, strlen(data), hash);
-    printf("SHA512: ");
-    print_hash(hash, SHA512_DIGEST_LENGTH);
-}
+    OpenSSL_add_all_digests();
 
-int main() {
-    const char *data = "Hello, world!";
-    printf("Hashing the string: %s\n", data);
+    hash_input(input, algorithm);
 
-    hash_md5(data);
-    hash_sha1(data);
-    hash_sha256(data);
-    hash_sha512(data);
-
+    EVP_cleanup();
     return 0;
 }
