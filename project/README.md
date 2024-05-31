@@ -29,11 +29,11 @@ The inclusion of a Makefile simplifies the build process and ensures reproducibl
 ##### Hashing a Message
 ! You should move in the directory where hasher is locating to execute the syntax command as instruction below.
 To hash a message using the `SHA-256` algorithm:`./hasher sha256 "Hello, world!"`<br>
-If you are using Unix-like OS you can do as following:<br>
-Add executable permission for `hasher` with command: `chmod +x hasher`<br>
-Then you can execute the program without preceeding python: `hasher sha256 -m "Hello, world!"`
 
 ##### Hashing a File
+! You should move in the directory where hasher is locating to execute the syntax command as instruction below.
+To hash a message using the `SHA-256` algorithm:`./hasher sha256 path/to/your/file.txt`<br>
+
 To hash a file using the `SHA-256` algorithm with one of these commands:
 To hash a message using the `SHA-256` algorithm:`python hasher sha256 -f path/to/your/file.txt`<br>
 If you are using Unix-like you can do as following:<br>
