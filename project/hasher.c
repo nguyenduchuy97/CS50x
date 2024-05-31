@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <openssl/evp.h>
+#include <unistd.h>
 
 // Macro for buffer size to read file chunks
 #define BUFFER_SIZE 4096
