@@ -5,7 +5,8 @@
         "string_view": "c",
         "stdlib.h": "c",
         "string.h": "c",
-        "dictionary.h": "c"
+        "dictionary.h": "c",
+        "evp.h": "c"
     },
     "python.REPL.enableREPLSmartSend": false
 }
