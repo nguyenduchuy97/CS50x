@@ -2,55 +2,28 @@
 #### Video Demo:  <URL HERE>
 #### Description: Extended Hashing Generator
 #### Overview
-The Extended Hashing Program is a versatile command-line tool designed to hash both messages and files using a wide variety of cryptographic hashing algorithms. It combines the capabilities of Python's built-in `hashlib` library and the `pycryptodome` library to provide extensive support for numerous hashing algorithms. This tool is ideal for anyone like me who like playing CTF challenges that required verious hashing algorithm types, because really don't like have to install a lot of tools for different algorithms so I combine them all together for our convenience or you might use it as your purposes.
+This project consists of a command-line program written in C that provides various hashing functionalities. The program allows users to compute the hash of a file, input from standard input, or a provided string using different cryptographic hash algorithms. Additionally, it includes a `Makefile` for building the program.
 
-#### Project Structure
-`hasher`
-This is the main script of the project. It handles command-line arguments, processes input data, and generates hashes using the specified algorithms. The script includes the following key components:
+#### Files
+##### hash.c
+`hash.c` is the main source file of the program. It contains the implementation of the hashing functionalities, including hashing a file (hash_file), hashing input from standard input (`hash_stdin`), and hashing a provided string (`hash_string`). The file also defines helper functions for printing hashes (`print_hash`) and displaying usage information (`print_usage`). Furthermore, the `main` function orchestrates the execution flow based on the command-line arguments provided by the user.
 
-1. Import Statements:
-
-    - `hashlib` for built-in hashing algorithms.
-    - `argparse` for parsing command-line arguments.
-    - Various hashing modules from `pycryptodome for` additional algorithm support.
-
-2. Algorithm Mapping:
-    - A dictionary (`pycryptodome_algorithms`) that maps algorithm names to their respective classes from `pycryptodome`.
-
-3. Function `hash_message`:
-
-    - Takes a message (string) and an algorithm (string) as input.
-    - Attempts to create a hash using `hashlib` first. If unsuccessful, it tries `pycryptodome`.
-    - Returns the hexadecimal digest of the hashed message.
-
-4. Function `hash_file`:
-
-    - Takes a file path (string) and an algorithm (string) as input.
-    - Reads the file in chunks to handle large files efficiently.
-    - Attempts to create a hash using `hashlib` first. If unsuccessful, it tries `pycryptodome`.
-    - Returns the hexadecimal digest of the hashed file contents.
-
-5. Function main:
-
-    - Uses `argparse` to handle command-line arguments.
-    - Combines available algorithms from `hashlib` and `pycryptodome`.
-    - Validates the specified algorithm.
-    - Calls `hash_message` or `hash_file` based on the input type (message or file).
-    - Prints the resulting hash to the console.
+##### Makefile
+The `Makefile` automates the compilation and linking process of the program. It defines rules for compiling individual source files, linking object files to create the executable, and cleaning up build artifacts. Additionally, the `Makefile` specifies compiler flags (`CFLAGS`) and libraries to link against (`LIBS`). This file simplifies the build process and ensures consistency across different platforms.
 
 #### Design Choices
 
-##### Combining `hashlib` and `pycryptodome`
-One of the primary design decisions was to combine `hashlib` and `pycryptodome` to leverage the strengths of both libraries. `hashlib` is part of the Python standard library and provides robust implementations of common hashing algorithms. However, its algorithm set is somewhat limited. `pycryptodome` extends the range of available algorithms significantly, including less common ones like `MD2` and `BLAKE2`. This combination ensures that users have access to a comprehensive set of cryptographic hash functions.
+##### Supporting Multiple Hashing Algorithms
+The program supports a wide range of cryptographic hash algorithms, including MD2, MD4, MD5, SHA-1, SHA-2 (224, 256, 384, 512), SHA-3 (224, 256, 384, 512), SHAKE128, SHAKE256, BLAKE2B512, and BLAKE2S256. This choice offers users flexibility in selecting the appropriate algorithm based on their security requirements and performance considerations.
 
-##### Command-Line Interface (CLI)
-Another key design choice was to implement the program as a command-line tool. The CLI approach makes the tool flexible and easy to use in various environments, including scripts and automation pipelines. The use of `argparse` ensures that the tool can handle multiple input types and provides a user-friendly interface with clear usage instructions.
+##### Handling Input Flexibility
+The program provides flexibility in input sources, allowing users to hash data from a file, standard input, or a provided string. This design choice accommodates various use cases, such as hashing large files, piping data from other commands, or hashing short strings directly from the command line. Additionally, the program handles input errors gracefully, providing informative error messages to the user.
 
-##### Handling Large Files
-When designing the `hash_file` function, special consideration was given to efficiently handle large files. Reading the file in chunks (using `iter(lambda: f.read(4096), b"")`) prevents excessive memory usage, making the tool suitable for hashing files of virtually any size.
+##### Modular Code Structure
+The code is organized into modular functions, each responsible for a specific hashing task. This modular structure enhances readability, maintainability, and extensibility of the codebase. By encapsulating functionality into smaller functions, it becomes easier to understand, test, and modify individual components without affecting the overall behavior of the program.
 
-#### Usage
-The Extended Hashing Program can be used to hash messages and files using a variety of algorithms. Below are some examples of how to use the tool from the command-line.
+##### Makefile for Build Automation
+The inclusion of a Makefile simplifies the build process and ensures reproducible builds across different environments. By defining rules for compiling source files and linking dependencies, the Makefile automates the build workflow, reducing the risk of manual errors and inconsistencies. Additionally, the Makefile enables incremental builds, avoiding unnecessary recompilation of unchanged source files.
 
 ##### Hashing a Message
 To hash a message using the `SHA-256` algorithm:`python hasher sha256 -m "Hello, world!"`<br>
