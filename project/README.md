@@ -11,7 +11,7 @@ This project consists of a command-line program written in C that provides vario
 ##### Makefile
 The `Makefile` automates the compilation and linking process of the program. It defines rules for compiling individual source files, linking object files to create the executable, and cleaning up build artifacts. Additionally, the `Makefile` specifies compiler flags (`CFLAGS`) and libraries to link against (`LIBS`). This file simplifies the build process and ensures consistency across different platforms.
 !!! If you want to change source file name or output file name, you should go to `Makefile` to change the configuration for your preference alternation.
-
+It's going to broke if you don't.
 
 #### Design Choices
 
