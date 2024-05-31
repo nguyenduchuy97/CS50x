@@ -29,17 +29,17 @@ The inclusion of a Makefile simplifies the build process and ensures reproducibl
 
 #### Usage
 ##### Hashing a Message
-!!! You should move in the directory where hasher is locating to execute the syntax command as instruction below.
+!!! You should move in the directory where hasher is locating to execute the syntax command as instruction below.<br>
 To hash a message using the `SHA-256` algorithm:`./hasher sha256 "Hello, world!"`<br>
 
 ##### Hashing a File
-!!! You should move in the directory where hasher is locating to execute the syntax command as instruction below.
+!!! You should move in the directory where hasher is locating to execute the syntax command as instruction below.<br>
 To hash a message using the `SHA-256` algorithm:`./hasher sha256 path/to/your/file.txt`<br>
 
 ##### Hashing standard input
-!!! You should move in the directory where hasher is locating to execute the syntax command as instruction below.
+!!! You should move in the directory where hasher is locating to execute the syntax command as instruction below.<br>
 To hash a message using the `SHA-256` algorithm:`./hasher sha256 -`<br>
-When you hit enter the cursor will goes down, waiting for you to input what ever you want, whether you do keyboard typing or Copy-Paste.
+When you hit enter the cursor will goes down, waiting for you to input what ever you want, whether you do keyboard typing or Copy-Paste.<br>
 To get the result you should press `Ctrl + D` (EOF, which stands for End Of File) to ending the standard input for activate hashing function executes.
 
 #### My words
