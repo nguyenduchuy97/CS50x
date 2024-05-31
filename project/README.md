@@ -1,5 +1,5 @@
 # Extended Hashing Generator
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://youtu.be/K4ym-_kSzLU
 #### Description: Extended Hashing Generator
 #### Overview
 This project consists of a command-line program written in C that provides various hashing functionalities. The program allows users to compute the hash of a file, input from standard input, or a provided string using different cryptographic hash algorithms. Additionally, it includes a `Makefile` for building the program.
