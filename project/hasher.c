@@ -9,9 +9,7 @@
 // Function to print the computed hash in hexadecimal format
 void print_hash(const char *algorithm, const unsigned char *digest, unsigned int length) {
     printf("%s: ", algorithm);
-    // Read each byte of the hash
     for (unsigned int i = 0; i < length; i++) {
-        // Print hex hashing result of each byte
         printf("%02x", digest[i]);
     }
     printf("\n");
@@ -93,10 +91,40 @@ void hash_stdin(const char *algorithm) {
     print_hash(algorithm, digest, digest_len);
 }
 
+// Function to hash a given string
+void hash_string(const char *data, const char *algorithm) {
+    EVP_MD_CTX *mdctx;  // Message Digest Context
+    const EVP_MD *md;   // Message Digest Method
+    unsigned char digest[EVP_MAX_MD_SIZE];  // Array to store the resulting hash
+    unsigned int digest_len;  // Length of the resulting hash
+
+    // Get the message digest method for the specified algorithm
+    md = EVP_get_digestbyname(algorithm);
+    if (!md) {
+        printf("Unknown message digest %s\n", algorithm);
+        exit(1);
+    }
+
+    // Initialize the message digest context
+    mdctx = EVP_MD_CTX_new();
+    EVP_DigestInit_ex(mdctx, md, NULL);
+
+    // Update the hash with the data
+    EVP_DigestUpdate(mdctx, data, strlen(data));
+
+    // Finalize the hash computation
+    EVP_DigestFinal_ex(mdctx, digest, &digest_len);
+    EVP_MD_CTX_free(mdctx);
+
+    // Print the resulting hash
+    print_hash(algorithm, digest, digest_len);
+}
+
 // Function to display the usage of the program
 void print_usage(const char *program_name) {
     printf("Usage: %s <algorithm> <filename>\n", program_name);
     printf("       %s <algorithm> - (to hash from standard input)\n", program_name);
+    printf("       %s <algorithm> \"string\" (to hash the provided string)\n", program_name);
     printf("Available algorithms:\n");
     printf("  md2, md4, md5, sha1, sha224, sha256, sha384, sha512\n");
     printf("  sha3-224, sha3-256, sha3-384, sha3-512, shake128, shake256\n");
@@ -111,16 +139,22 @@ int main(int argc, char *argv[]) {
     }
 
     const char *algorithm = argv[1];
-    const char *filename = argv[2];
+    const char *input = argv[2];
 
     // Initialize OpenSSL's digest algorithms
     OpenSSL_add_all_digests();
 
-    // Check if the input is from stdin
-    if (strcmp(filename, "-") == 0) {
+    // Determine the type of input and hash accordingly
+    if (strcmp(input, "-") == 0) {
         hash_stdin(algorithm);
+    } else if (input[0] == '\"' && input[strlen(input) - 1] == '\"') {
+        // Remove the surrounding quotes from the input string
+        size_t len = strlen(input);
+        char *data = strndup(input + 1, len - 2);
+        hash_string(data, algorithm);
+        free(data);
     } else {
-        hash_file(filename, algorithm);
+        hash_file(input, algorithm);
     }
 
     // Clean up OpenSSL
