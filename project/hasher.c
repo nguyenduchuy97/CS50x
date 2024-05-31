@@ -151,6 +151,7 @@ int main(int argc, char *argv[]) {
     } else if (input[0] == '\"' && input[strlen(input) - 1] == '\"') {
         // Remove the surrounding quotes from the input string
         size_t len = strlen(input);
+        // Duplicate specified 
         char *data = strndup(input + 1, len - 2);
         hash_string(data, algorithm);
         free(data);
