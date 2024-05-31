@@ -9,6 +9,7 @@
 // Function to print the computed hash in hexadecimal format
 void print_hash(const char *algorithm, const unsigned char *digest, unsigned int length) {
     printf("%s: ", algorithm);
+    // Read 
     for (unsigned int i = 0; i < length; i++) {
         printf("%02x", digest[i]);
     }
