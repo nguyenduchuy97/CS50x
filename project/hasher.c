@@ -123,8 +123,8 @@ void hash_string(const char *data, const char *algorithm) {
 // Function to display the usage of the program
 void print_usage(const char *program_name) {
     printf("Usage: %s <algorithm> <filename>\n", program_name);
-    printf("       %s <algorithm> - (to hash from standard input. Press Ctrl + D two times to hash.)\n", program_name);
-    printf("       %s <algorithm> \"string\" (to hash the provided string)\n", program_name);
+    printf("       %s <algorithm> - (to hash from standard input. Press Ctrl + D to hash.)\n", program_name);
+    printf("       %s <algorithm> \"string\" (to hash the provided string. You should quote the string if it has spaces.)\n\n", program_name);
     printf("Available algorithms:\n");
     printf("  md2, md4, md5, sha1, sha224, sha256, sha384, sha512\n");
     printf("  sha3-224, sha3-256, sha3-384, sha3-512, shake128, shake256\n");
