@@ -36,6 +36,12 @@ To hash a message using the `SHA-256` algorithm:`./hasher sha256 "Hello, world!"
 !!! You should move in the directory where hasher is locating to execute the syntax command as instruction below.
 To hash a message using the `SHA-256` algorithm:`./hasher sha256 path/to/your/file.txt`<br>
 
+##### Hashing standard input
+!!! You should move in the directory where hasher is locating to execute the syntax command as instruction below.
+To hash a message using the `SHA-256` algorithm:`./hasher sha256 -`<br>
+When you hit enter the cursor will goes down, waiting for you to input what ever you want, whether you do keyboard typing or Copy-Paste.
+To get the result you should press `Ctrl + D` to ending the standard input for activate hashing function executes
+
 #### My words
 This project is an extended hashing program I build for my own and also for you all. It is a powerful and flexible tool for generating cryptographic hashes, it faster than the version in python I have built. The `openssl` library was a massive cryptographic and famous in crypto funtions, it has extensive algorithms. Its command-line interface ensures ease of use in various environments, making it a valuable tool for us. This project demonstrates careful consideration of users needs and efficient handling of different data types, from short messages to large files.
 <br>
