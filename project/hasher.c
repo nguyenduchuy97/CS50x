@@ -148,14 +148,10 @@ int main(int argc, char *argv[]) {
     if (strcmp(input, "-") == 0) {
         hash_stdin(algorithm);
     // Ensure the string was quoted
-    } else if (input[0] == '\"' && input[strlen(input) - 1] == '\"') {
-        // Remove the surrounding quotes from the input string
-        size_t len = strlen(input);
-        char *data = strndup(input + 1, len - 2);
-        hash_string(data, algorithm);
-        free(data);
-    } else {
+    } else if (access(input, F_OK) != -1) {
         hash_file(input, algorithm);
+    } else {
+        hash_string(input, algorithm);
     }
 
     // Clean up OpenSSL
