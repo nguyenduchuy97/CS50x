@@ -25,7 +25,9 @@ The code is organized into modular functions, each responsible for a specific ha
 ##### Makefile for Build Automation
 The inclusion of a Makefile simplifies the build process and ensures reproducible builds across different environments. By defining rules for compiling source files and linking dependencies, the Makefile automates the build workflow, reducing the risk of manual errors and inconsistencies. Additionally, the Makefile enables incremental builds, avoiding unnecessary recompilation of unchanged source files.
 
+#### Usage
 ##### Hashing a Message
+! You should move in the directory where hasher is locating to execute the syntax command as instruction below.
 To hash a message using the `SHA-256` algorithm:`./hasher sha256 "Hello, world!"`<br>
 If you are using Unix-like OS you can do as following:<br>
 Add executable permission for `hasher` with command: `chmod +x hasher`<br>
