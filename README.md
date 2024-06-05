@@ -1,0 +1,2 @@
+# CS50x
+This is my CS50x projects 2024
